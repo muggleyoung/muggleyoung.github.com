@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>matlab基础 - Muggleyoung Blog</title>
+  <meta name="author" content="muggleyoung">
+
+  
+  <meta name="description" content="matlab&#22522;&#30784;
+&#29992;&#24471;&#30528;&#30340;&#30697;&#38453;&#30340;&#22522;&#26412;&#34920;&#31034;&#21644;&#35745;&#31639;&#65292;&# &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://muggleyoung.github.com/blog/2009/10/30/matlab%E5%9F%BA%E7%A1%80/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Muggleyoung Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Muggleyoung Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:muggleyoung.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Matlab基础</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-10-30T00:00:00+08:00" pubdate data-updated="true">Oct 30<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>
+                                    <p><font face="Times New Roman"><strong>matlab&#22522;&#30784;</strong></font></p>
+<p><font face="Times New Roman"><strong>&#29992;&#24471;&#30528;&#30340;&#30697;&#38453;&#30340;&#22522;&#26412;&#34920;&#31034;&#21644;&#35745;&#31639;&#65292;&#36824;&#26377;&#20882;&#21495;&#30340;&#29992;&#27861;&#12290;&#21518;&#38754;&#25105;&#36824;&#28155;&#21152;&#20102;&#28857;&#20056;&#65292;&#28857;&#38500;&#65292;&#19982;&#22522;&#26412;&#20056;&#38500;&#30340;&#19981;&#21516;&#12290;</strong></font></p>
+<p><font face="Times New Roman"><strong></strong></font>&#160;</p>
+<p><font face="Times New Roman"><strong>1</strong></font><strong>&#12289;&#30697;&#38453;&#21450;&#20854;&#36816;&#31639;</strong><strong><br /></strong><font face="Times New Roman">1.1</font>&#30697;&#38453;&#30340;&#30452;&#25509;&#36755;&#20837;<br /><font face="Times New Roman">matlab</font>&#20013;&#30452;&#25509;&#36755;&#20837;&#30697;&#38453;&#26102;&#19981;&#29992;&#25551;&#36848;&#30697;&#38453;&#30340;&#31867;&#22411;&#21644;&#32500;&#25968;&#12290;&#36755;&#20837;&#26102;&#65292;&#21516;&#19968;&#34892;&#20803;&#32032;&#29992;&#36887;&#21495;&#25110;&#32773;&#31354;&#26684;&#38548;&#24320;&#65292;&#19981;&#21516;&#34892;&#30340;&#20803;&#32032;&#29992;&#20998;&#21495;&#25110;&#32773;&#22238;&#36710;&#38548;&#24320;&#12290;<strong>&#65288;&#23618;&#27425;&#32467;&#26500;&#19978;&#65292;&#65288;&#36887;&#21495;&#65309;&#31354;&#26684;&#65289;</strong><strong><font face="Times New Roman">&lt;</font></strong><strong>&#65288;&#20998;&#21495;&#65309;&#22238;&#36710;&#65289;&#65289;</strong><strong><br /></strong><a name="INPUT_1"></a><strong><font face="Courier New">A=[1,2,3;4,5,6] </font></strong><font face="Times New Roman">&#160;&#160;&#160;&#160;&#160;%</font>&#21516;&#34892;&#20803;&#32032;&#38388;&#29992;&#36887;&#21495;&#38548;&#24320;<br /><font face="Times New Roman"><font face="Times New Roman"><a name="OUTPUT_1"></a><font face="Courier New">A =<br /></font><font face="Courier New">&#160;&#160;&#160;&#160; 1&#160;&#160;&#160;&#160; 2&#160;&#160;&#160;&#160; 3<br /></font></font></font></p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"></font></font><font face="Times New Roman"><font face="Courier New"></font></font></font>
+<p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Courier New">&#160;&#160;&#160;&#160; 4&#160;&#160;&#160;&#160; 5&#160;&#160;&#160;&#160; 6</font><font face="Times New Roman"> </font><font face="Times New Roman">&#160;</font></font></font></font></p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><a name="INPUT_4"></a><strong><font face="Courier New">A=[1,2,3</font></strong><strong><font face="Courier New">&#160;&#160;&#160; <br /></font></strong><strong><font face="Courier New">4,5,6] &#160;&#160;<br /></font></strong><font face="Times New Roman">%</font>&#19981;&#21516;&#34892;&#29992;&#22238;&#36710;&#38548;&#24320;<br /><a name="OUTPUT_4"></a><font face="Courier New">A =<br /></font><font face="Courier New">&#160;&#160;&#160;&#160; 1&#160;&#160;&#160;&#160; 2&#160;&#160;&#160;&#160; 3<br /></font></font></font></font>
+<p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Courier New">&#160;&#160;&#160;&#160; 4&#160;&#160;&#160;&#160; 5&#160;&#160;&#160; &#160;6</font><font face="Times New Roman"> </font><font face="Times New Roman">&#160;</font></font></font></font></p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New">&#30697;&#38453;&#20013;&#30340;&#20803;&#32032;&#21487;&#20197;&#29992;&#23427;&#30340;&#34892;&#12289;&#21015;&#25968;&#36827;&#34892;&#35775;&#38382;&#65288;&#27880;&#24847;&#35201;&#25918;&#22312;&#22278;&#25324;&#21495;&#20869;&#65289;&#12290;<br />&#20363;&#22914;&#23545;&#20110;&#19978;&#20363;&#65292;&#29616;&#35775;&#38382;&#31532;&#20108;&#34892;&#31532;&#19977;&#20010;&#20803;&#32032;&#65288;&#31532;&#19968;&#20010;&#26159;&#34892;&#65292;&#31532;&#20108;&#20010;&#26159;&#21015;&#65289;&#65306;<br /><a name="INPUT_5"></a><strong><font face="Courier New">A(2,3) </font></strong><font face="Times New Roman">&#160;%</font>&#27880;&#24847;&#36825;&#37324;&#35201;&#29992;&#22278;&#25324;&#21495;&#65292;&#36825;&#37324;&#30456;&#24403;&#20110;&#19968;&#20010;&#20989;&#25968;&#12290;<font face="Times New Roman">matlab</font>&#20013;&#20989;&#25968;&#30340;&#33258;&#21464;&#37327;&#25918;&#22312;&#22278;&#25324;&#21495;&#20013;&#65292;<font face="Times New Roman"> %</font>&#32780;<font face="Times New Roman">mathematica</font>&#21017;&#25918;&#22312;&#20013;&#25324;&#21495;&#20013;&#12290;<br /><a name="OUTPUT_5"></a><font face="Courier New">ans =<br /></font></font></font></font>
+<p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Courier New">&#160;&#160;&#160;&#160; 6</font><font face="Times New Roman"> </font><font face="Times New Roman">&#160;</font></font></font></font></p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New">&#30697;&#38453;&#20013;&#30340;&#20803;&#32032;&#20063;&#21487;&#20197;&#20165;&#20165;&#29992;&#19968;&#20010;&#19979;&#26631;&#26469;&#35775;&#38382;&#65292;&#20294;&#36825;&#26102;&#20505;&#35201;&#26684;&#22806;&#27880;&#24847;&#65292;&#27492;&#26102;&#30340;&#20803;&#32032;&#26159;&#25353;&#21015;&#20248;&#20808;&#25490;&#24207;&#30340;&#12290;&#20363;&#22914;&#23545;&#19978;&#20363;<font face="Times New Roman">A<br /></font></font></font></font>
+<p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><a name="INPUT_6"></a><strong><font face="Courier New">A(4) </font></strong><font face="Times New Roman">&#160;</font></font></font></font></p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><a name="OUTPUT_6"></a><font face="Courier New">ans =<br /></font></font></font></font></font></font>
+<p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New">&#160;&#160;&#160;&#160; 5</font><font face="Times New Roman"> </font><font face="Times New Roman">&#160;</font></font></font></font></font></font></p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman">&#32467;&#26524;&#20026;<font face="Times New Roman">5</font>&#32780;&#19981;&#26159;&#25353;&#34892;&#20248;&#20808;&#30340;&#39034;&#24207;&#24471;&#20986;<font face="Times New Roman">4</font>&#12290;<br />&#20462;&#25913;&#30697;&#38453;&#30340;&#20803;&#32032;&#21487;&#20197;&#30452;&#25509;&#36827;&#34892;&#65292;&#22914;<br /></font></font></font></font></font>
+<p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><a name="INPUT_7"></a><strong><font face="Courier New">A(2,2)=8 </font></strong><font face="Times New Roman">&#160;</font></font></font></font></font></font></p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><a name="OUTPUT_7"></a><font face="Courier New">A =<br /></font><font face="Courier New">&#160;&#160;&#160;&#160; 1&#160;&#160;&#160;&#160; 2&#160;&#160;&#160;&#160; 3<br /></font></font></font></font></font></font></font></font>
+<p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New">&#160;&#160;&#160;&#160; 4&#160;&#160;&#160;&#160; 8&#160;&#160;&#160;&#160; 6</font><font face="Times New Roman"> </font><font face="Times New Roman">&#160;</font></font></font></font></font></font></font></font></p>
+<p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><a name="INPUT_8"></a><strong><font face="Courier New">A(4)=5 </font></strong><font face="Times New Roman">&#160;</font></font></font></font></font></font></font></font></p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><a name="OUTPUT_8"></a><font face="Courier New">A =<br /></font><font face="Courier New">&#160;&#160;&#160;&#160; 1&#160;&#160;&#160;&#160; 2&#160;&#160;&#160;&#160; 3<br /></font></font></font></font></font></font></font></font></font></font>
+<p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New">&#160;&#160;&#160;&#160; 4&#160;&#160;&#160;&#160; 5&#160;&#160;&#160;&#160; 6</font><font face="Times New Roman"> </font><font face="Times New Roman">&#160;</font></font></font></font></font></font></font></font></font></font></p>
+<p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><a name="INPUT_9"></a><strong><font face="Courier New">A(7)=10 </font></strong><font face="Times New Roman">&#160;</font></font></font></font></font></font></font></font></font></font></p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"></font></font></font></font></font></font></font></font></font></font></font>
+<p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><a name="OUTPUT_9"></a><strong><font face="Courier New">???&#160; In an assignment&#160; A(I) = B, a matrix A cannot be resized.</font></strong><font face="Times New Roman"> </font><font face="Times New Roman">&#160;</font></font></font></font></font></font></font></font></font></font></font></font></p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman">&#19978;&#20363;&#35775;&#38382;&#36234;&#30028;&#65281;<br /></font></font></font></font></font></font></font></font></font></font></font>
+<p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><a name="INPUT_10"></a><strong><font face="Courier New">A(2,6)=9 </font></strong><font face="Times New Roman">&#160;</font></font></font></font></font></font></font></font></font></font></font></font></p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><a name="OUTPUT_10"></a><font face="Courier New">A =<br /></font><font face="Courier New">&#160;&#160;&#160;&#160; 1&#160;&#160;&#160;&#160; 2&#160;&#160;&#160;&#160; 3&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0<br /></font><font face="Courier New">&#160;&#160;&#160;&#160; 4&#160;&#160;&#160;&#160; 5&#160;&#160;&#160;&#160; 6&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 9</font><font face="Times New Roman"> </font><font face="Times New Roman">&#160;<br /></font>&#32780;&#26412;&#20363;&#21364;&#19981;&#24403;&#36234;&#30028;&#22788;&#29702;&#65292;&#32780;&#26159;&#33258;&#21160;&#36827;&#34892;&#25193;&#20805;&#12290;&#22240;&#20026;&#19978;&#19968;&#20363;&#20013;&#65292;<font face="Times New Roman">matlab</font>&#26080;&#27861;&#21028;&#26029;&#35201;&#22914;&#20309;&#25193;&#20805;&#65292;&#25152;&#20197;&#24403;&#36234;&#30028;&#22788;&#29702;&#65292;&#32780;&#22312;&#36825;&#37324;&#23427;&#20250;&#26681;&#25454;&#20320;&#32473;&#20986;&#30340;&#8220;&#22352;&#26631;&#8221;&#21644;&#21407;&#20808;&#30697;&#38453;&#30340;&#23610;&#23544;&#36827;&#34892;&#23545;&#27604;&#65292;&#32473;&#20986;&#19968;&#20010;&#26368;&#23567;&#30340;&#20294;&#24688;&#22909;&#21253;&#20303;&#25152;&#26377;&#22352;&#26631;&#30340;&#22823;&#23567;&#12290;&#24182;&#19988;&#40664;&#35748;&#32473;&#26032;&#25193;&#20805;&#20986;&#30340;&#24182;&#19988;&#29992;&#25143;&#27809;&#26377;&#25351;&#23450;&#20540;&#30340;&#20803;&#32032;&#36171;&#20540;&#20026;<font face="Times New Roman">0</font>&#12290;<br /></font></font></font></font></font></font></font></font></font></font></font></font></font>
+<p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><a name="INPUT_11"></a><strong><font face="Courier New">A(4,5)=15 </font></strong><font face="Times New Roman">&#160;</font></font></font></font></font></font></font></font></font></font></font></font></font></font></p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><a name="OUTPUT_11"></a><font face="Courier New">A =<br /></font><font face="Courier New">&#160;&#160;&#160;&#160; 1&#160;&#160;&#160;&#160; 2&#160;&#160;&#160;&#160; 3&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0<br /></font><font face="Courier New">&#160;&#160;&#160;&#160; 4&#160;&#160;&#160;&#160; 5&#160;&#160;&#160;&#160; 6&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160; &#160;9<br /></font><font face="Courier New">&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0<br /></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font>
+<p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New">&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160; 15&#160;&#160;&#160;&#160; 0</font><font face="Times New Roman"> </font><font face="Times New Roman">&#160;</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></p>
+<p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><a name="INPUT_12"></a><strong><font face="Courier New">A(6,9)=1 </font></strong><font face="Times New Roman">&#160;</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><a name="OUTPUT_12"></a><font face="Courier New">A =<br /></font><font face="Courier New">&#160;&#160;&#160;&#160; 1&#160;&#160;&#160;&#160; 2&#160;&#160;&#160;&#160; 3&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0<br /></font><font face="Courier New">&#160;&#160;&#160;&#160; 4&#160;&#160;&#160;&#160; 5&#160;&#160;&#160;&#160; 6&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 9&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0<br /></font><font face="Courier New">&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160; &#160;&#160;0<br /></font><font face="Courier New">&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160; 15&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0<br /></font><font face="Courier New">&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0<br /></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font>
+<p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New">&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 1</font><font face="Times New Roman"> </font><font face="Times New Roman">&#160;</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman">1.2</font>&#30697;&#38453;&#30340;&#20989;&#25968;&#29983;&#25104;<br /><font face="Times New Roman">matlab</font>&#25552;&#20379;&#20102;&#19968;&#20123;&#20989;&#25968;&#26469;&#26500;&#36896;&#29305;&#27530;&#30697;&#38453;&#65292;&#20363;&#22914;<br /></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font>
+<p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><a name="INPUT_13"></a><font face="Courier New"><strong>w=zeros(2,3)&#160;&#160;&#160;&#160;&#160;&#160;&#160; %</strong></font><strong>&#26500;&#36896;<font face="Courier New">2</font>&#215;<font face="Courier New">3</font>&#30340;&#38646;&#30697;&#38453;<font face="Courier New"> </font></strong><font face="Times New Roman">&#160;</font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></p><font face="Times New Roman"><font face="Times New Roman"><font face="Courier New"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><font face="Times New Roman"><a name="OUTPUT_13"></a><font face="Courier New">w =<br /></font><font face="Courier New">&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0<br /></font><font face="Courier New">&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0&#160;&#160;&#160;&#160; 0</font><font face="Times New Roman"> </font><font face="Times New Roman">&#160;<br /></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font>
+<p><font face="Times New Roman"><font face ... class="clear"></font></font></p></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">muggleyoung</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-10-30T00:00:00+08:00" pubdate data-updated="true">Oct 30<span>th</span>, 2009</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://muggleyoung.github.com/blog/2009/10/30/matlab%E5%9F%BA%E7%A1%80/" data-via="" data-counturl="http://muggleyoung.github.com/blog/2009/10/30/matlab%E5%9F%BA%E7%A1%80/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/10/27/beamlab-installation/" title="Previous Post: beamlab installation">&laquo; beamlab installation</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/11/01/%E6%97%85%E8%A1%8C%E7%9A%84%E6%84%8F%E4%B9%89-one-week/" title="Next Post: 旅行的意义-one week">旅行的意义-one week &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/08/my-frist-post/">my-frist-post</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/14/eclipse---java.lang.noclassdeffounderror%3A-com.jayway.android.robotium.solo.solo%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/">eclipse - java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Solo错误解决</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/04/08/%E4%BD%A0%E7%8E%B0%E5%9C%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%BD%BB%E6%9D%BE%E4%B9%88%EF%BC%9F/">你现在的工作轻松么？</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/19/css%E7%AC%94%E8%AE%B0-position%E9%83%BD%E6%9C%89%E5%95%A5%E5%B1%9E%E6%80%A7/">CSS笔记-position都有啥属性</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/19/css%E7%AC%94%E8%AE%B0-css-reset/">CSS笔记-CSS reset</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - muggleyoung -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

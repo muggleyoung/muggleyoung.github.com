@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>无脸人--hash表 - Muggleyoung Blog</title>
+  <meta name="author" content="muggleyoung">
+
+  
+  <meta name="description" content="&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#19968;&#20999;&#37117;&#20026;&#32771;&#35797;&#35753;&#36335;,&#21521;&#26080;&#25968;&#20154;&#25215 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://muggleyoung.github.com/blog/2006/06/29/%E6%97%A0%E8%84%B8%E4%BA%BA--hash%E8%A1%A8/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Muggleyoung Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Muggleyoung Blog</a></h1>
+  
+    <h2>A blogging framework for hackers.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:muggleyoung.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">无脸人--hash表</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-06-29T00:00:00+08:00" pubdate data-updated="true">Jun 29<span>th</span>, 2006</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#19968;&#20999;&#37117;&#20026;&#32771;&#35797;&#35753;&#36335;,&#21521;&#26080;&#25968;&#20154;&#25215;&#35834;&#20102;&#26080;&#25968;&#20107;&#24773;,&#37117;&#25512;&#22312;&#20102;&#32771;&#35797;&#21518;.&#21487;&#26089;&#19978;&#30340;&#25490;&#38431;&#35770;&#36824;&#26159;&#35753;&#25105;&#32771;&#30340;&#24808;&#19981;&#24525;&#30585;.&#21482;&#33021;&#23492;&#24076;&#26395;&#20110;&#32769;&#24072;&#30340;&#22823;&#21457;&#24904;&#24754;&#20102;<img onload="var image=new Image();image.src=this.src;if(image.width&gt;0 &amp;&amp; image.height&gt;0){if(image.width&gt;=700){this.width=700;this.height=image.height*700/image.width;}}" src="http://blog.hexun.com/CuteSoft_Client/CuteEditor/images/emrose.gif" align="absMiddle" border="0" />&#30495;&#30340;&#27442;&#21741;&#26080;&#27882;&#21834;</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#32771;&#35797;&#21518;,&#20986;&#21435;&#29609;,&#25171;&#28216;&#25103;,&#21507;&#22909;&#21507;&#30340;,&#30475;&#30005;&#24433;&#8230;&#8230;..&#24635;&#20043;&#24456;&#24537;,&#24456;&#24537;.</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#32993;&#20081;&#25970;&#19978;&#20102;&#26412;&#23398;&#26399;&#30340;&#26368;&#21518;&#19968;&#20010;&#19978;&#26426;&#31243;&#24207;,&#20081;&#30340;&#19968;&#22604;&#31946;&#28034;.&#23601;&#26159;&#19981;&#24819;&#20889;,&#20063;&#19981;&#20250;&#20889;,&#26356;&#27809;&#26102;&#38388;&#20889;.&#20110;&#26159;&#20046;&#8230;..&#21402;&#30528;&#33080;&#30382;&#25214;&#39640;&#25163;&#24110;&#24537;&#20462;&#25913;,&#25913;&#30340;&#25105;&#37117;&#24555;&#35201;&#35748;&#19981;&#20986;&#33258;&#24049;&#30340;&#20316;&#21697;&#20102;.&#23601;&#20687;&#21117;&#31363;&#20102;&#21035;&#20154;&#30340;&#29256;&#26435;,&#33258;&#24049;&#37117;&#35273;&#24471;&#24456;&#27809;&#33080;,&#24456;&#27809;&#33080;&#8230;.&#24819;&#36215;&#20102;&lt;&#21315;&#19982;&#21315;&#23547;&gt;,&#23567;&#21315;&#21644;&#26080;&#33080;&#20154;&#22352;&#22312;&#28779;&#36710;&#19978;,&#31383;&#22806;&#38378;&#36807;&#30340;&#26223;&#29289;,&#25504;&#36807;&#30340;&#34394;&#24187;&#30340;&#20154;&#24433;.&#26080;&#33080;&#20154;&#21574;&#30528;&#38754;&#20855;,&#38745;&#38745;&#30340;&#22352;&#30528;,&#30475;&#19981;&#21040;&#38754;&#20855;&#19979;&#30340;&#24515;&#24773;&#8230;</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#19981;&#24223;&#35805;&#20102;,&#36148;&#31243;&#24207;,&#36148;&#22909;&#20102;&#30561;&#35273;&#8230;&#21402;&#33080;&#30382;&#19968;&#27425;!</p>
+<p>&#160; </p>
+<p><span lang="EN-US">&lt;</span><span>&#31639;&#27861;&#19982;&#25968;&#25454;&#32467;&#26500;</span><span lang="EN-US">&gt;</span><span>&#31532;&#22235;&#27425;&#19978;&#26426;&#25253;&#21578;</span></p>
+<p><span>&#39064;&#30446;</span><span lang="EN-US">:</span><span>&#20351;&#29992;&#21704;&#24076;&#34920;&#26597;&#25214;&#21333;&#35789;</span></p>
+<p align="left"><span></span><span lang="EN-US"><span lang="EN-US"></span></span></p>
+<p><span>&#39064;&#30446;&#34917;&#20805;&#35828;&#26126;</span><span lang="EN-US">:</span></p>
+<p><span>&#32473;&#23450;&#19968;&#20010;&#33521;&#25991;&#27573;&#33853;</span><span lang="EN-US">(</span><span>&#21333;&#35789;&#20010;&#25968;&#23567;&#20110;</span><span lang="EN-US">200),</span><span>&#21033;&#29992;</span><span lang="EN-US">hash</span><span>&#34920;</span><span lang="EN-US">(</span><span>&#34920;&#38271;&#26368;&#22823;</span><span lang="EN-US">20)</span><span>&#32479;&#35745;&#21333;&#35789;&#20986;&#29616;&#30340;&#39057;&#24230;</span><span lang="EN-US">,</span><span>&#24182;&#33021;&#26681;&#25454;&#35201;&#27714;&#26174;&#31034;&#20986;&#32473;&#23450;&#21333;&#35789;&#22312;&#27573;&#33853;&#20013;&#20986;&#29616;&#30340;&#20301;&#32622;</span><span lang="EN-US">.</span><span>&#21644;&#19981;&#21516;&#21333;&#35789;&#30340;&#20986;&#29616;&#39057;&#24230;</span><span lang="EN-US">.</span><span>&#20854;&#20013;</span><span lang="EN-US">hash</span><span>&#20989;&#25968;&#20351;&#29992;&#38500;&#30041;&#20313;&#25968;&#27861;&#26500;&#36896;</span><span lang="EN-US">,</span><span>&#20351;&#29992;&#38142;&#22320;&#22336;&#27861;&#36827;&#34892;&#20914;&#31361;&#22788;&#29702;</span><span lang="EN-US">.</span></p>
+<p><span>&#19968;&#27010;&#35201;&#35774;&#35745;</span><span lang="EN-US">:</span></p>
+<p><span lang="EN-US">1</span><span>&#22522;&#26412;&#25968;&#25454;&#32467;&#26500;&#21450;&#25805;&#20316;</span><span lang="EN-US">:</span><span lang="EN-US"> </span></p>
+<p align="left"><span lang="EN-US">//</span><span>&#21333;&#35789;&#20301;&#32622;&#20449;&#24687;&#32467;&#26500;&#20307;</span><span lang="EN-US">;</span></p>
+<p align="left"><span lang="EN-US">typedef</span><span lang="EN-US"> <span>struct</span> locate</span></p>
+<p align="left"><span lang="EN-US">{<span>&#160;&#160;&#160;&#160; </span></span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>int</span> pos;<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#20301;&#32622;&#38142;&#34920;&#30340;&#24403;&#21069;&#38271;&#24230;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>struct</span> locate *place;</span></p>
+<p align="left"><span lang="EN-US">}locate;<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#23384;&#20648;&#21333;&#35789;&#20986;&#29616;&#27425;&#25968;&#21644;&#20986;&#29616;&#20301;&#32622;&#30340;&#32467;&#26500;&#20307;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US">//</span><span>&#21019;&#24314;&#21333;&#35789;&#32467;&#26500;&#20307;</span><span lang="EN-US">;</span></p>
+<p align="left"><span lang="EN-US">typedef</span><span lang="EN-US"> <span>struct</span> word</span></p>
+<p align="left"><span lang="EN-US">{</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span>sword letter;<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#21333;&#35789;&#20013;&#30340;&#27599;&#19968;&#20010;&#23383;&#27597;&#32452;&#25104;&#30340;&#25968;&#32452;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>int</span> frequency;<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#21333;&#35789;&#30340;&#20351;&#29992;&#39057;&#29575;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>struct</span> locate *place;<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#25351;&#21521;&#21333;&#35789;&#30340;&#20301;&#32622;&#38142;&#34920;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>struct</span> word *next;<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#25351;&#21521;&#19979;&#19968;&#33410;&#28857;&#30340;&#25351;&#38024;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US">}word,W[MAXSIZE];</span></p>
+<p align="left"><span lang="EN-US">//</span><span>&#21019;&#24314;&#21704;&#24076;&#34920;&#23384;&#20648;&#32467;&#26500;&#30340;&#32467;&#26500;&#20307;</span><span lang="EN-US">;</span></p>
+<p align="left"><span lang="EN-US">typedef</span><span lang="EN-US"> <span>struct</span> </span></p>
+<p align="left"><span lang="EN-US">{</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>struct</span> word *next;<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#21704;&#24076;&#34920;&#20013;&#35813;&#22320;&#22336;&#25351;&#21521;&#30340;&#25628;&#32034;&#38142;&#34920;&#39318;&#32467;&#28857;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US">}hashtable[MAXHASHNUM];</span></p>
+<p align="left"><span lang="EN-US">&#160;</span></p>
+<p align="left"><span>&#22522;&#26412;&#25805;&#20316;&#23450;&#20041;</span><span lang="EN-US">:</span></p>
+<p align="left"><span lang="EN-US">void</span><span lang="EN-US"> inithash(hashtable h,<span>int</span> len)<span> <span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>//</span><span>&#21021;&#22987;&#21270;</span><span lang="EN-US">hash</span><span>&#34920;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US">void</span><span lang="EN-US"> initword(word *&amp;w,locate *&amp;p)<span> <span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>//</span><span>&#21021;&#22987;&#21270;&#21333;&#35789;&#30340;&#32467;&#28857;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US">int</span><span lang="EN-US"> hashkey(sword s)<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>&#160;&#160; </span><span><span>&#160;</span>//</span><span>&#23450;&#20041;</span><span lang="EN-US">hash</span><span>&#20989;&#25968;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US">void</span><span lang="EN-US"> value(sword &amp;s1,sword s2)<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#23545;&#23383;&#31526;&#25968;&#32452;&#36171;&#20540;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US">int</span><span lang="EN-US"> compare(sword s1,sword s2)<span> <span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>//</span><span>&#27604;&#36739;&#20004;&#20010;&#23383;&#31526;&#20018;&#26159;&#21542;&#30456;&#31561;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US">word *exist(sword s,hashtable h,<span>int</span> num)<span>&#160; </span><span><span>&#160;</span>//</span><span>&#21028;&#26029;</span><span lang="EN-US">hash</span><span>&#34920;&#20013;&#26159;&#21542;&#24050;&#23384;&#22312;</span><span lang="EN-US">s;</span></span></p>
+<p align="left"><span lang="EN-US">void</span><span lang="EN-US"> creathtable(hashtable h,sword s,<span>int</span> wordnum)<span> //</span><span>&#24314;&#31435;&#21704;&#24076;&#34920;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US">bool</span><span lang="EN-US"> IsLetter(<span>char</span> temp)<span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#21028;&#26029;&#26159;&#19981;&#26159;&#23383;&#27597;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US">void</span><span lang="EN-US"> search(sword s,hashtable h)<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>&#160;&#160; </span><span><span>&#160;</span>//</span><span>&#22312;</span><span lang="EN-US">hash</span><span>&#34920;&#20013;&#26597;&#25214;</span><span lang="EN-US">,</span><span>&#24182;&#25171;&#21360;&#20449;&#24687;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US">void</span><span lang="EN-US"> output(hashtable h)<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>&#160;&#160; </span><span><span>&#160;</span>//</span><span>&#36755;&#20986;&#25991;&#31456;&#20013;&#30340;&#25152;&#26377;&#21333;&#35789;&#20449;&#24687;</span><span lang="EN-US">;</span></span></p>
+<p><span>&#20108;&#35814;&#32454;&#35774;&#35745;</span></p>
+<p align="left"><span lang="EN-US">//</span><span>&#21021;&#22987;&#21270;</span><span lang="EN-US">hash</span><span>&#34920;</span><span lang="EN-US">;</span></p>
+<p align="left"><span lang="EN-US">void</span><span lang="EN-US"> inithash(hashtable h,<span>int</span> len)<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//len</span><span>&#20026;&#34920;&#38271;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US">{</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>int</span> i;</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>for</span>(i=0; i&lt;len; i++)</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span>{</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>h[i].next=NULL;<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#25351;&#21521;&#38142;&#34920;&#30340;&#25351;&#38024;&#20026;&#31354;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span>}</span></p>
+<p align="left"><span lang="EN-US">}</span></p>
+<p align="left"><span lang="EN-US">&#160;</span></p>
+<p align="left"><span lang="EN-US">//</span><span>&#21021;&#22987;&#21270;&#21333;&#35789;&#30340;&#32467;&#28857;</span><span lang="EN-US">;</span></p>
+<p align="left"><span lang="EN-US">void</span><span lang="EN-US"> initword(word *&amp;w,locate *&amp;p)</span></p>
+<p align="left"><span lang="EN-US">{</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span>w=(word *)malloc(<span>sizeof</span>(word));<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span></span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span>p=(locate *)malloc(<span>sizeof</span>(locate));<span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#20998;&#37197;&#31354;&#38388;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span>w-&gt;frequency=0;<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#21021;&#22987;&#39057;&#29575;&#20026;</span><span lang="EN-US">0;</span></span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span>w-&gt;place=NULL;</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span>w-&gt;next=NULL;<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#25351;&#38024;&#22343;&#20026;&#31354;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US">}</span></p>
+<p align="left"><span lang="EN-US">&#160;</span></p>
+<p align="left"><span lang="EN-US">//</span><span>&#23450;&#20041;</span><span lang="EN-US">hash</span><span>&#20989;&#25968;</span><span lang="EN-US">;</span></p>
+<p align="left"><span lang="EN-US">int</span><span lang="EN-US"> hashkey(sword s)<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#20197;&#27599;&#20010;&#21333;&#35789;&#30340;&#21069;&#20004;&#20010;&#23383;&#27597;&#30340;</span><span lang="EN-US">asc</span><span>&#30721;&#20540;&#20043;&#21644;&#19982;</span><span lang="EN-US">20</span><span>&#27714;&#20313;&#20026;</span><span lang="EN-US">hash</span><span>&#20989;&#25968;&#20540;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US">{</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>int</span> key;</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>if</span>(s[1]!=&#8217;\0&#8217;)<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#21333;&#35789;&#30340;&#23383;&#27597;&#20010;&#25968;</span><span lang="EN-US">&gt;=</span><span>&#20004;&#20010;&#23383;&#27597;&#26102;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>key=(s[0]+s[1])%20;</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>else</span><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#21482;&#26377;&#19968;&#20010;&#23383;&#27597;&#30340;&#21333;&#35789;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>key=s[0]%20;</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>return</span> key;</span></p>
+<p align="left"><span lang="EN-US">}</span></p>
+<p align="left"><span lang="EN-US">//</span><span>&#23545;&#23383;&#31526;&#25968;&#32452;&#36171;&#20540;</span><span lang="EN-US">;</span></p>
+<p align="left"><span lang="EN-US">void</span><span lang="EN-US"> value(sword &amp;s1,sword s2)<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#23558;&#23383;&#31526;&#20018;</span><span lang="EN-US">s1</span><span>&#36171;&#32473;</span><span lang="EN-US">s2;</span></span></p>
+<p align="left"><span lang="EN-US">{</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>int</span> i; </span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>for</span>(i=0;s2[i]!=&#8217;\0&#8217;;i++)<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#23383;&#31526;&#20018;&#30340;&#32456;&#27490;&#26159;</span><span lang="EN-US">&#8216;\0&#8217;;</span></span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span>{</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>s1[i]=s2[i];</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span>}</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span>s1[i]=&#8217;\0&#8217;;</span></p>
+<p align="left"><span lang="EN-US">}</span></p>
+<p align="left"><span lang="EN-US">//</span><span>&#27604;&#36739;&#20004;&#20010;&#23383;&#31526;&#20018;&#26159;&#21542;&#30456;&#31561;</span><span lang="EN-US">;</span></p>
+<p align="left"><span lang="EN-US">int</span><span lang="EN-US"> compare(sword s1,sword s2)</span></p>
+<p align="left"><span lang="EN-US">{</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>int</span> i=0;</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>while</span>( i&lt;20 &amp;&amp; s1[i]!=&#8217;\0&#8217; &amp;&amp; s2[i]!=&#8217;\0&#8217;) </span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span>{</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>if</span>(s1[i]!=s2[i])<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#19981;&#30456;&#31561;&#26102;&#36820;&#22238;</span><span lang="EN-US">0;</span></span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>return</span> 0;</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>i++;</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span>}</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160; </span><span>if</span>(s1[i]==&#8217;\0&#8217; &amp;&amp; s2[i]==&#8217;\0&#8217;)<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#30456;&#31561;&#26102;&#36820;&#22238;</span><span lang="EN-US">1;</span></span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>return</span> 1;</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>else</span></span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>return</span> 0;</span></p>
+<p align="left"><span lang="EN-US">}</span></p>
+<p align="left"><span lang="EN-US">//</span><span>&#21028;&#26029;</span><span lang="EN-US">hash</span><span>&#34920;&#20013;&#26159;&#21542;&#24050;&#23384;&#22312;</span><span lang="EN-US">s;</span></p>
+<p align="left"><span lang="EN-US">word *exist(sword s,hashtable h,<span>int</span> num)</span></p>
+<p align="left"><span lang="EN-US">{</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span>word *p=h[num].next;</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span><span>while</span>(p!=NULL)<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//p</span><span>&#19981;&#31561;&#20110;&#31354;&#26102;&#36827;&#34892;&#21028;&#26029;</span><span lang="EN-US">;</span></span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span>{</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>if</span>(compare(p-&gt;letter,s))<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#30456;&#31561;&#26102;&#36820;&#22238;</span><span lang="EN-US">p;</span></span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>return</span> p;</span></p>
+<p align="left"><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>p=p-&gt;next;<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span><span>//</span><span>&#19981;&#30456;&#31561;&#26102;</span><span lang="EN-US">p</span><span>&#25351;&#21521;</span><span lang="EN-US">p-&gt;next</span><span>&#32487;&#32493;&#27604;&#36739;</span><spa ... class="clear"></spa></span></p></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">muggleyoung</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2006-06-29T00:00:00+08:00" pubdate data-updated="true">Jun 29<span>th</span>, 2006</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://muggleyoung.github.com/blog/2006/06/29/%E6%97%A0%E8%84%B8%E4%BA%BA--hash%E8%A1%A8/" data-via="" data-counturl="http://muggleyoung.github.com/blog/2006/06/29/%E6%97%A0%E8%84%B8%E4%BA%BA--hash%E8%A1%A8/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2006/06/14/kruskal-%EF%BC%86-prim/" title="Previous Post: kruskal ＆ prim">&laquo; kruskal ＆ prim</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2006/07/03/amelie-in-france/" title="Next Post: Amelie in France">Amelie in France &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/08/my-frist-post/">my-frist-post</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/14/eclipse---java.lang.noclassdeffounderror%3A-com.jayway.android.robotium.solo.solo%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/">eclipse - java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Solo错误解决</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/04/08/%E4%BD%A0%E7%8E%B0%E5%9C%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%BD%BB%E6%9D%BE%E4%B9%88%EF%BC%9F/">你现在的工作轻松么？</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/19/css%E7%AC%94%E8%AE%B0-position%E9%83%BD%E6%9C%89%E5%95%A5%E5%B1%9E%E6%80%A7/">CSS笔记-position都有啥属性</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/19/css%E7%AC%94%E8%AE%B0-css-reset/">CSS笔记-CSS reset</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - muggleyoung -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
