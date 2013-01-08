@@ -1,0 +1,19 @@
+---
+layout: post
+title: ! 'eclipse - java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Solo错误解决'
+categories: []
+tags: []
+published: true
+comments: false
+---
+<p>
+                                    <p>When I try to launch test for android app, I got following error message:</p>
+<div id="blog_text" class="cnt" style="font-family: Georgia; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; color: #333333; letter-spacing: 2px; overflow-x: hidden; overflow-y: hidden; position: relative !important;">
+<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; line-height: normal;">java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Solo<br />at com.skymobi.android.qc.test.RobotTest.setUp(RobotTest.java:46)<br />at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:169)<br />at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:154)<br />at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:529)<br />at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1448)<br /><br />&#22312;eclipse&#20013;&#36827;&#34892;&#22914;&#19979;&#35774;&#32622;</div>
+<ol style="line-height: normal;"><li>"Properties &gt; Java Build Path &gt; Libraries", delete "Android Dependencies" in my test project.</li>
+<li>"Properties &gt; Java Build Path &gt; Libraries", delete two robotium jar and click "Add JARs" to re-import robotium jar in my test project.</li>
+<li>"Properties &gt; Java Build Path &gt; Order and Export", check two checkbok of robotium jar (and othera you want exported.)</li>
+<li>Clean my test project.</li>
+</ol></div>
+<p>Problem sloved!</p>
+                                    </p>

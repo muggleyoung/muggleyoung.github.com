@@ -1,0 +1,203 @@
+---
+layout: post
+title: high翻天--继承和多态
+categories: []
+tags: []
+published: true
+comments: false
+---
+<p>
+                                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#19968;&#23517;&#23460;8&#20010;&#20154;&#22312;&#22823;&#38593;&#22612;&#30340;&#28165;&#30495;&#39184;&#21381;&#19968;&#36890;&#25195;&#33633;&#20043;&#21518;&#23601;&#26432;&#21521;&#22478;&#37324;.&#22312;&#38065;&#26588;&#35746;&#20102;&#21253;&#38388;,&#36890;&#23477;.&#36824;&#35753;&#26417;&#25991;&#25991;&#23567;&#31528;&#23401;&#25285;&#24515;&#21322;&#22825;,&#26102;&#21051;&#27719;&#25253;&#34892;&#36394;<img onload="var image=new Image();image.src=this.src;if(image.width&gt;0 &amp;&amp; image.height&gt;0){if(image.width&gt;=700){this.width=700;this.height=image.height*700/image.width;}}" src="http://blog.hexun.com//CuteSoft_Client/CuteEditor/images/face23.gif" align="absMiddle" border="0" /></p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#20043;&#21069;&#21482;&#21548;LH&#35828;&#36807;&#37027;&#37324;,&#26524;&#28982;&#29615;&#22659;&#19981;&#38169;,&#20215;&#38065;&#20063;&#36824;&#34892;.&#33258;&#21161;&#39184;...&#23601;&#37027;&#26679;.</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#23601;&#19981;&#25918;&#29255;&#20102;,&#23562;&#37325;&#20010;&#20154;&#38544;&#31169;,&#32780;&#19988;&#29609;&#30340;&#22826;high,&#20840;&#28982;&#27809;&#26377;&#20102;&#24179;&#26085;&#37324;&#30340;&#28113;&#22899;&#39118;&#33539;,&#19981;&#22909;&#24847;&#24605;&#25343;&#20986;&#26469;&#20002;&#20154;.</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#23545;&#20110;&#21809;&#27468;&#30340;&#20005;&#37325;&#24515;&#37324;&#38452;&#24433;,&#25105;&#25343;&#30528;&#40614;&#30340;&#22768;&#38899;&#36824;&#19981;&#22914;&#23567;&#39134;&#30340;&#21407;&#38899;&#20998;&#36125;&#25968;&#39640;...&#23454;&#22312;&#19981;&#25954;&#21834;,&#24597;&#21523;&#21040;&#20154;...&#19981;&#36807;&#25954;&#22312;&#23478;&#20154;&#38754;&#21069;&#24320;&#21475;&#21756;&#21799;&#20063;&#31639;&#26159;&#36827;&#27493;&#20102;&#21543;.</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#24819;&#24403;&#24180;,cui&#20174;&#26469;&#21548;&#19981;&#20986;&#26469;&#25105;&#22312;&#21756;&#20160;&#20040;&#27468;,&#25105;&#20063;&#29468;&#19981;&#20986;&#22905;&#22312;&#21809;&#20160;&#20040;.&#20457;&#20116;&#38899;&#20005;&#37325;&#19981;&#36275;&#30340;&#23567;&#23401;&#21834;~~~</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#24378;&#28872;&#33258;&#21329;ing.....</p>
+<p>----------------------------------------------------------------------------------------------------------------------------------</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160; &#20043;&#21069;&#20889;&#20102;&#31243;&#24207;&#19978;&#26426;&#25253;&#21578;&#20160;&#20040;&#30340;&#37117;&#20250;&#36148;&#20986;&#26469;,&#19978;&#23398;&#26399;&#20599;&#25042;,&#32593;&#32476;&#31243;&#24207;&#35774;&#35745;&#30340;&#37117;&#27809;&#36148;,&#21520;&#27668;&#24819;&#35201;&#36824;&#24471;&#25214;&#21035;&#20154;&#20511;,&#30495;&#40635;&#28902;.&#20197;&#21518;&#21220;&#24555;&#28857;.&#20808;&#25226;&#25105;&#30340;.net&#31532;&#20108;&#27425;&#25253;&#21578;&#36148;&#19978;.&#22522;&#26412;&#19978;&#29031;&#30528;&#23567;&#39134;&#30340;&#20195;&#30721;&#25913;&#30340;,&#19981;&#36947;&#24503;&#21834;...</p>
+<p>&#160; </p>
+<p><b><span>&#23436;&#25104;&#30446;&#26631;</span></b><b><span lang="EN-US">:</span></b></p>
+<p><span>&#36890;&#36807;&#23454;&#36341;&#20307;&#20250;</span><span lang="EN-US">C#</span><span>&#30340;&#32487;&#25215;&#26426;&#21046;&#21644;&#22810;&#24577;&#30340;&#23454;&#29616;</span><span lang="EN-US">.</span></p>
+<p><b><span>&#38382;&#39064;&#25551;&#36848;</span></b><b><span lang="EN-US">: </span></b></p>
+<p><span>&#30456;&#27604;&#20043;&#19979;</span><span lang="EN-US">,</span><span>&#30001;&#20110;&#23545;&#20110;&#36816;&#21160;&#31867;&#26381;&#35013;&#30340;&#38144;&#21806;&#20102;&#35299;&#26356;&#28165;&#26970;&#20123;</span><span lang="EN-US">,</span><span>&#25918;&#24323;&#20102;&#20851;&#20110;&#22270;&#20070;&#30340;&#20316;&#19994;</span><span lang="EN-US">,</span><span>&#33258;&#24049;&#37325;&#26032;&#25551;&#36848;&#20102;&#36825;&#20010;&#38382;&#39064;</span><span lang="EN-US">.</span><span>&#20808;&#23450;&#20041;&#19968;&#20010;</span><span lang="EN-US">merchandise(</span><span>&#21830;&#21697;</span><span lang="EN-US">)</span><span>&#31867;</span><span lang="EN-US">,</span><span>&#28982;&#21518;</span><span lang="EN-US">sportsware (</span><span>&#36816;&#21160;&#35013;</span><span lang="EN-US">)</span><span>&#32487;&#25215;</span><span lang="EN-US">merchandise, clothing</span><span>&#21644;</span><span lang="EN-US">bag</span><span>&#26159;</span><span lang="EN-US">sportsware</span><span>&#30340;&#23376;&#31867;</span><span lang="EN-US">.</span><span>&#22312;</span><span lang="EN-US">student</span><span>&#31867;&#20013;&#23450;&#20041;&#34394;&#20989;&#25968;</span><span lang="EN-US"> display()</span><span>&#26174;&#31034;&#21830;&#21697;&#22522;&#26412;&#20449;&#24687;</span><span lang="EN-US">.</span><span>&#32780;&#22312;&#23376;&#31867;</span><span lang="EN-US">, clothing, bag</span><span>&#20013;&#20998;&#21035;&#37325;&#26032;&#23450;&#20041;</span><span lang="EN-US">display()</span><span>&#26174;&#31034;&#20854;&#29305;&#26377;&#20449;&#24687;</span><span lang="EN-US">.</span></p>
+<p><span lang="EN-US">&#160;</span><span lang="EN-US"><span lang="EN-US"><b><span>&#28304;&#30721;</span></b><b><span lang="EN-US">:</span></b></span></span></p>
+<p><span lang="EN-US">using System;</span></p>
+<p><span lang="EN-US">using System.Collections.Generic;</span></p>
+<p><span lang="EN-US">using System.Text;</span></p>
+<p><span lang="EN-US">&#160;</span></p>
+<p><span lang="EN-US">class merchandise</span></p>
+<p><span lang="EN-US">{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>protected string name; //</span><span>&#21830;&#21697;&#21517;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>protected int number;//</span><span>&#21830;&#21697;&#36135;&#21495;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>protected int price;//</span><span>&#20135;&#21697;&#20215;&#26684;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>protected string date;//</span><span>&#20986;&#21378;&#26085;&#26399;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>protected merchandise()</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160; </span><span>&#160;</span>protected merchandise(string name, int number, int price, string date)</span></p>
+<p><span lang="EN-US">{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>this.name = name;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>this.number = number;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>this.price = price;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>this.date = date;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>public string Name</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>get</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>return name;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>set</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>name = value;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>public int Number</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>get</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>return number;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>set</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160; </span><span>&#160;&#160;&#160;</span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>number = value;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>public int Price</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>get</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>return price;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>set</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>price = value;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>public string Date</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>get</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160; </span><span>&#160;&#160;&#160;&#160;&#160;&#160;</span>return date;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>set</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>date = value;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US">}</span></p>
+<p><span lang="EN-US">class sportsware : merchandise//</span><span>&#36816;&#21160;&#35013;</span></p>
+<p><span lang="EN-US">{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>private string material;//</span><span>&#26448;&#36136;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>private string color;//</span><span>&#39068;&#33394;</span></p>
+<p><span lang="EN-US">&#160;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>public sportsware()</span></p>
+<p><span lang="EN-US">{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>public sportsware(string name, int number, int price, string date)</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>: base(name, number, price, date)</span></p>
+<p><span lang="EN-US">{</span></p>
+<p><span lang="EN-US">}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>public sportsware(string name, int number, int price, string date, string material, string color)</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160; </span>: base(name, number, price, date)</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>this.material = material;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>this.color = color;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>public string Material</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>get</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>return material;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>set</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>material = value;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>public string Color</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>get</span></p>
+<p><span lang="EN-US"><span>&#160; </span><span>&#160;&#160;&#160;&#160;&#160;&#160;</span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>return color;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>set</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>color = value;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>}<span>&#160;&#160;&#160; </span></span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>public virtual void display()</span></p>
+<p><span lang="EN-US"><span>&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>Console.WriteLine(" name: {0} \n number: {1} \n price: {2} \n date: {3} ",<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>Name, Number, Price, Date);</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160; </span>Console.WriteLine(" material: {0} \n color: {1} ", Material, Color);</span></p>
+<p><span lang="EN-US"><span>&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US">}</span></p>
+<p><span lang="EN-US">class clothing : sportsware</span></p>
+<p><span lang="EN-US">{</span></p>
+<p><span lang="EN-US">private char sex;//</span><span>&#30007;&#24335;&#25110;&#22899;&#24335;</span></p>
+<p><span lang="EN-US">private string size;//</span><span>&#23610;&#30721;</span></p>
+<p><span lang="EN-US">clothing()</span></p>
+<p><span lang="EN-US">{</span></p>
+<p><span lang="EN-US"><span>&#160;</span>}</span></p>
+<p><span lang="EN-US">public clothing(string name, int number, int price, string date)</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160; </span>: base(name, number, price, date)</span></p>
+<p><span lang="EN-US">{</span></p>
+<p><span lang="EN-US">}</span></p>
+<p><span lang="EN-US">public clothing(string name, int number, int price, string date, string material, string color)</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span><span>&#160;&#160;</span>: base(name, number, price, date, material, color)</span></p>
+<p><span lang="EN-US">{</span></p>
+<p><span lang="EN-US">}</span></p>
+<p><span lang="EN-US">public clothing(string name, int number, int price, string date, string material, string color,char sex,string size)</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160; </span><span>&#160;</span>: base(name, number, price, date, material, color)</span></p>
+<p><span lang="EN-US">{</span></p>
+<p><span lang="EN-US">this.sex = sex;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>this.size = size; </span></p>
+<p><span lang="EN-US"><span>&#160;</span>}</span></p>
+<p><span lang="EN-US"><span>&#160;</span>public override void display()</span></p>
+<p><span lang="EN-US">{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>Console.WriteLine("This is the information about sports clothing:");</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>base.display();</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>Console.WriteLine("sex : {0}\n size : {1}", sex, size);</span></p>
+<p><span lang="EN-US"><span>&#160;</span>}</span></p>
+<p><span lang="EN-US">}</span></p>
+<p><span lang="EN-US">class bag : sportsware</span></p>
+<p><span lang="EN-US">{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>private string type;//</span><span>&#21253;&#30340;&#31867;&#22411;</span><span lang="EN-US">,</span><span>&#21452;&#32937;</span><span lang="EN-US">,</span><span>&#21333;&#32937;&#25110;&#33136;&#21253;</span><span lang="EN-US">...</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>public bag()</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>public bag(string name, int number, int price, string date)</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>: base(name, number, price, date)</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>public bag(string name, int number, int price, string date, string material, string color)</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>: base(name, number, price, date, material, color)</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>public bag(string name, int number, int price, string date, string material, string color, string type)</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>: base(name, number, price, date, material, color)</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;</span><span>&#160;&#160;&#160;&#160;&#160;&#160; </span>this.type = type;</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>public override void display()</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>Console.WriteLine("This is the information about sports bag:");</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>base.display();</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>Console.WriteLine("type : {0} ",type);</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US">}</span></p>
+<p><span lang="EN-US">namespace ConsoleApplication1</span></p>
+<p><span lang="EN-US">{</span></p>
+<p><span lang="EN-US"><span>&#160;</span><span>&#160;&#160; </span>class Program</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>static void Main(string[] args)</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>{</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>sportsware sw = new clothing("</span><span>&#23398;&#29983;&#20241;&#38386;</span><span lang="EN-US">" , 0123456 , 99 , "20070828" , "</span><span>&#26825;</span><span lang="EN-US">" , "</span><span>&#30333;</span><span lang="EN-US">" , 'F' , "XL");</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>sw.display();<span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span></span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>sw = new bag("</span><span>&#36816;&#21160;&#20070;&#21253;</span><span lang="EN-US">", 4567892, 59, "19861011", "</span><span>&#24070;&#24067;</span><span lang="EN-US">", "</span><span>&#20848;</span><span lang="EN-US">", "</span><span>&#21452;&#32937;&#32972;&#21253;</span><span lang="EN-US">");</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>sw.display();</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>Console.Read();</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US"><span>&#160;&#160;&#160; </span>}</span></p>
+<p><span lang="EN-US">}</span></p>
+                                    </p>

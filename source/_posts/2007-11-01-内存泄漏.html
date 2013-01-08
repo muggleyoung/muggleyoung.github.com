@@ -1,0 +1,79 @@
+---
+layout: post
+title: 内存泄漏
+categories: []
+tags: []
+published: true
+comments: false
+---
+<p>
+                                    &#160;&#160; <span>&#160;&#26417;&#25991;&#25991;&#30340;&#33150;&#35759;&#38754;&#35797;&#25552;&#21040;&#20102;&#20869;&#23384;&#27844;&#28431;&#30340;&#38382;&#39064;</span><span lang="EN-US">,&#25105;&#31455;&#28982;&#20174;&#26469;&#27809;&#21548;&#36807;&#36825;&#20010;&#35789;,&#27491;&#22909;&#35201;&#20889;.NET&#20316;&#19994;,</span><span>&#19987;&#38376;&#26597;&#20102;&#26597;.</span>
+<p><span></span><span>&#160;&#160;&#160; &#20869;&#23384;&#27844;&#28431;&#26159;</span><span lang="EN-US">C</span><span>&#21644;</span><span lang="EN-US">C++</span><span>&#30340;&#32534;&#31243;&#20013;&#32463;&#24120;&#20250;&#20986;&#29616;&#30340;&#38169;&#35823;</span><span lang="EN-US">,</span><span>&#20174;&#29992;&#25143;&#20351;&#29992;&#31243;&#24207;&#30340;&#35282;&#24230;&#26469;&#30475;&#65292;&#20869;&#23384;&#27844;&#28431;&#26412;&#36523;&#19981;&#20250;&#20135;&#29983;&#20160;&#20040;&#21361;&#23475;&#65292;&#19968;&#33324;&#29992;&#25143;&#26681;&#26412;&#24863;&#35273;&#19981;&#21040;&#20869;&#23384;&#27844;&#28431;&#30340;&#23384;&#22312;&#12290;&#30495;&#27491;&#26377;&#21361;&#23475;&#30340;&#26159;&#20869;&#23384;&#27844;&#28431;&#30340;&#22534;&#31215;&#65292;&#36825;&#20250;&#26368;&#32456;&#28040;&#32791;&#23613;&#31995;&#32479;&#25152;&#26377;&#30340;&#20869;&#23384;&#12290;&#20174;&#36825;&#20010;&#35282;&#24230;&#26469;&#35828;&#65292;&#19968;&#27425;&#24615;&#20869;&#23384;&#27844;&#28431;&#24182;&#27809;&#26377;&#20160;&#20040;&#21361;&#23475;&#65292;&#22240;&#20026;&#23427;&#19981;&#20250;&#22534;&#31215;&#65292;&#32780;&#38544;&#24335;&#20869;&#23384;&#27844;&#28431;&#21361;&#23475;&#24615;&#21017;&#38750;&#24120;&#22823;&#65292;&#22240;&#20026;&#36739;&#20043;&#20110;&#24120;&#21457;&#24615;&#21644;&#20598;&#21457;&#24615;&#20869;&#23384;&#27844;&#28431;&#23427;&#26356;&#38590;&#34987;&#26816;&#27979;&#21040;&#12290;</span></p>
+<p><span>&#160;&#160;&#160; &#19968;&#33324;&#22320;</span><span lang="EN-US">,</span><span>&#20869;&#23384;&#27844;&#28431;&#21487;&#20197;&#20998;&#20026;</span><span lang="EN-US">4</span><span>&#31867;</span><span lang="EN-US">.</span><span>&#25214;&#21040;&#20102;&#19968;&#20123;&#30456;&#24212;&#30340;&#20363;&#31243;&#21152;&#20197;&#35828;&#26126;</span><span lang="EN-US">:</span></p>
+<p><span lang="EN-US">&#160;&#160;&#160; 1. </span><span>&#24120;&#21457;&#24615;&#20869;&#23384;&#27844;&#28431;</span><span lang="EN-US">:</span><span>&#21457;&#29983;&#20869;&#23384;&#27844;&#28431;&#30340;&#20195;&#30721;&#20250;&#34987;&#22810;&#27425;&#25191;&#34892;&#21040;</span><span lang="EN-US">,</span><span>&#27599;&#27425;&#34987;&#25191;&#34892;&#30340;&#26102;&#20505;&#37117;&#20250;&#23548;&#33268;&#19968;&#22359;&#20869;&#23384;&#27844;&#28431;</span><span lang="EN-US">. </span><span>&#22914;&#19979;&#20363;</span><span lang="EN-US">,</span><span>&#22914;&#26524;</span><span lang="EN-US">Something()</span><span>&#20989;&#25968;&#19968;&#30452;&#36820;&#22238;</span><span lang="EN-US">True</span><span>&#65292;&#37027;&#20040;</span><span lang="EN-US">pOldBmp</span><span>&#25351;&#21521;&#30340;</span><span lang="EN-US">HBITMAP</span><span>&#23545;&#35937;&#24635;&#26159;&#21457;&#29983;&#27844;&#28431;</span></p>
+<p><span lang="EN-US">void CMyView::OnPaint( CDC* pDC ) </span></p>
+<p><span lang="EN-US">{ </span></p>
+<p><span lang="EN-US">CBitmap bmp; </span></p>
+<p><span lang="EN-US">CBitmap* pOldBmp; </span></p>
+<p><span lang="EN-US">bmp.LoadBitmap(IDB_MYBMP); </span></p>
+<p><span lang="EN-US">pOldBmp = pDC-&gt;SelectObject( &amp;bmp ); </span></p>
+<p><span lang="EN-US">&#8230; </span></p>
+<p><span lang="EN-US">if( Something() )</span></p>
+<p><span lang="EN-US">{</span></p>
+<p><span lang="EN-US">return; </span></p>
+<p><span lang="EN-US">} </span></p>
+<p><span lang="EN-US">pDC-&gt;SelectObject( pOldBmp ); </span></p>
+<p><span lang="EN-US">return; </span></p>
+<p><span lang="EN-US">} </span></p>
+<p><span lang="EN-US">&#160;&#160;&#160; 2. </span><span>&#20598;&#21457;&#24615;&#20869;&#23384;&#27844;&#28431;</span><span lang="EN-US">:</span><span>&#21457;&#29983;&#20869;&#23384;&#27844;&#28431;&#30340;&#20195;&#30721;&#21482;&#26377;&#22312;&#26576;&#20123;&#29305;&#23450;&#29615;&#22659;&#25110;&#25805;&#20316;&#36807;&#31243;&#19979;&#25165;&#20250;&#21457;&#29983;</span><span lang="EN-US">.</span><span>&#24120;&#21457;&#24615;&#21644;&#20598;&#21457;&#24615;&#26159;&#30456;&#23545;&#30340;</span><span lang="EN-US">.</span><span>&#23545;&#20110;&#29305;&#23450;&#30340;&#29615;&#22659;</span><span lang="EN-US">,</span><span>&#20598;&#21457;&#24615;&#30340;&#20063;&#35768;&#23601;&#21464;&#25104;&#20102;&#24120;&#21457;&#24615;&#30340;</span><span lang="EN-US">.</span><span>&#25152;&#20197;&#27979;&#35797;&#29615;&#22659;&#21644;&#27979;&#35797;&#26041;&#27861;&#23545;&#26816;&#27979;&#20869;&#23384;&#27844;&#28431;&#33267;&#20851;&#37325;&#35201;</span><span lang="EN-US">.</span></p>
+<p><span>&#21448;&#22914;&#19978;&#20363;</span><span lang="EN-US">: </span><span>&#22914;&#26524;</span><span lang="EN-US">Something()</span><span>&#20989;&#25968;&#21482;&#26377;&#22312;&#29305;&#23450;&#29615;&#22659;&#19979;&#25165;&#36820;&#22238;</span><span lang="EN-US">True,</span><span>&#37027;&#20040;</span><span lang="EN-US">pOldBmp</span><span>&#25351;&#21521;&#30340;</span><span lang="EN-US">HBITMAP</span><span>&#23545;&#35937;&#24182;&#19981;&#24635;&#26159;&#21457;&#29983;&#27844;&#28431;</span><span lang="EN-US">.</span></p>
+<p><span lang="EN-US">&#160;&#160;&#160; 3. </span><span>&#19968;&#27425;&#24615;&#20869;&#23384;&#27844;&#28431;</span><span lang="EN-US">:</span><span>&#21457;&#29983;&#20869;&#23384;&#27844;&#28431;&#30340;&#20195;&#30721;&#21482;&#20250;&#34987;&#25191;&#34892;&#19968;&#27425;</span><span lang="EN-US">,</span><span>&#25110;&#32773;&#30001;&#20110;&#31639;&#27861;&#19978;&#30340;&#32570;&#38519;</span><span lang="EN-US">,</span><span>&#23548;&#33268;&#24635;&#20250;&#26377;&#19968;&#22359;&#20165;&#19988;&#19968;&#22359;&#20869;&#23384;&#21457;&#29983;&#27844;&#28431;</span><span lang="EN-US">.</span><span>&#27604;&#22914;&#22312;&#31867;&#30340;&#26500;&#36896;&#20989;&#25968;&#20013;&#20998;&#37197;&#20869;&#23384;</span><span lang="EN-US">,</span><span>&#22312;&#26512;&#26500;&#20989;&#25968;&#20013;&#21364;&#27809;&#26377;&#37322;&#25918;&#35813;&#20869;&#23384;</span><span lang="EN-US">,</span><span>&#20294;&#26159;&#22240;&#20026;&#36825;&#20010;&#31867;&#26159;&#19968;&#20010;</span><span lang="EN-US">Singleton,</span><span>&#25152;&#20197;&#20869;&#23384;&#27844;&#28431;&#21482;&#20250;&#21457;&#29983;&#19968;&#27425;</span><span lang="EN-US">.</span><span>&#22914;&#19979;&#20363;</span><span lang="EN-US">, </span><span>&#22914;&#26524;&#31243;&#24207;&#22312;&#32467;&#26463;&#30340;&#26102;&#20505;&#27809;&#26377;&#37322;&#25918;</span><span lang="EN-US">g_lpszFileName</span><span>&#25351;&#21521;&#30340;&#23383;&#31526;&#20018;</span><span lang="EN-US">,</span><span>&#37027;&#20040;</span><span lang="EN-US">,</span><span>&#21363;&#20351;&#22810;&#27425;&#35843;&#29992;</span><span lang="EN-US">SetFileName(),</span><span>&#24635;&#20250;&#26377;&#19968;&#22359;&#20869;&#23384;</span><span lang="EN-US">,</span><span>&#32780;&#19988;&#20165;&#26377;&#19968;&#22359;&#20869;&#23384;&#21457;&#29983;&#27844;&#28431;</span><span lang="EN-US">.</span></p>
+<p><span lang="EN-US">char* g_lpszFileName = NULL; </span></p>
+<p><span lang="EN-US">void SetFileName( const char* lpcszFileName ) </span></p>
+<p><span lang="EN-US">{</span></p>
+<p><span lang="EN-US">if( g_lpszFileName )</span></p>
+<p><span lang="EN-US">{ </span></p>
+<p><span lang="EN-US">free( g_lpszFileName ); </span></p>
+<p><span lang="EN-US">}</span></p>
+<p><span lang="EN-US">g_lpszFileName = strdup( lpcszFileName ); </span></p>
+<p><span lang="EN-US">}</span></p>
+<p><span lang="EN-US">&#160;&#160;&#160; 4. </span><span>&#38544;&#24335;&#20869;&#23384;&#27844;&#28431;</span><span lang="EN-US">:</span><span>&#31243;&#24207;&#22312;&#36816;&#34892;&#36807;&#31243;&#20013;&#19981;&#20572;&#30340;&#20998;&#37197;&#20869;&#23384;</span><span lang="EN-US">,</span><span>&#20294;&#26159;&#30452;&#21040;&#32467;&#26463;&#30340;&#26102;&#20505;&#25165;&#37322;&#25918;&#20869;</span><span lang="EN-US">.</span><span>&#20005;&#26684;&#30340;&#35828;&#36825;&#37324;&#24182;&#27809;&#26377;&#21457;&#29983;&#20869;&#23384;&#27844;&#28431;</span><span lang="EN-US">,</span><span>&#22240;&#20026;&#26368;&#32456;&#31243;&#24207;&#37322;&#25918;&#20102;&#25152;&#26377;&#30003;&#35831;&#30340;&#20869;&#23384;</span><span lang="EN-US">.</span><span>&#20294;&#26159;&#23545;&#20110;&#19968;&#20010;&#38271;&#26102;&#38388;&#19981;&#38388;&#26029;&#36816;&#34892;&#30340;&#26381;&#21153;&#22120;&#31243;&#24207;</span><span lang="EN-US">,</span><span>&#19981;&#21450;&#26102;&#37322;&#25918;&#20869;&#23384;&#20063;&#21487;&#33021;&#23548;&#33268;&#26368;&#32456;&#32791;&#23613;&#31995;&#32479;&#30340;&#25152;&#26377;&#20869;&#23384;</span><span lang="EN-US">.</span><span lang="EN-US"> </span><span>&#19979;&#20363;&#20013;&#20551;&#35774;&#22312;</span><span lang="EN-US">Client</span><span>&#20174;</span><span lang="EN-US">Server</span><span>&#31471;&#26029;&#24320;&#21518;</span><span lang="EN-US">,Server</span><span>&#24182;&#27809;&#26377;&#21628;&#21483;</span><span lang="EN-US">OnClientDisconnected()</span><span>&#20989;&#25968;</span><span lang="EN-US">,</span><span>&#37027;&#20040;&#20195;&#34920;&#37027;&#27425;&#36830;&#25509;&#30340;</span><span lang="EN-US">Connection</span><span>&#23545;&#35937;&#23601;&#19981;&#20250;&#34987;&#21450;&#26102;&#30340;&#21024;&#38500;</span><span lang="EN-US">(</span><span>&#22312;</span><span lang="EN-US">Server</span><span>&#31243;&#24207;&#36864;&#20986;&#30340;&#26102;&#20505;</span><span lang="EN-US">,</span><span>&#25152;&#26377;</span><span lang="EN-US">Connection</span><span>&#23545;&#35937;&#20250;&#22312;</span><span lang="EN-US">ConnectionManager</span><span>&#30340;&#26512;&#26500;&#20989;&#25968;&#37324;&#34987;&#21024;&#38500;</span><span lang="EN-US">).</span><span>&#24403;&#19981;&#26029;&#30340;&#26377;&#36830;&#25509;&#24314;&#31435;</span><span lang="EN-US">,</span><span>&#26029;&#24320;&#26102;&#38544;&#24335;&#20869;&#23384;&#27844;&#28431;&#23601;&#21457;&#29983;&#20102;</span><span lang="EN-US">.</span></p>
+<p><span lang="EN-US">class Connection</span></p>
+<p><span lang="EN-US">{</span></p>
+<p><span lang="EN-US">public:</span></p>
+<p><span lang="EN-US">Connection( SOCKET s); </span></p>
+<p><span lang="EN-US">~Connection(); </span></p>
+<p><span lang="EN-US">&#8230; </span></p>
+<p><span lang="EN-US">private: </span></p>
+<p><span lang="EN-US">SOCKET _socket; </span></p>
+<p><span lang="EN-US">&#8230; </span></p>
+<p><span lang="EN-US">}; </span></p>
+<p><span lang="EN-US">class ConnectionManager </span></p>
+<p><span lang="EN-US">{ </span></p>
+<p><span lang="EN-US">public: </span></p>
+<p><span lang="EN-US">ConnectionManager()</span></p>
+<p><span lang="EN-US">{ </span></p>
+<p><span lang="EN-US">} </span></p>
+<p><span lang="EN-US">~ConnectionManager()</span></p>
+<p><span lang="EN-US">{ </span></p>
+<p><span lang="EN-US">list::iterator it; </span></p>
+<p><span lang="EN-US">for( it = _connlist.begin(); it != _connlist.end(); ++it )</span></p>
+<p><span lang="EN-US">{ </span></p>
+<p><span lang="EN-US">delete </span><span>&#65288;</span><span lang="EN-US">*it</span><span>&#65289;</span><span lang="EN-US">; </span></p>
+<p><span lang="EN-US">} </span></p>
+<p><span lang="EN-US">_connlist.clear(); </span></p>
+<p><span lang="EN-US">} </span></p>
+<p><span lang="EN-US">void OnClientConnected( SOCKET s )</span></p>
+<p><span lang="EN-US">{ </span></p>
+<p><span lang="EN-US">Connection* p = new Connection(s); </span></p>
+<p><span lang="EN-US">_connlist.push_back(p); </span></p>
+<p><span lang="EN-US">} </span></p>
+<p><span lang="EN-US">void OnClientDisconnected( Connection* pconn )</span></p>
+<p><span lang="EN-US">{ </span></p>
+<p><span lang="EN-US">_connlist.remove( pconn ); </span></p>
+<p><span lang="EN-US">delete pconn; </span></p>
+<p><span lang="EN-US">} </span></p>
+<p><span lang="EN-US">private: </span></p>
+<p><span lang="EN-US">list _connlist; </span></p>
+<p><span lang="EN-US">}; </span></p>
+                                    </p>
