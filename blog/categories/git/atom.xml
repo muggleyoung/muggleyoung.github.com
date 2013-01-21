@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: git | muggleyoung's blog]]></title>
+  <link href="http://muggleyoung.github.com/blog/categories/git/atom.xml" rel="self"/>
+  <link href="http://muggleyoung.github.com/"/>
+  <updated>2013-01-21T15:24:23+08:00</updated>
+  <id>http://muggleyoung.github.com/</id>
+  <author>
+    <name><![CDATA[muggleyoung]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to setup a new remote git repo]]></title>
+    <link href="http://muggleyoung.github.com/blog/2013/01/21/how-to-setup-a-new-remote-git-repo/"/>
+    <updated>2013-01-21T00:31:00+08:00</updated>
+    <id>http://muggleyoung.github.com/blog/2013/01/21/how-to-setup-a-new-remote-git-repo</id>
+    <content type="html"><![CDATA[<h3>If you already have a repo, and want to version control it:</h3>
+
+<ul>
+<li>Goto your repo, and initialize it to a git repo</li>
+</ul>
+
+
+<p>```</p>
+
+<pre><code>cd my_repo
+git init
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li><p>Goto <a href="http://github.com">github</a> to create your remote repo</p></li>
+<li><p>Connect your local repo to the remote repo</p></li>
+</ul>
+
+
+<p>```</p>
+
+<pre><code>git remote add origin [your_remote_repo]
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>Set your branch as the remote master</li>
+</ul>
+
+
+<p>```</p>
+
+<pre><code>    vi .git/config
+</code></pre>
+
+<p>```
+   Add</p>
+
+<p>```</p>
+
+<pre><code>[branch "master"]
+    remote = origin
+    merge = refs/heads/master
+</code></pre>
+
+<p>```</p>
+
+<ul>
+<li>If you want to use different user name and email with your global settings, please change it here. Add</li>
+</ul>
+
+
+<p>```</p>
+
+<pre><code>[user]
+    name = your_username
+    email = your_email
+</code></pre>
+
+<p>```</p>
+
+<h3>If you want to create a repo via git, and then start to coding:</h3>
+
+<p>This is much easier.</p>
+
+<ul>
+<li>Go to <a href="http://github.com">github</a> to create a new repo. (You probably want to create a readme and gitignore at the same time)</li>
+<li>Go to the folder where you want the repo sitting, and clone the repo</li>
+</ul>
+
+
+<p>```</p>
+
+<pre><code>cd your_folder
+git clone your_repo
+</code></pre>
+
+<p>```   <br/>
+<strong>DONE !</strong></p>
+]]></content>
+  </entry>
+  
+</feed>
