@@ -5,15 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>笨娃一枚 - muggleyoung's blog</title>
+  <title>how to change git repo name - muggleyoung's blog</title>
   <meta name="author" content="muggleyoung">
 
   
-  <meta name="description" content="&#22826;&#26197;&#20102;
-&#39044;&#35746;&#38738;&#26053;
-&#23450;&#37329;0.72&#20992;
-&#25163;&#32493;&#36153;2&#20992;
-&#26089;&#30693;&#36947;&# &hellip;">
+  <meta name="description" content="If you are not satisfy with your git repo name, you can easily change it. Log in github -> your repo -> settings
+Typing your new repo name, and &# &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -22,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://muggleyoung.github.com/blog/2011/03/15/%E7%AC%A8%E5%A8%83%E4%B8%80%E6%9E%9A/">
+  <link rel="canonical" href="http://muggleyoung.github.com/blog/2013/01/21/how-to-change-git-repo-name/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -71,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">笨娃一枚</h1>
+      <h1 class="entry-title">How to Change Git Repo Name</h1>
     
     
       <p class="meta">
@@ -87,22 +84,36 @@
   
 
 
-<time datetime="2011-03-15T00:00:00+08:00" pubdate data-updated="true">Mar 15<span>th</span>, 2011</time>
+<time datetime="2013-01-21T19:46:00+08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>
-                                    <p>&#22826;&#26197;&#20102;</p>
-<p>&#39044;&#35746;&#38738;&#26053;</p>
-<p>&#23450;&#37329;0.72&#20992;</p>
-<p>&#25163;&#32493;&#36153;2&#20992;</p>
-<p>&#26089;&#30693;&#36947;&#22810;&#23450;&#20004;&#22825;&#20102;</p>
-<p>&#26089;&#30693;&#36947;&#19981;&#29992;&#32593;&#38134;&#20102;</p>
-<p>&#20111;&#27515;&#20102;&#25105;~~~~</p>
-                                    </p>
+<div class="entry-content"><p>If you are not satisfy with your git repo name, you can easily change it.</p>
+
+<ul>
+<li>Log in <a href="http://github.com">github</a> -> your repo -> settings</li>
+<li>Typing your new repo name, and &#8220;Rename&#8221; it</li>
+<li>Open terminal, go to your repo folder</li>
+<li>You have two ways to change your remote settings:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote set-url origin git@github.com:muggleyoung/fog_city.git</span></code></pre></td></tr></table></div></figure>
+
+
+<p>OR</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>vi .git/config</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Change the remote url to your new repo url</p>
+
+<p><strong>DONE !</strong></p>
 </div>
 
 
@@ -125,15 +136,21 @@
   
 
 
-<time datetime="2011-03-15T00:00:00+08:00" pubdate data-updated="true">Mar 15<span>th</span>, 2011</time>
+<time datetime="2013-01-21T19:46:00+08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/git/'>git</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://muggleyoung.github.com/blog/2011/03/15/%E7%AC%A8%E5%A8%83%E4%B8%80%E6%9E%9A/" data-via="" data-counturl="http://muggleyoung.github.com/blog/2011/03/15/%E7%AC%A8%E5%A8%83%E4%B8%80%E6%9E%9A/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://muggleyoung.github.com/blog/2013/01/21/how-to-change-git-repo-name/" data-via="" data-counturl="http://muggleyoung.github.com/blog/2013/01/21/how-to-change-git-repo-name/" >Tweet</a>
   
   
   
@@ -142,10 +159,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2011/03/13/%E6%AF%95%E4%B8%9A%E5%AD%A3-%E6%96%B0%E6%A0%A1%E5%8C%BA/" title="Previous Post: 毕业季-新校区">&laquo; 毕业季-新校区</a>
+        <a class="basic-alignment left" href="/blog/2013/01/21/how-to-setup-a-new-remote-git-repo/" title="Previous Post: How to setup a new remote git repo">&laquo; How to setup a new remote git repo</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2011/03/28/%E6%97%85%E8%A1%8C%E5%BD%92%E6%9D%A5/" title="Next Post: 旅行归来">旅行归来 &raquo;</a>
       
     </p>
   </footer>

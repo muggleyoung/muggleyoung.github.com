@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | muggleyoung's blog]]></title>
   <link href="http://muggleyoung.github.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://muggleyoung.github.com/"/>
-  <updated>2013-01-21T15:24:23+08:00</updated>
+  <updated>2013-01-21T19:54:51+08:00</updated>
   <id>http://muggleyoung.github.com/</id>
   <author>
     <name><![CDATA[muggleyoung]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[how to change git repo name]]></title>
+    <link href="http://muggleyoung.github.com/blog/2013/01/21/how-to-change-git-repo-name/"/>
+    <updated>2013-01-21T19:46:00+08:00</updated>
+    <id>http://muggleyoung.github.com/blog/2013/01/21/how-to-change-git-repo-name</id>
+    <content type="html"><![CDATA[<p>If you are not satisfy with your git repo name, you can easily change it.</p>
+
+<ul>
+<li>Log in <a href="http://github.com">github</a> -> your repo -> settings</li>
+<li>Typing your new repo name, and "Rename" it</li>
+<li>Open terminal, go to your repo folder</li>
+<li>You have two ways to change your remote settings:</li>
+</ul>
+
+
+<p>```</p>
+
+<pre><code>git remote set-url origin git@github.com:muggleyoung/fog_city.git
+</code></pre>
+
+<p>```
+OR</p>
+
+<p>```</p>
+
+<pre><code>vi .git/config
+</code></pre>
+
+<p>```
+Change the remote url to your new repo url</p>
+
+<p><strong>DONE !</strong></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to setup a new remote git repo]]></title>
