@@ -1,12 +1,15 @@
 body > nav {
-  position: relative;
-  background-color: $nav-bg;
-  @include background($nav-bg-front, $nav-bg-back);
+  float: right;
+  background-color: $nav-bg;  
   border: {
     top: 1px solid $nav-border-top;
-    bottom: 1px solid $nav-border-bottom; }
+    bottom: 1px solid $nav-border-bottom; 
+  }
   padding-top: .35em;
   padding-bottom: .35em;
+  &:after {
+    clear: both;
+  }
   form {
     @include background-clip(padding-box);
     margin: 0; padding: 0;

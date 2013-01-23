@@ -1,7 +1,7 @@
 body > header {
+  float: left;
   background: $header-bg;
   h1 {
-    display: inline-block;
     margin: 0;
     a, a:visited, a:hover {
       color: $title_color;
