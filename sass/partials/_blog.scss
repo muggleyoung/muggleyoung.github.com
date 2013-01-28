@@ -1,15 +1,26 @@
 article {
   position: relative;
-  .meta {
+  .post-info {
     position: absolute;
     top: 0;
     left: 0;
-    padding-top: 0.4em;
+    list-style: none;
+    .meta {
+        font-size: .9em;
+        color: $text-color-light;
+        margin: 0;
+        @extend .sans;
+        text-transform: uppercase;
+        padding-top: 0.4em;
+        time {
+            font-size: 0.9em;
+            opacity: 0.6;
+        }
+    }
   }
   a { @extend .force-wrap; }
 header {
     position: relative;
-    // padding-top: 2em;
     padding-bottom: 1em;
     margin-bottom: 1em;
     margin-left: 20%;
