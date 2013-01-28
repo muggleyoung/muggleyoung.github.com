@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: html | ]]></title>
+  <link href="http://muggleyoung.github.com/blog/categories/html/atom.xml" rel="self"/>
+  <link href="http://muggleyoung.github.com/"/>
+  <updated>2013-01-28T14:35:44+08:00</updated>
+  <id>http://muggleyoung.github.com/</id>
+  <author>
+    <name><![CDATA[muggleyoung]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to use font icon in HTML]]></title>
+    <link href="http://muggleyoung.github.com/blog/2013/01/25/how-to-use-font-icon-in-html/"/>
+    <updated>2013-01-25T18:25:00+08:00</updated>
+    <id>http://muggleyoung.github.com/blog/2013/01/25/how-to-use-font-icon-in-html</id>
+    <content type="html"><![CDATA[<h5>Why Icon Fonts (图标字体) are awesome?</h5>
+
+<p>we can easily change the style (e.g. scale, color, shadow, opacity, rotate, etc.)
+It is 100% accessible, we don't need to use image sprites then</p>
+
+<h5>Some of Icon Fonts websites:</h5>
+
+<ul>
+<li><a href="http://fontello.com/">Fontello</a></li>
+<li><a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome</a></li>
+<li><a href="http://fico.lensco.be/">fico</a></li>
+<li><a href="http://icomoon.io/#home">IcoMoon</a></li>
+</ul>
+
+
+<h5>Building your Icon Fonts</h5>
+
+<h6>1. Download icon fonts</h6>
+
+<p>I used <a href="http://fontello.com/">Fontello</a> to get my Icon Fonts.</p>
+
+<ol>
+<li>Go to <a href="http://fontello.com/">Fontello</a></li>
+<li>Choose icons you want</li>
+<li>Download webfont</li>
+</ol>
+
+
+<p>Then you'll get fonts files like: *.eot, *.svg, *.ttf, *.woff.</p>
+
+<h6>2. HTML</h6>
+
+<p>```
+ <ul></p>
+
+<pre><code>  &lt;li class="icon-pencil"&gt;{date}&lt;/li&gt;  
+</code></pre>
+
+<p> </ul>
+```</p>
+
+<h6>3. CSS</h6>
+
+<p>Open your fontello folder, you'll see a file named "fontello.css", copy content of this css to your css file:</p>
+
+<p>```
+@charset "UTF-8";
+@font-face {
+  font-family: 'fontello';
+  src: url("../font/fontello.eot");
+  src: url("../font/fontello.eot?#iefix") format('embedded-opentype'),</p>
+
+<pre><code>   url("../font/fontello.woff") format('woff'), 
+   url("../font/fontello.ttf") format('truetype'), 
+   url("../font/fontello.svg#fontello") format('svg');
+</code></pre>
+
+<p>  font-weight: normal;
+  font-style: normal;
+}
+  font-family: 'fontello';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  opacity: 0.8;
+/<em> fix buttons height, for twitter bootstrap </em>/
+  line-height: 1em;
+/<em> Animation center compensation - magrins should be symmetric </em>/
+/<em> remove if not needed </em>/
+  margin-left: 0.2em;
+/<em> you can be more comfortable with increased icons size </em>/
+/<em> font-size: 120%; </em>/
+/<em> Uncomment for 3D effect </em>/
+/<em> text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); </em>/
+}</p>
+
+<p>.icon-pencil:before { content: '\270e'; } /<em> '✎' </em>/
+.icon-feather:before { content: '\2712'; } /<em> '✒' </em>/
+.icon-tag:before { content: '\e70c'; } /<em> '' </em>/
+.icon-comment:before { content: '\e718'; } /<em> '' </em>/
+```</p>
+
+<p>Then you can customize the style as what you want.</p>
+
+<p><strong>Done</strong></p>
+]]></content>
+  </entry>
+  
+</feed>

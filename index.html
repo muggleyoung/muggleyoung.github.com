@@ -9,8 +9,8 @@
   <meta name="author" content="muggleyoung">
 
   
-  <meta name="description" content="If you are not satisfy with your git repo name, you can easily change it. Log in github -> your repo -> settings
-Typing your new repo name, and &# &hellip;">
+  <meta name="description" content="Why Icon Fonts (图标字体) are awesome? we can easily change the style (e.g. scale, color, shadow, opacity, rotate, etc.)
+It is 100% accessible, we don&# &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,8 +70,9 @@ Typing your new repo name, and &# &hellip;">
     <article>
       
   
-  <p class="meta">
-    
+  <ul class="post-info">
+      <li class="meta icon-pencil">
+        
 
 
 
@@ -83,9 +84,174 @@ Typing your new repo name, and &# &hellip;">
   
 
 
-<time datetime="2013-01-21T19:46:00+08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time>
+
+<time datetime="2013-01-25T18:25:00+08:00" pubdate data-updated="true">Jan 25<span>th</span>, 2013</time>
+        
+      </li>  
+  </ul>
+  
+<header>
     
-  </p>
+      <h1 class="entry-title"><a href="/blog/2013/01/25/how-to-use-font-icon-in-html/">How to Use Font Icon in HTML</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content"><h5>Why Icon Fonts (图标字体) are awesome?</h5>
+
+<p>we can easily change the style (e.g. scale, color, shadow, opacity, rotate, etc.)
+It is 100% accessible, we don&#8217;t need to use image sprites then</p>
+
+<h5>Some of Icon Fonts websites:</h5>
+
+<ul>
+<li><a href="http://fontello.com/">Fontello</a></li>
+<li><a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome</a></li>
+<li><a href="http://fico.lensco.be/">fico</a></li>
+<li><a href="http://icomoon.io/#home">IcoMoon</a></li>
+</ul>
+
+
+<h5>Building your Icon Fonts</h5>
+
+<h6>1. Download icon fonts</h6>
+
+<p>I used <a href="http://fontello.com/">Fontello</a> to get my Icon Fonts.</p>
+
+<ol>
+<li>Go to <a href="http://fontello.com/">Fontello</a></li>
+<li>Choose icons you want</li>
+<li>Download webfont</li>
+</ol>
+
+
+<p>Then you&#8217;ll get fonts files like: *.eot, *.svg, *.ttf, *.woff.</p>
+
+<h6>2. HTML</h6>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> &lt;ul&gt;
+</span><span class='line'>      &lt;li class="icon-pencil"&gt;{date}&lt;/li&gt;  
+</span><span class='line'> &lt;/ul&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<h6>3. CSS</h6>
+
+<p>Open your fontello folder, you&#8217;ll see a file named &#8220;fontello.css&#8221;, copy content of this css to your css file:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@charset "UTF-8";
+</span><span class='line'>@font-face {
+</span><span class='line'>  font-family: 'fontello';
+</span><span class='line'>  src: url("../font/fontello.eot");
+</span><span class='line'>  src: url("../font/fontello.eot?#iefix") format('embedded-opentype'), 
+</span><span class='line'>       url("../font/fontello.woff") format('woff'), 
+</span><span class='line'>       url("../font/fontello.ttf") format('truetype'), 
+</span><span class='line'>       url("../font/fontello.svg#fontello") format('svg');
+</span><span class='line'>  font-weight: normal;
+</span><span class='line'>  font-style: normal;
+</span><span class='line'>}
+</span><span class='line'>[class^="icon-"]:before,
+</span><span class='line'>[class*=" icon-"]:before {
+</span><span class='line'>  font-family: 'fontello';
+</span><span class='line'>  font-style: normal;
+</span><span class='line'>  font-weight: normal;
+</span><span class='line'>  speak: none;
+</span><span class='line'>  display: inline-block;
+</span><span class='line'>  text-decoration: inherit;
+</span><span class='line'>  width: 1em;
+</span><span class='line'>  margin-right: 0.2em;
+</span><span class='line'>  text-align: center;
+</span><span class='line'>  opacity: 0.8;
+</span><span class='line'>/* fix buttons height, for twitter bootstrap */
+</span><span class='line'>  line-height: 1em;
+</span><span class='line'>/* Animation center compensation - magrins should be symmetric */
+</span><span class='line'>/* remove if not needed */
+</span><span class='line'>  margin-left: 0.2em;
+</span><span class='line'>/* you can be more comfortable with increased icons size */
+</span><span class='line'>/* font-size: 120%; */
+</span><span class='line'>/* Uncomment for 3D effect */
+</span><span class='line'>/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>.icon-pencil:before { content: '\270e'; } /* '✎' */
+</span><span class='line'>.icon-feather:before { content: '\2712'; } /* '✒' */
+</span><span class='line'>.icon-tag:before { content: '\e70c'; } /* '' */
+</span><span class='line'>.icon-comment:before { content: '\e718'; } /* '' */</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then you can customize the style as what you want.</p>
+
+<p><strong>Done</strong></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  
+  <ul class="post-info">
+      <li class="meta icon-pencil">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2013-01-21T19:46:00+08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time>
+        
+      </li>  
+  </ul>
   
 <header>
     
@@ -128,8 +294,9 @@ Typing your new repo name, and &# &hellip;">
     <article>
       
   
-  <p class="meta">
-    
+  <ul class="post-info">
+      <li class="meta icon-pencil">
+        
 
 
 
@@ -141,9 +308,11 @@ Typing your new repo name, and &# &hellip;">
   
 
 
+
 <time datetime="2013-01-21T00:31:00+08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time>
-    
-  </p>
+        
+      </li>  
+  </ul>
   
 <header>
     
@@ -240,8 +409,9 @@ Typing your new repo name, and &# &hellip;">
     <article>
       
   
-  <p class="meta">
-    
+  <ul class="post-info">
+      <li class="meta icon-pencil">
+        
 
 
 
@@ -253,9 +423,11 @@ Typing your new repo name, and &# &hellip;">
   
 
 
+
 <time datetime="2013-01-13T15:46:00+08:00" pubdate data-updated="true">Jan 13<span>th</span>, 2013</time>
-    
-  </p>
+        
+      </li>  
+  </ul>
   
 <header>
     
@@ -330,8 +502,9 @@ Typing your new repo name, and &# &hellip;">
     <article>
       
   
-  <p class="meta">
-    
+  <ul class="post-info">
+      <li class="meta icon-pencil">
+        
 
 
 
@@ -343,9 +516,11 @@ Typing your new repo name, and &# &hellip;">
   
 
 
+
 <time datetime="2013-01-08T13:52:00+08:00" pubdate data-updated="true">Jan 8<span>th</span>, 2013</time>
-    
-  </p>
+        
+      </li>  
+  </ul>
   
 <header>
     
@@ -368,52 +543,6 @@ Typing your new repo name, and &# &hellip;">
 
     </article>
   
-  
-    <article>
-      
-  
-  <p class="meta">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-14T00:00:00+08:00" pubdate data-updated="true">May 14<span>th</span>, 2012</time>
-    
-  </p>
-  
-<header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/14/eclipse---java.lang.noclassdeffounderror%3A-com.jayway.android.robotium.solo.solo%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/">Eclipse - java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Solo错误解决</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content"><p>
-                                    <p>When I try to launch test for android app, I got following error message:</p>
-<div id="blog_text" class="cnt" style="font-family: Georgia; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; color: #333333; letter-spacing: 2px; overflow-x: hidden; overflow-y: hidden; position: relative !important;">
-<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; line-height: normal;">java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Solo<br />at com.skymobi.android.qc.test.RobotTest.setUp(RobotTest.java:46)<br />at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:169)<br />at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:154)<br />at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:529)<br />at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1448)<br /><br />&#22312;eclipse&#20013;&#36827;&#34892;&#22914;&#19979;&#35774;&#32622;</div>
-<ol style="line-height: normal;"><li>&#8220;Properties &gt; Java Build Path &gt; Libraries&#8221;, delete &#8220;Android Dependencies&#8221; in my test project.</li>
-<li>&#8220;Properties &gt; Java Build Path &gt; Libraries&#8221;, delete two robotium jar and click &#8220;Add JARs&#8221; to re-import robotium jar in my test project.</li>
-<li>&#8220;Properties &gt; Java Build Path &gt; Order and Export&#8221;, check two checkbok of robotium jar (and othera you want exported.)</li>
-<li>Clean my test project.</li>
-</ol></div>
-<p>Problem sloved!</p>
-                                    </p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -429,6 +558,10 @@ Typing your new repo name, and &# &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/01/25/how-to-use-font-icon-in-html/">How to use font icon in HTML</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/01/21/how-to-change-git-repo-name/">how to change git repo name</a>
       </li>
     
@@ -442,10 +575,6 @@ Typing your new repo name, and &# &hellip;">
     
       <li class="post">
         <a href="/blog/2013/01/08/my-frist-post/">my-frist-post</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/14/eclipse---java.lang.noclassdeffounderror%3A-com.jayway.android.robotium.solo.solo%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/">eclipse - java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Solo错误解决</a>
       </li>
     
   </ul>

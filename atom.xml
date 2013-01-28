@@ -4,7 +4,7 @@
   <title><![CDATA[]]></title>
   <link href="http://muggleyoung.github.com/atom.xml" rel="self"/>
   <link href="http://muggleyoung.github.com/"/>
-  <updated>2013-01-23T09:51:12+08:00</updated>
+  <updated>2013-01-28T14:35:44+08:00</updated>
   <id>http://muggleyoung.github.com/</id>
   <author>
     <name><![CDATA[muggleyoung]]></name>
@@ -12,6 +12,139 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to use font icon in HTML]]></title>
+    <link href="http://muggleyoung.github.com/blog/2013/01/25/how-to-use-font-icon-in-html/"/>
+    <updated>2013-01-25T18:25:00+08:00</updated>
+    <id>http://muggleyoung.github.com/blog/2013/01/25/how-to-use-font-icon-in-html</id>
+    <content type="html"><![CDATA[<h5>Why Icon Fonts (图标字体) are awesome?</h5>
+
+<p>we can easily change the style (e.g. scale, color, shadow, opacity, rotate, etc.)
+It is 100% accessible, we don&#8217;t need to use image sprites then</p>
+
+<h5>Some of Icon Fonts websites:</h5>
+
+<ul>
+<li><a href="http://fontello.com/">Fontello</a></li>
+<li><a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome</a></li>
+<li><a href="http://fico.lensco.be/">fico</a></li>
+<li><a href="http://icomoon.io/#home">IcoMoon</a></li>
+</ul>
+
+
+<h5>Building your Icon Fonts</h5>
+
+<h6>1. Download icon fonts</h6>
+
+<p>I used <a href="http://fontello.com/">Fontello</a> to get my Icon Fonts.</p>
+
+<ol>
+<li>Go to <a href="http://fontello.com/">Fontello</a></li>
+<li>Choose icons you want</li>
+<li>Download webfont</li>
+</ol>
+
+
+<p>Then you&#8217;ll get fonts files like: *.eot, *.svg, *.ttf, *.woff.</p>
+
+<h6>2. HTML</h6>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> &lt;ul&gt;
+</span><span class='line'>      &lt;li class="icon-pencil"&gt;{date}&lt;/li&gt;  
+</span><span class='line'> &lt;/ul&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<h6>3. CSS</h6>
+
+<p>Open your fontello folder, you&#8217;ll see a file named &#8220;fontello.css&#8221;, copy content of this css to your css file:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@charset "UTF-8";
+</span><span class='line'>@font-face {
+</span><span class='line'>  font-family: 'fontello';
+</span><span class='line'>  src: url("../font/fontello.eot");
+</span><span class='line'>  src: url("../font/fontello.eot?#iefix") format('embedded-opentype'), 
+</span><span class='line'>       url("../font/fontello.woff") format('woff'), 
+</span><span class='line'>       url("../font/fontello.ttf") format('truetype'), 
+</span><span class='line'>       url("../font/fontello.svg#fontello") format('svg');
+</span><span class='line'>  font-weight: normal;
+</span><span class='line'>  font-style: normal;
+</span><span class='line'>}
+</span><span class='line'>[class^="icon-"]:before,
+</span><span class='line'>[class*=" icon-"]:before {
+</span><span class='line'>  font-family: 'fontello';
+</span><span class='line'>  font-style: normal;
+</span><span class='line'>  font-weight: normal;
+</span><span class='line'>  speak: none;
+</span><span class='line'>  display: inline-block;
+</span><span class='line'>  text-decoration: inherit;
+</span><span class='line'>  width: 1em;
+</span><span class='line'>  margin-right: 0.2em;
+</span><span class='line'>  text-align: center;
+</span><span class='line'>  opacity: 0.8;
+</span><span class='line'>/* fix buttons height, for twitter bootstrap */
+</span><span class='line'>  line-height: 1em;
+</span><span class='line'>/* Animation center compensation - magrins should be symmetric */
+</span><span class='line'>/* remove if not needed */
+</span><span class='line'>  margin-left: 0.2em;
+</span><span class='line'>/* you can be more comfortable with increased icons size */
+</span><span class='line'>/* font-size: 120%; */
+</span><span class='line'>/* Uncomment for 3D effect */
+</span><span class='line'>/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>.icon-pencil:before { content: '\270e'; } /* '✎' */
+</span><span class='line'>.icon-feather:before { content: '\2712'; } /* '✒' */
+</span><span class='line'>.icon-tag:before { content: '\e70c'; } /* '' */
+</span><span class='line'>.icon-comment:before { content: '\e718'; } /* '' */</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then you can customize the style as what you want.</p>
+
+<p><strong>Done</strong></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[how to change git repo name]]></title>
@@ -776,40 +909,6 @@
 <p>&#21916;&#27426;&#26032;&#30340;&#27675;&#22260;</p>
 <p>&#24863;&#35273;&#24037;&#20316;&#25928;&#29575;&#36824;&#26159;&#26377;&#28857;&#20302;</p>
 <p>&#23454;&#39564;&#23460;&#36951;&#30041;&#24694;&#20064;&#21834;&#65374;&#24517;&#39035;&#25235;&#32039;&#25913;&#36827;&#65374;&#65374;&#65374;</p>
-                                    </p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[毕业季-离校]]></title>
-    <link href="http://muggleyoung.github.com/blog/2011/04/01/%E6%AF%95%E4%B8%9A%E5%AD%A3-%E7%A6%BB%E6%A0%A1/"/>
-    <updated>2011-04-01T00:00:00+08:00</updated>
-    <id>http://muggleyoung.github.com/blog/2011/04/01/毕业季-离校</id>
-    <content type="html"><![CDATA[<p>
-                                    <p>&#24635;&#31639;&#26159;&#24443;&#24213;&#27605;&#19994;&#20102;</p>
-<p>&#22238;&#26469;&#24320;&#22987;&#21150;&#29702;&#21508;&#31181;&#25163;&#32493;&#65292;&#19968;&#20010;&#20154;&#25343;&#30528;&#20061;&#24352;&#31163;&#26657;&#25163;&#32493;&#34920;&#21040;&#22788;&#25910;&#38598;&#30422;&#31456;</p>
-<p>&#36824;&#22909;&#21681;&#25928;&#29575;&#39640;&#65292;&#22823;&#26089;&#36215;&#26469;&#25630;&#23436;&#20107;&#24773;&#65292;&#36824;&#26469;&#24471;&#21450;&#21435;&#38376;&#21475;&#26469;&#20010;&#22823;&#30871;&#22823;&#39309;&#30340;&#32993;&#36771;&#27748;&#34917;&#34917;&#21170;&#20799;~</p>
-<p>&#25171;&#21253;&#23487;&#33293;&#25152;&#26377;&#19996;&#35199;&#65292;&#27809;&#21147;&#27668;&#25171;&#25195;&#65292;&#29408;&#24515;&#30041;&#32473;&#38463;&#23016;</p>
-<p>&#26179;&#24736;&#21435;&#31036;&#22530;&#65292;&#22352;&#22312;&#35282;&#33853;&#35266;&#25705;&#27605;&#19994;&#20856;&#31036;&#19968;&#23567;&#20250;&#65292;&#26412;&#31185;&#22240;&#20026;&#29983;&#30149;&#38169;&#36807;&#20102;&#33258;&#24049;&#20026;&#33258;&#24049;&#25320;&#24125;&#31319;&#30340;&#26102;&#21051;&#65292;&#22079;&#22079;</p>
-<p>&#20854;&#23454;&#65292;&#27605;&#19994;&#20856;&#31036;&#34429;&#28982;&#27809;&#21170;&#65292;&#26377;&#37027;&#20040;&#19968;&#23567;&#20250;&#65292;&#36824;&#26159;&#24773;&#32490;&#28608;&#21160;&#40763;&#23376;&#21457;&#37240;</p>
-<p>&#21253;&#25324;&#36864;&#23487;&#33293;&#26102;&#65292;&#24102;&#30528;&#38463;&#23016;&#26469;&#26816;&#26597;&#65292;&#20851;&#38376;&#30340;&#19968;&#30636;&#24847;&#35782;&#21040;&#65292;&#20877;&#20063;&#19981;&#20250;&#26469;&#36825;&#37324;&#12290;&#12290;&#12290;&#12290;</p>
-<p>&#160;</p>
-<p>&#26152;&#22825;&#21448;&#36305;&#21435;&#23398;&#26657;&#39046;&#20102;&#25253;&#21040;&#35777;&#65292;&#20107;&#20799;&#23601;&#31639;&#23436;&#20102;</p>
-<p>&#24443;&#24213;&#32467;&#26463;&#20102;&#12290;&#12290;&#12290;&#12290;</p>
-<p>&#24320;&#22987;&#25171;&#21253;&#20986;&#24046;&#30340;&#34892;&#26446;</p>
-<p>&#24754;&#20652;&#30340;&#21457;&#29616;&#34892;&#26446;&#31665;&#26377;&#28857;&#23567;&#65292;&#22836;&#30140;&#21834;</p>
-<p>&#25379;&#38065;&#20102;&#20877;&#25972;&#20010;&#65281;</p>
-<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
-<p>&#22238;&#21040;&#23478;&#23601;&#30149;&#20498;&#40479;&#65292;&#26152;&#22825;&#22312;&#23478;&#30561;&#20102;&#21322;&#22825;&#65292;&#24102;&#30149;&#21435;&#23398;&#26657;&#32487;&#32493;&#21150;&#25163;&#32493;</p>
-<p>&#23481;&#26131;&#20040;&#25105;&#65292;&#36523;&#36127;&#36825;&#20040;&#22810;&#20154;&#30340;&#25163;&#32493;&#65292;&#29983;&#30149;&#37117;&#19981;&#33021;&#36367;&#23454;&#21351;&#24202;</p>
-<p>&#25105;2&#19981;&#25289;&#21513;&#30340;&#29241;&#31455;&#28982;&#36824;&#35201;&#24102;&#25105;&#21435;&#21507;&#27873;&#39309;&#34917;&#34917;</p>
-<p>&#21040;&#27873;&#39309;&#24215;&#38376;&#21475;&#23601;&#24320;&#22987;&#21520;&#12290;&#12290;&#12290;&#12290;</p>
-<p>&#20154;&#21834;&#65292;&#36824;&#26159;&#27809;&#36924;&#21040;&#37027;&#20221;&#20799;&#19978;&#65292;&#23601;&#24635;&#26159;&#24456;&#23047;&#27668;</p>
-<p>&#24819;&#20043;&#21069;&#65292;&#21482;&#35201;&#29983;&#30149;&#23601;&#22362;&#20915;&#19981;&#19979;&#24202;&#65292;&#30561;&#19968;&#25972;&#22825;</p>
-<p>&#29616;&#22312;&#30828;&#29228;&#19979;&#26469;&#65292;&#34429;&#35828;&#21520;&#20102;&#19968;&#20250;&#65292;&#35813;&#24178;&#22043;&#19981;&#36824;&#26159;&#24471;&#21435;&#20040;</p>
-<p>&#32780;&#19988;&#25928;&#29575;&#36824;&#31639;&#39640;&#65292;&#19968;&#23567;&#26102;&#25630;&#23450;</p>
-<p>&#24863;&#35874;&#21516;&#24773;&#25105;&#30340;&#21516;&#23398;&#20204;&#65292;&#35265;&#23043;&#24980;&#24756;&#65292;&#25597;&#19979;&#21097;&#19979;&#30340;&#28866;&#25674;&#23376;</p>
-<p>&#24863;&#35874;&#25105;&#29241;&#36865;&#25105;&#21435;&#23398;&#26657;&#65292;&#23601;&#26159;&#27873;&#39309;&#27809;&#21507;&#25104;&#24456;&#21487;&#24796;</p>
                                     </p>
 ]]></content>
   </entry>

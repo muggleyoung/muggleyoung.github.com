@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>How to use font icon in HTML - </title>
+  <meta name="author" content="muggleyoung">
+
+  
+  <meta name="description" content="Why Icon Fonts (图标字体) are awesome? we can easily change the style (e.g. scale, color, shadow, opacity, rotate, etc.)
+It is 100% accessible, we don&# &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://muggleyoung.github.com/blog/2013/01/25/how-to-use-font-icon-in-html/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/"></a></h1>
+  
+    <h2>young for you</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:muggleyoung.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  
+  <ul class="post-info">
+      <li class="meta icon-pencil">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2013-01-25T18:25:00+08:00" pubdate data-updated="true">Jan 25<span>th</span>, 2013</time>
+        
+      </li>  
+  </ul>
+  
+<header>
+    
+      <h1 class="entry-title">How to Use Font Icon in HTML</h1>
+    
+  </header>
+
+
+<div class="entry-content"><h5>Why Icon Fonts (图标字体) are awesome?</h5>
+
+<p>we can easily change the style (e.g. scale, color, shadow, opacity, rotate, etc.)
+It is 100% accessible, we don&#8217;t need to use image sprites then</p>
+
+<h5>Some of Icon Fonts websites:</h5>
+
+<ul>
+<li><a href="http://fontello.com/">Fontello</a></li>
+<li><a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome</a></li>
+<li><a href="http://fico.lensco.be/">fico</a></li>
+<li><a href="http://icomoon.io/#home">IcoMoon</a></li>
+</ul>
+
+
+<h5>Building your Icon Fonts</h5>
+
+<h6>1. Download icon fonts</h6>
+
+<p>I used <a href="http://fontello.com/">Fontello</a> to get my Icon Fonts.</p>
+
+<ol>
+<li>Go to <a href="http://fontello.com/">Fontello</a></li>
+<li>Choose icons you want</li>
+<li>Download webfont</li>
+</ol>
+
+
+<p>Then you&#8217;ll get fonts files like: *.eot, *.svg, *.ttf, *.woff.</p>
+
+<h6>2. HTML</h6>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> &lt;ul&gt;
+</span><span class='line'>      &lt;li class="icon-pencil"&gt;{date}&lt;/li&gt;  
+</span><span class='line'> &lt;/ul&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<h6>3. CSS</h6>
+
+<p>Open your fontello folder, you&#8217;ll see a file named &#8220;fontello.css&#8221;, copy content of this css to your css file:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@charset "UTF-8";
+</span><span class='line'>@font-face {
+</span><span class='line'>  font-family: 'fontello';
+</span><span class='line'>  src: url("../font/fontello.eot");
+</span><span class='line'>  src: url("../font/fontello.eot?#iefix") format('embedded-opentype'), 
+</span><span class='line'>       url("../font/fontello.woff") format('woff'), 
+</span><span class='line'>       url("../font/fontello.ttf") format('truetype'), 
+</span><span class='line'>       url("../font/fontello.svg#fontello") format('svg');
+</span><span class='line'>  font-weight: normal;
+</span><span class='line'>  font-style: normal;
+</span><span class='line'>}
+</span><span class='line'>[class^="icon-"]:before,
+</span><span class='line'>[class*=" icon-"]:before {
+</span><span class='line'>  font-family: 'fontello';
+</span><span class='line'>  font-style: normal;
+</span><span class='line'>  font-weight: normal;
+</span><span class='line'>  speak: none;
+</span><span class='line'>  display: inline-block;
+</span><span class='line'>  text-decoration: inherit;
+</span><span class='line'>  width: 1em;
+</span><span class='line'>  margin-right: 0.2em;
+</span><span class='line'>  text-align: center;
+</span><span class='line'>  opacity: 0.8;
+</span><span class='line'>/* fix buttons height, for twitter bootstrap */
+</span><span class='line'>  line-height: 1em;
+</span><span class='line'>/* Animation center compensation - magrins should be symmetric */
+</span><span class='line'>/* remove if not needed */
+</span><span class='line'>  margin-left: 0.2em;
+</span><span class='line'>/* you can be more comfortable with increased icons size */
+</span><span class='line'>/* font-size: 120%; */
+</span><span class='line'>/* Uncomment for 3D effect */
+</span><span class='line'>/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>.icon-pencil:before { content: '\270e'; } /* '✎' */
+</span><span class='line'>.icon-feather:before { content: '\2712'; } /* '✒' */
+</span><span class='line'>.icon-tag:before { content: '\e70c'; } /* '' */
+</span><span class='line'>.icon-comment:before { content: '\e718'; } /* '' */</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then you can customize the style as what you want.</p>
+
+<p><strong>Done</strong></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">muggleyoung</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2013-01-25T18:25:00+08:00" pubdate data-updated="true">Jan 25<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/css/'>css</a>, <a class='category' href='/blog/categories/html/'>html</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://muggleyoung.github.com/blog/2013/01/25/how-to-use-font-icon-in-html/" data-via="" data-counturl="http://muggleyoung.github.com/blog/2013/01/25/how-to-use-font-icon-in-html/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/21/how-to-change-git-repo-name/" title="Previous Post: how to change git repo name">&laquo; how to change git repo name</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/25/how-to-use-font-icon-in-html/">How to use font icon in HTML</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/21/how-to-change-git-repo-name/">how to change git repo name</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/21/how-to-setup-a-new-remote-git-repo/">How to setup a new remote git repo</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/13/hui-gu-2012/">回顾2012</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/08/my-frist-post/">my-frist-post</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - muggleyoung -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a>.</span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

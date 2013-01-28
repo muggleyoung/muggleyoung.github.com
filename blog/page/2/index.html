@@ -9,8 +9,7 @@
   <meta name="author" content="muggleyoung">
 
   
-  <meta name="description" content="&#24037;&#20316;&#19968;&#21608;&#24180;&#65292;&#24863;&#24936;&#39047;&#22810;&#65292;&#19968;&#28857;&#19968;&#28857;&#35760;&#24405;&#20102;
-&# &hellip;">
+  <meta name="description" content="When I try to launch test for android app, I got following error message: java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Soloat &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,8 +69,9 @@
     <article>
       
   
-  <p class="meta">
-    
+  <ul class="post-info">
+      <li class="meta icon-pencil">
+        
 
 
 
@@ -83,9 +83,60 @@
   
 
 
-<time datetime="2012-04-08T00:00:00+08:00" pubdate data-updated="true">Apr 8<span>th</span>, 2012</time>
+
+<time datetime="2012-05-14T00:00:00+08:00" pubdate data-updated="true">May 14<span>th</span>, 2012</time>
+        
+      </li>  
+  </ul>
+  
+<header>
     
-  </p>
+      <h1 class="entry-title"><a href="/blog/2012/05/14/eclipse---java.lang.noclassdeffounderror%3A-com.jayway.android.robotium.solo.solo%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/">Eclipse - java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Solo错误解决</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+                                    <p>When I try to launch test for android app, I got following error message:</p>
+<div id="blog_text" class="cnt" style="font-family: Georgia; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; color: #333333; letter-spacing: 2px; overflow-x: hidden; overflow-y: hidden; position: relative !important;">
+<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; line-height: normal;">java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Solo<br />at com.skymobi.android.qc.test.RobotTest.setUp(RobotTest.java:46)<br />at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:169)<br />at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:154)<br />at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:529)<br />at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1448)<br /><br />&#22312;eclipse&#20013;&#36827;&#34892;&#22914;&#19979;&#35774;&#32622;</div>
+<ol style="line-height: normal;"><li>&#8220;Properties &gt; Java Build Path &gt; Libraries&#8221;, delete &#8220;Android Dependencies&#8221; in my test project.</li>
+<li>&#8220;Properties &gt; Java Build Path &gt; Libraries&#8221;, delete two robotium jar and click &#8220;Add JARs&#8221; to re-import robotium jar in my test project.</li>
+<li>&#8220;Properties &gt; Java Build Path &gt; Order and Export&#8221;, check two checkbok of robotium jar (and othera you want exported.)</li>
+<li>Clean my test project.</li>
+</ol></div>
+<p>Problem sloved!</p>
+                                    </p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  
+  <ul class="post-info">
+      <li class="meta icon-pencil">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2012-04-08T00:00:00+08:00" pubdate data-updated="true">Apr 8<span>th</span>, 2012</time>
+        
+      </li>  
+  </ul>
   
 <header>
     
@@ -133,8 +184,9 @@
     <article>
       
   
-  <p class="meta">
-    
+  <ul class="post-info">
+      <li class="meta icon-pencil">
+        
 
 
 
@@ -146,9 +198,11 @@
   
 
 
+
 <time datetime="2012-02-19T00:00:00+08:00" pubdate data-updated="true">Feb 19<span>th</span>, 2012</time>
-    
-  </p>
+        
+      </li>  
+  </ul>
   
 <header>
     
@@ -178,8 +232,9 @@
     <article>
       
   
-  <p class="meta">
-    
+  <ul class="post-info">
+      <li class="meta icon-pencil">
+        
 
 
 
@@ -191,9 +246,11 @@
   
 
 
+
 <time datetime="2012-02-19T00:00:00+08:00" pubdate data-updated="true">Feb 19<span>th</span>, 2012</time>
-    
-  </p>
+        
+      </li>  
+  </ul>
   
 <header>
     
@@ -228,8 +285,9 @@
     <article>
       
   
-  <p class="meta">
-    
+  <ul class="post-info">
+      <li class="meta icon-pencil">
+        
 
 
 
@@ -241,9 +299,11 @@
   
 
 
+
 <time datetime="2012-01-08T00:00:00+08:00" pubdate data-updated="true">Jan 8<span>th</span>, 2012</time>
-    
-  </p>
+        
+      </li>  
+  </ul>
   
 <header>
     
@@ -388,56 +448,6 @@
 
     </article>
   
-  
-    <article>
-      
-  
-  <p class="meta">
-    
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-03T00:00:00+08:00" pubdate data-updated="true">Jan 3<span>rd</span>, 2012</time>
-    
-  </p>
-  
-<header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/01/03/2011%E5%B9%B4%E6%80%BB%E7%BB%93%E7%AF%87/">2011年总结篇</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content"><p>
-                                    <p>&#36825;&#19968;&#24180;&#65292;&#25105;&#32456;&#20110;&#27605;&#19994;&#20102;&#65292;&#30495;&#30340;&#26159;&#29100;&#36807;&#20102;&#20004;&#24180;&#21322;&#30340;&#30740;&#31350;&#29983;&#65292;&#25104;&#21151;&#22312;3&#26376;&#31572;&#36777;&#65292;&#39034;&#21033;&#27605;&#19994;&#12290;</p>
-<p><img src="http://fmn.rrimg.com/fmn054/20110311/1435/p_large_EgtR_1076000089715c42.jpg" alt="" width="640" height="480" /></p>
-<p>&#32039;&#25509;&#30528;&#65292;&#22312;&#27605;&#19994;&#21644;&#20837;&#32844;&#30340;&#38388;&#38553;&#65292;&#33457;&#20102;&#20004;&#21608;&#26102;&#38388;&#65292;&#21414;&#38376;&#65292;&#19978;&#28023;&#65292;&#26477;&#24030;&#65292;&#36716;&#20102;&#19968;&#22823;&#22280;&#12290;&#24182;&#25104;&#21151;&#22312;&#21644;&#20146;&#29233;&#30340;&#39134;&#30896;&#22836;&#21518;&#19968;&#22825;&#65292;&#20002;&#20102;&#30456;&#26426;&#65292;&#21644;&#36825;&#27425;&#27605;&#19994;&#26053;&#34892;&#30340;&#25152;&#26377;&#29289;&#29702;&#35760;&#24518;&#12290;</p>
-<p>
-&#22235;&#26376;&#20837;&#32844;&#65292;&#23601;&#26469;&#21040;&#20102;&#21271;&#20140;&#12290;&#36319;&#30528;&#21516;&#20107;&#20204;&#22312;&#22823;&#22823;&#23567;&#23567;&#30340;&#39033;&#30446;&#20013;&#23398;&#20064;&#30528;&#12290;&#39034;&#20415;&#23398;&#20102;&#19979;&#25171;&#22826;&#26497;&#36825;&#26723;&#23376;&#20107;&#20799;&#12290;</p>
-<p><img src="http://fmn.rrimg.com/fmn057/20120103/1820/large_Y3FN_7e830000b24c121c.jpg" alt="" width="720" height="540" /></p>
-<p>&#22312;&#21271;&#20140;&#65292;&#20063;&#31639;&#26159;&#21644;&#26576;&#20154;&#20851;&#31995;&#31283;&#23450;&#20123;&#20102;&#12290;&#31283;&#23450;&#30340;&#29983;&#27668;&#65292;&#21557;&#26550;&#12290;</p>
-<p>
-8&#26376;&#65292;&#27838;TWU&#30340;&#20809;&#65292;&#21435;&#20102;&#36538;&#21360;&#24230;&#12290;&#22312;&#23398;&#20064;&#20013;&#65292;&#35748;&#35782;&#20102;&#36127;&#36131;&#30340;trainer&#65292;&#28909;&#24773;&#30340;&#21516;&#23398;&#20204;&#12290;&#24863;&#35273;&#33258;&#24049;&#20063;&#24314;&#31435;&#36215;&#33258;&#20449;&#20102;&#65292;&#19981;&#37027;&#20040;&#23475;&#32670;&#20102;&#12290;&#38500;&#20102;&#23398;&#20064;&#65292;&#27599;&#20010;&#21608;&#26411;&#22823;&#23478;&#36824;&#20250;&#38598;&#20307;&#20986;&#28216;&#65292;&#22312;&#27888;&#23020;&#38517;&#20302;&#35843;&#30340;&#36807;&#20102;25&#23681;&#29983;&#26085;&#12290;&#24819;&#24565;&#25105;&#30340;&#32769;&#24072;&#20204;&#65292;&#21516;&#23398;&#20204;&#65292;&#20598;&#23572;&#26377;&#37027;&#20040;&#19968;&#19979;&#19979;&#20063;&#24819;&#24565;&#21360;&#24230;&#30340;&#39135;&#29289;~</p>
-<p><img src="http://fmn.xnpic.com/fmn049/20110902/2350/p_large_Fyko_6f9c0000dbfb5c41.jpg" alt="" width="720" height="540" /></p>
-<p>&#22238;&#21040;&#21271;&#20140;&#65292;&#23828;&#21516;&#23398;&#23601;&#35201;&#32467;&#23130;&#20102;&#12290;&#24179;&#29983;&#22836;&#19968;&#27425;&#24403;&#20276;&#23064;&#65292;&#30475;&#30528;&#23828;&#34987;&#29240;&#29240;&#39046;&#30528;&#36208;&#30340;&#26102;&#20505;&#65292;&#25105;&#22312;&#25340;&#21629;&#30340;&#24971;&#30524;&#27882;&#12290;&#36824;&#19968;&#24230;&#34987;&#22823;&#20249;&#23041;&#32961;&#65292;&#20877;&#21741;&#23601;&#19981;&#35768;&#20570;&#20276;&#23064;&#20102;&#12290;</p>
-<p><img src="http://filer.blogbus.com/5333148/5333148_13297384181.jpeg" alt="" /></p>
-<p>2012&#30340;&#24320;&#22987;&#65292;&#22238;&#39038;&#36825;&#19968;&#24180;&#65292;&#32463;&#21382;&#30340;&#20107;&#24773;&#19981;&#23569;&#65292;&#20294;&#32570;&#23569;&#20102;&#20197;&#24448;&#22362;&#25345;&#20570;&#30340;&#20107;&#24773;&#65292;&#27604;&#22914;&#35268;&#24459;&#30340;&#35835;&#20070;&#65292;&#26356;&#26032;blog&#65292;&#27604;&#22914;&#35821;&#35328;&#30340;&#23398;&#20064;&#12290;&#31215;&#26497;&#30340;&#19968;&#38754;&#26159;&#21516;&#26679;&#25918;&#24323;&#28010;&#36153;&#22823;&#37327;&#26102;&#38388;&#36861;&#21508;&#31181;&#32654;&#21095;&#65292;&#30005;&#24433;&#65292;show&#36824;&#26159;&#35201;&#30475;&#30340;&#65292;&#20294;&#35201;&#36866;&#24230;&#30340;&#21862;&#12290;</p>
-                                    </p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -455,6 +465,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/01/25/how-to-use-font-icon-in-html/">How to use font icon in HTML</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/01/21/how-to-change-git-repo-name/">how to change git repo name</a>
       </li>
     
@@ -468,10 +482,6 @@
     
       <li class="post">
         <a href="/blog/2013/01/08/my-frist-post/">my-frist-post</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/14/eclipse---java.lang.noclassdeffounderror%3A-com.jayway.android.robotium.solo.solo%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/">eclipse - java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Solo错误解决</a>
       </li>
     
   </ul>
