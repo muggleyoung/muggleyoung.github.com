@@ -2,7 +2,7 @@ article {
   position: relative;
   .post-info {
     position: absolute;
-    top: 0;
+    top: 2em;
     left: 0;
     list-style: none;
     .meta {
@@ -111,7 +111,7 @@ article + article {
 #content .blog-index {
   margin-left: 6%;
   padding: 0;
-  article { margin-top: 2em; margin-right: 55px; padding-left: 0; padding-right:0;}
+  article { padding-top: 2em; margin-right: 55px; padding-left: 0; padding-right:0;}
   article header { background: none; padding-bottom: 0; }
   article h1 {
     font-size: 1.8em;

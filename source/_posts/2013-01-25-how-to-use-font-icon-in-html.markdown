@@ -6,7 +6,8 @@ comments: true
 categories: html css
 ---
 ##### Why Icon Fonts (图标字体) are awesome?
-we can easily change the style (e.g. scale, color, shadow, opacity, rotate, etc.)
+We can easily change the style (e.g. scale, color, shadow, opacity, rotate, etc.)
+
 It is 100% accessible, we don't need to use image sprites then
 
 
@@ -82,5 +83,7 @@ Open your fontello folder, you'll see a file named "fontello.css", copy content 
 ```
 
 Then you can customize the style as what you want.
+
+DO NOT forget to include your css file in the html. I made this mistake twice, shame :(
 
 __Done__
