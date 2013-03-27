@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | ]]></title>
   <link href="http://muggleyoung.github.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://muggleyoung.github.com/"/>
-  <updated>2013-01-28T14:35:44+08:00</updated>
+  <updated>2013-03-28T00:49:15+08:00</updated>
   <id>http://muggleyoung.github.com/</id>
   <author>
     <name><![CDATA[muggleyoung]]></name>
@@ -12,6 +12,144 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Version Control .vim File With Git]]></title>
+    <link href="http://muggleyoung.github.com/blog/2013/03/27/version-control-dot-vim-file-with-git/"/>
+    <updated>2013-03-27T22:45:00+08:00</updated>
+    <id>http://muggleyoung.github.com/blog/2013/03/27/version-control-dot-vim-file-with-git</id>
+    <content type="html"><![CDATA[<p><em>We usually have lots of vim plugins installed, and custermized configrations. It is better to version control .vim, .vimrc, even .gvimrc. So that we can easily set the configration on different laptop, also as a backup :)</em></p>
+
+<p><strong>如何使用github管理vim配置文件？</strong></p>
+
+<p>如果仅使用git管理.vim目录，你会发现提交之后的版本库中，每个插件都是不可用的，也无法完全pull下来。那是因为插件目录本身也是一个git的版本库。对于这样的情况，需要使用git submodel来进行配置。</p>
+
+<p>I will introduce solutions for my case first.</p>
+
+<ul>
+<li>I have <a href="https://github.com/tpope/vim-pathogen">Pathogen.vim</a> installed, so in my .vim directory, there should be a "/bundle" dir.</li>
+<li>I've already have several plugins installed</li>
+<li>I inited my .vim as a git repo</li>
+</ul>
+
+
+<h5>Add plugins as git submodule</h5>
+
+<ol>
+<li><p>Remove git index for your plugins</p>
+
+<p> Because the .vim is a git repo now, so all the installed plugins is already staged in git. So we need to remove them first.</p>
+
+<p> You can try this first:</p>
+
+<p> <code>
+ git ls-files --stage plugin_folder
+</code></p>
+
+<p> If you can see something like this</p>
+
+<p> <code>
+ 160000 d00cf29f23627fc54eb992dde6a79112677cd86c 0 plugin_folder
+</code></p>
+
+<p> That means the repo in plugin_folder has been added as "gitlink" already. So run following command to remove them from index:</p>
+
+<p> <code>
+ git rm --cached plugin_folder
+</code></p></li>
+<li><p>Add plugins as a git module</p>
+
+<p> e.g. I have a <a href="https://github.com/scrooloose/nerdtree">nerdTree</a> installed, and about to add its folder as submodule.</p>
+
+<p> <code>
+ git submodule add https://github.com/scrooloose/nerdtree.git bundle/nerdTree
+</code></p>
+
+<p> Make a commit</p>
+
+<p> <code>
+ git add .
+ git ci -m "add nerdTree as git submodule"
+</code></p></li>
+<li><p>Do step1, step2 for your other plugin dirs</p></li>
+</ol>
+
+
+<h5>Script to do things as above, for lazy guys and who already has lots of plugins installed</h5>
+
+<p><strong> 在<a href="http://icodeit.org/">邱大师</a>的帮助下，我们还有对于懒人和装了N多插件的同学的脚本！</strong></p>
+
+<h6>1.Goto your .vim directory</h6>
+
+<p><code>
+cd ~/.vim
+</code></p>
+
+<h6>2. Create a script file, and copy the following commands:</h6>
+
+<p>```</p>
+
+<h1>!/bin/bash</h1>
+
+<p>git rm -r --cached bundle
+find ./bundle/ -name config | xargs grep 'url' | awk -F= '{print $2}' | awk -F/ '{printf("git submodule add %s bundle/%s\n", $0, $NF)}' | sed 's/(.*).git/\1/g' >script
+chmod +x script
+./script
+rm script
+```</p>
+
+<p>I've updated the script in my <a href="https://github.com/muggleyoung/vimrc">.vim repo</a>. You can download the script from here: <a href="https://github.com/muggleyoung/vimrc/blob/master/sync_git.sh">https://github.com/muggleyoung/vimrc/blob/master/sync_git.sh</a></p>
+
+<p><strong> Note: </strong></p>
+
+<p> In this script, we first remove the staged plugins from git, then run the "git submodule add …" command for all the existing plugin folders.</p>
+
+<p><strong>So it is important to make sure the script is created under ./vim folder. </strong></p>
+
+<h6>3. Then you can make your own commit and push</h6>
+
+<h5>We can also add .vimrc and .gvimrc into our repo, by make them as symbolic link</h5>
+
+<ol>
+<li><p>Move .vimrc and .gvimrc files to .vim directory</p>
+
+<p> <code>
+ mv .vimrc ~/.vim/vimrc
+ mv .gvimrc ~/.vim/gvimrc
+</code></p></li>
+<li><p>Create symbolic links for them</p>
+
+<p> <code>
+ ln -s ~/.vim/vimrc ~/.vimrc
+ ln -s ~/.vim/gvimrc ~/.gvimrc
+</code></p>
+
+<p> So that the ~/.vimrc points to ~/.vim/vimrc</p></li>
+<li><p>Of course we need to add another commit as well</p></li>
+</ol>
+
+
+<p><strong>Check your repo now, it should all work!</strong></p>
+
+<hr />
+
+<h5>If you just start to install plugins, you can do as following:</h5>
+
+<ol>
+<li>Init .vim as a git repo;</li>
+<li>Install <a href="https://github.com/tpope/vim-pathogen">Pathogen.vim</a>;</li>
+<li><p>Install plugins as submodule:</p>
+
+<p> <code>
+ cd ~/.vim
+ mkdir ~/.vim/bundle
+ git submodule add plugin-repo-url
+</code></p></li>
+<li><p>Add .vimrc and .gvimrc into your repo, and make a commit.</p></li>
+</ol>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[how to change git repo name]]></title>

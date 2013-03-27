@@ -9,7 +9,13 @@
   <meta name="author" content="muggleyoung">
 
   
-  <meta name="description" content="&#32593;&#26131;2011&#24180;&#26657;&#22253;&#25307;&#32856;&#31508;&#35797;&#65292;&#36319;&#26377;&#36947;&#21644;&#28216;&#25103;&#26159;&#20998 &hellip;">
+  <meta name="description" content="&#20882;&#27873;&#25490;&#24207;&#65306;
+#include &lt;fstream&gt;
+#include &lt;math.h&gt;
+using namespace std;
+void BubbleSort(int A[],int n)
+{
+&# &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -64,6 +70,83 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  
+  <ul class="post-info">
+      <li class="meta icon-pencil">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2010-09-30T00:00:00+08:00" pubdate data-updated="true">Sep 30<span>th</span>, 2010</time>
+        
+      </li>  
+  </ul>
+  
+<header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/09/30/bubblesort/">BubbleSort</a></h1>
+    
+  </header>
+
+
+  <div class="entry-content"><p>
+                                    <p>&#20882;&#27873;&#25490;&#24207;&#65306;</p>
+<p>#include &lt;fstream&gt;<br />
+#include &lt;math.h&gt;<br />
+using namespace std;<br /><br />
+void BubbleSort(int A[],int n)<br />
+{<br />
+&#160;&#160;&#160; for(int j=1;j!=n;j++)<br />
+&#160;&#160;&#160; {<br />
+&#160;&#160;&#160; &#160;&#160;&#160; for (int i=0;i!=(n-j);i++)<br />
+&#160;&#160;&#160; &#160;&#160;&#160; {<br />
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; if(A[i]&gt;A[i+1])<br />
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; {<br />
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; int t = A[i];<br />
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; A[i] = A[i+1];<br />
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; A[i+1] = t;<br />
+&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; }<br />
+&#160;&#160;&#160; &#160;&#160;&#160; }<br />
+&#160;&#160;&#160; }<br />
+}<br /><br />
+void main()<br />
+{<br />
+&#160;&#160;&#160; ifstream infile;<br />
+&#160;&#160;&#160; ofstream outfile(&#8220;result.txt&#8221;);<br />
+&#160;&#160;&#160; infile.open(&#8220;seq.txt&#8221;);<br />
+&#160;&#160;&#160; int A[100];<br />
+&#160;&#160;&#160; int n=0;<br />
+&#160;&#160;&#160; while(!infile.eof())<br />
+&#160;&#160;&#160; {<br />
+&#160;&#160;&#160; &#160;&#160;&#160; infile&gt;&gt;A[n];<br />
+&#160;&#160;&#160; &#160;&#160;&#160; n++;<br />
+&#160;&#160;&#160; }<br />
+&#160;&#160;&#160; BubbleSort(A,n);<br />
+&#160;&#160;&#160; for (int i=0;i!=n;i++)<br />
+&#160;&#160;&#160; {<br />
+&#160;&#160;&#160; &#160;&#160;&#160; outfile&lt;&lt;&lt;&#8221; &#8220;;<br />
+&#160;&#160;&#160; }<br />
+}</p>
+                                    </p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -288,52 +371,6 @@
 
     </article>
   
-  
-    <article>
-      
-  
-  <ul class="post-info">
-      <li class="meta icon-pencil">
-        
-
-
-
-
-
-
-
-
-  
-
-
-
-<time datetime="2010-09-20T00:00:00+08:00" pubdate data-updated="true">Sep 20<span>th</span>, 2010</time>
-        
-      </li>  
-  </ul>
-  
-<header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/20/quicksort/">QuickSort</a></h1>
-    
-  </header>
-
-
-  <div class="entry-content"><p>
-                                    <p>&#20026;&#27611;&#25105;&#27515;&#27963;&#23398;&#19981;&#20250;&#35745;&#31639;&#26102;&#38388;&#22797;&#26434;&#24230;~</p>
-<p>&#22826;&#25387;&#36133;&#20102;~</p>
-<p>&#160;</p>
-<p>Quick Sort &#24555;&#25490;&#65306;</p>
-<p>&#160;</p>
-<p>#include &lt;fstream.h&gt;<br />#include&lt;math.h&gt; <br /><br />int partition(int A[], int head,int tail)<br />{<br />&#160;&#160;&#160; int key = A[head];<br />&#160;&#160;&#160; int i,j,t;<br />&#160;&#160;&#160; i = head;<br />&#160;&#160;&#160; j = head+1;<br />&#160;&#160;&#160; while (j&lt;=tail)<br />&#160;&#160;&#160; {<br />&#160;&#160;&#160; &#160;&#160;&#160; if (key&gt;A[j])<br />&#160;&#160;&#160; &#160;&#160;&#160; {<br />&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; i = i+1;<br />&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; t = A[j];<br />&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; A[j] = A[i];<br />&#160;&#160;&#160; &#160;&#160;&#160; &#160;&#160;&#160; A[i] = t;<br />&#160;&#160;&#160; &#160;&#160;&#160; }<br />&#160;&#160;&#160; &#160;&#160;&#160; j = j+1;<br />&#160;&#160;&#160; }<br />&#160;&#160;&#160; A[head] = A[i];<br />&#160;&#160;&#160; A[i] = key;<br />&#160;&#160;&#160; return i;<br />}<br /><br />void quicksort(int A[], int head,int tail)<br />{<br />&#160;&#160;&#160; int r;<br />&#160;&#160;&#160; if(head&lt;tail)<br />&#160;&#160;&#160; {<br />&#160;&#160;&#160; &#160;&#160;&#160; r = partition(A,head,tail);<br />&#160;&#160;&#160; &#160;&#160;&#160; quicksort(A,head,r);<br />&#160;&#160;&#160; &#160;&#160;&#160; quicksort(A,r+1,tail);<br />&#160;&#160;&#160; }<br />}<br /><br />void main()<br />{<br />&#160;&#160;&#160; ifstream infile;<br />&#160;&#160;&#160; ofstream outfile (&#8220;result.txt&#8221;);<br />&#160;&#160;&#160; infile.open(&#8220;seq.txt&#8221;);<br />&#160;&#160;&#160; int n = 0;<br />&#160;&#160;&#160; int A[100];<br />&#160;&#160;&#160; while (!infile.eof())<br />&#160;&#160;&#160; {<br />&#160;&#160;&#160; &#160;&#160;&#160; infile&gt;&gt;A[n];<br />&#160;&#160;&#160; &#160;&#160;&#160; n++;<br />&#160;&#160;&#160; }<br />&#160;&#160;&#160; quicksort(A,0,n-1);<br />&#160;&#160;&#160; for (int i=0;i&lt;n;i++)<br />&#160;&#160;&#160; {<br />&#160;&#160;&#160; &#160;&#160;&#160; outfile&lt;&lt;A[i]&lt;&lt;&#8221; &#8220;;<br />&#160;&#160;&#160; }<br />}</p>
-                                    </p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/15/">&larr; Older</a>
@@ -351,6 +388,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/27/version-control-dot-vim-file-with-git/">Version Control .vim File With Git</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/01/25/how-to-use-font-icon-in-html/">How to use font icon in HTML</a>
       </li>
     
@@ -364,10 +405,6 @@
     
       <li class="post">
         <a href="/blog/2013/01/13/hui-gu-2012/">回顾2012</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/01/08/my-frist-post/">my-frist-post</a>
       </li>
     
   </ul>

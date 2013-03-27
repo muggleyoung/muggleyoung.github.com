@@ -4,7 +4,7 @@
   <title><![CDATA[Category: html | ]]></title>
   <link href="http://muggleyoung.github.com/blog/categories/html/atom.xml" rel="self"/>
   <link href="http://muggleyoung.github.com/"/>
-  <updated>2013-01-28T14:35:44+08:00</updated>
+  <updated>2013-03-28T00:49:15+08:00</updated>
   <id>http://muggleyoung.github.com/</id>
   <author>
     <name><![CDATA[muggleyoung]]></name>
@@ -20,8 +20,9 @@
     <id>http://muggleyoung.github.com/blog/2013/01/25/how-to-use-font-icon-in-html</id>
     <content type="html"><![CDATA[<h5>Why Icon Fonts (图标字体) are awesome?</h5>
 
-<p>we can easily change the style (e.g. scale, color, shadow, opacity, rotate, etc.)
-It is 100% accessible, we don't need to use image sprites then</p>
+<p>We can easily change the style (e.g. scale, color, shadow, opacity, rotate, etc.)</p>
+
+<p>It is 100% accessible, we don't need to use image sprites then</p>
 
 <h5>Some of Icon Fonts websites:</h5>
 
@@ -106,6 +107,8 @@ It is 100% accessible, we don't need to use image sprites then</p>
 ```</p>
 
 <p>Then you can customize the style as what you want.</p>
+
+<p>DO NOT forget to include your css file in the html. I made this mistake twice, shame :(</p>
 
 <p><strong>Done</strong></p>
 ]]></content>

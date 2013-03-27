@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Version Control .vim File With Git - </title>
+  <meta name="author" content="muggleyoung">
+
+  
+  <meta name="description" content="We usually have lots of vim plugins installed, and custermized configrations. It is better to version control .vim, .vimrc, even .gvimrc. So that we &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://muggleyoung.github.com/blog/2013/03/27/version-control-dot-vim-file-with-git/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/"></a></h1>
+  
+    <h2>young for you</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:muggleyoung.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  
+  <ul class="post-info">
+      <li class="meta icon-pencil">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2013-03-27T22:45:00+08:00" pubdate data-updated="true">Mar 27<span>th</span>, 2013</time>
+        
+      </li>  
+  </ul>
+  
+<header>
+    
+      <h1 class="entry-title">Version Control .vim File With Git</h1>
+    
+  </header>
+
+
+<div class="entry-content"><p><em>We usually have lots of vim plugins installed, and custermized configrations. It is better to version control .vim, .vimrc, even .gvimrc. So that we can easily set the configration on different laptop, also as a backup :)</em></p>
+
+<p><strong>如何使用github管理vim配置文件？</strong></p>
+
+<p>如果仅使用git管理.vim目录，你会发现提交之后的版本库中，每个插件都是不可用的，也无法完全pull下来。那是因为插件目录本身也是一个git的版本库。对于这样的情况，需要使用git submodel来进行配置。</p>
+
+<p>I will introduce solutions for my case first.</p>
+
+<ul>
+<li>I have <a href="https://github.com/tpope/vim-pathogen">Pathogen.vim</a> installed, so in my .vim directory, there should be a &#8220;/bundle&#8221; dir.</li>
+<li>I&#8217;ve already have several plugins installed</li>
+<li>I inited my .vim as a git repo</li>
+</ul>
+
+
+<h5>Add plugins as git submodule</h5>
+
+<ol>
+<li><p>Remove git index for your plugins</p>
+
+<p> Because the .vim is a git repo now, so all the installed plugins is already staged in git. So we need to remove them first.</p>
+
+<p> You can try this first:</p>
+
+<p> <code>
+ git ls-files --stage plugin_folder
+</code></p>
+
+<p> If you can see something like this</p>
+
+<p> <code>
+ 160000 d00cf29f23627fc54eb992dde6a79112677cd86c 0 plugin_folder
+</code></p>
+
+<p> That means the repo in plugin_folder has been added as &#8220;gitlink&#8221; already. So run following command to remove them from index:</p>
+
+<p> <code>
+ git rm --cached plugin_folder
+</code></p></li>
+<li><p>Add plugins as a git module</p>
+
+<p> e.g. I have a <a href="https://github.com/scrooloose/nerdtree">nerdTree</a> installed, and about to add its folder as submodule.</p>
+
+<p> <code>
+ git submodule add https://github.com/scrooloose/nerdtree.git bundle/nerdTree
+</code></p>
+
+<p> Make a commit</p>
+
+<p> <code>
+ git add .
+ git ci -m "add nerdTree as git submodule"
+</code></p></li>
+<li><p>Do step1, step2 for your other plugin dirs</p></li>
+</ol>
+
+
+<h5>Script to do things as above, for lazy guys and who already has lots of plugins installed</h5>
+
+<p><strong> 在<a href="http://icodeit.org/">邱大师</a>的帮助下，我们还有对于懒人和装了N多插件的同学的脚本！</strong></p>
+
+<h6>1.Goto your .vim directory</h6>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd ~/.vim</span></code></pre></td></tr></table></div></figure>
+
+
+<h6>2. Create a script file, and copy the following commands:</h6>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/bin/bash
+</span><span class='line'>git rm -r --cached bundle
+</span><span class='line'>find ./bundle/ -name config | xargs grep 'url' | awk -F= '{print $2}' | awk -F/ '{printf("git submodule add %s bundle/%s\n", $0, $NF)}' | sed 's/\(.*\).git/\1/g' &gt;script
+</span><span class='line'>chmod +x script
+</span><span class='line'>./script
+</span><span class='line'>rm script</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I&#8217;ve updated the script in my <a href="https://github.com/muggleyoung/vimrc">.vim repo</a>. You can download the script from here: <a href="https://github.com/muggleyoung/vimrc/blob/master/sync_git.sh">https://github.com/muggleyoung/vimrc/blob/master/sync_git.sh</a></p>
+
+<p><strong> Note: </strong></p>
+
+<p> In this script, we first remove the staged plugins from git, then run the &#8220;git submodule add …&#8221; command for all the existing plugin folders.</p>
+
+<p><strong>So it is important to make sure the script is created under ./vim folder. </strong></p>
+
+<h6>3. Then you can make your own commit and push</h6>
+
+<h5>We can also add .vimrc and .gvimrc into our repo, by make them as symbolic link</h5>
+
+<ol>
+<li><p>Move .vimrc and .gvimrc files to .vim directory</p>
+
+<p> <code>
+ mv .vimrc ~/.vim/vimrc
+ mv .gvimrc ~/.vim/gvimrc
+</code></p></li>
+<li><p>Create symbolic links for them</p>
+
+<p> <code>
+ ln -s ~/.vim/vimrc ~/.vimrc
+ ln -s ~/.vim/gvimrc ~/.gvimrc
+</code></p>
+
+<p> So that the ~/.vimrc points to ~/.vim/vimrc</p></li>
+<li><p>Of course we need to add another commit as well</p></li>
+</ol>
+
+
+<p><strong>Check your repo now, it should all work!</strong></p>
+
+<hr />
+
+<h5>If you just start to install plugins, you can do as following:</h5>
+
+<ol>
+<li>Init .vim as a git repo;</li>
+<li>Install <a href="https://github.com/tpope/vim-pathogen">Pathogen.vim</a>;</li>
+<li><p>Install plugins as submodule:</p>
+
+<p> <code>
+ cd ~/.vim
+ mkdir ~/.vim/bundle
+ git submodule add plugin-repo-url
+</code></p></li>
+<li><p>Add .vimrc and .gvimrc into your repo, and make a commit.</p></li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">muggleyoung</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2013-03-27T22:45:00+08:00" pubdate data-updated="true">Mar 27<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/git/'>git</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://muggleyoung.github.com/blog/2013/03/27/version-control-dot-vim-file-with-git/" data-via="" data-counturl="http://muggleyoung.github.com/blog/2013/03/27/version-control-dot-vim-file-with-git/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/25/how-to-use-font-icon-in-html/" title="Previous Post: How to use font icon in HTML">&laquo; How to use font icon in HTML</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/27/version-control-dot-vim-file-with-git/">Version Control .vim File With Git</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/25/how-to-use-font-icon-in-html/">How to use font icon in HTML</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/21/how-to-change-git-repo-name/">how to change git repo name</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/21/how-to-setup-a-new-remote-git-repo/">How to setup a new remote git repo</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/13/hui-gu-2012/">回顾2012</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - muggleyoung -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a>.</span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
