@@ -4,7 +4,7 @@
   <title><![CDATA[]]></title>
   <link href="http://muggleyoung.github.com/atom.xml" rel="self"/>
   <link href="http://muggleyoung.github.com/"/>
-  <updated>2013-04-07T14:50:12+08:00</updated>
+  <updated>2013-04-13T17:51:27+08:00</updated>
   <id>http://muggleyoung.github.com/</id>
   <author>
     <name><![CDATA[muggleyoung]]></name>
@@ -12,6 +12,97 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Build a Blog With Octopress on Github]]></title>
+    <link href="http://muggleyoung.github.com/blog/2013/04/13/build-a-blog-with-octopress-on-github/"/>
+    <updated>2013-04-13T13:31:00+08:00</updated>
+    <id>http://muggleyoung.github.com/blog/2013/04/13/build-a-blog-with-octopress-on-github</id>
+    <content type="html"><![CDATA[<p><em>Before start, please make sure you have github, ruby, rvm installed.</em></p>
+
+<h2>Setup Octopress</h2>
+
+<h5>Clone octopress repo</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git your_repo
+</span><span class='line'>cd your_repo</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>Install dependent gems</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install bundler
+</span><span class='line'>bundle install</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>Search for a theme to install</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Will talk later about how to install a customized theme</p>
+
+<h5>Deploy it on Github</h5>
+
+<p>I hosted my blog with <a href="http://pages.github.com/">Github Pages</a>, so that I can only use commit and push to publish my posts. If there are multipul authors, it still easy to handle with git commands.</p>
+
+<p>Goto github and create a new repo named as <code>username.github.io</code>. Then github pages will use the master branch as the public directory on a web server, serving up all the files at your Pages url <code>http://username.github.io</code></p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Note</strong>: When you copy the url from github, please remember to remove the suffix &#8220;.git&#8221;. So the url should be something like this &#8220;git@github.com:username/username.github.io&#8221;. Cause if you get the wrong url, it may not report any error :(</p>
+
+<p>This command will:</p>
+
+<ol>
+<li>Ask you for your Github Pages repository url.</li>
+<li>Rename the remote pointing to imathis/octopress from ‘origin’ to ‘octopress’</li>
+<li>Add your Github Pages repository as the default origin remote.</li>
+<li>Switch the active branch from master to source.</li>
+<li>Configure your blog’s url according to your repository.</li>
+<li>Setup a master branch in the _deploy directory for deployment.</li>
+</ol>
+
+
+<p>Then run:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake gen_deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will generate and deploy your blog on your site.</p>
+
+<p>Now, if you visit http://username.github.io, it should be your site !</p>
+
+<h5>Configuring Your Octopress</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>vi _config.yml</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Go to edit config.yml for site title, author, etc. And some third party account info.</p>
+
+<p>Intergated third party settings:</p>
+
+<ul>
+<li>Github - List your github repositories in the sidebar</li>
+<li>Twitter - Setup a sidebar twitter feed, follow button, and tweet button (for sharing posts and pages).</li>
+<li>Google Plus One - Setup sharing for posts and pages on Google’s plus one network.</li>
+<li>Pinboard - Share your recent Pinboard bookmarks in the sidebar.</li>
+<li>Delicious - Share your recent Delicious bookmarks in the sidebar.</li>
+<li>Disqus Comments - Add your disqus short name to enable disqus comments on your site.</li>
+<li>Google Analytics - Add your tracking id to enable Google Analytics tracking for your site.</li>
+<li>Facebook - Add a Facebook like button</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Version Control .vim File With Git]]></title>
@@ -988,53 +1079,6 @@
 <p>&#24456;&#38712;&#27668;&#30340;&#19968;&#20010;&#20154;&#20914;&#36827;&#21435;&#65292;&#25214;&#22352;&#65292;&#28857;&#39184;</p>
 <p>&#19968;&#30424;&#28023;&#40092;&#65292;&#19968;&#30871;&#31859;&#39277;&#65292;28&#22359;</p>
 <p>&#24515;&#28385;&#24847;&#36275;&#30340;&#22238;&#23478;&#30561;&#35273;</p>
-                                    </p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[抵京10日小记]]></title>
-    <link href="http://muggleyoung.github.com/blog/2011/04/15/%E6%8A%B5%E4%BA%AC10%E6%97%A5%E5%B0%8F%E8%AE%B0/"/>
-    <updated>2011-04-15T00:00:00+08:00</updated>
-    <id>http://muggleyoung.github.com/blog/2011/04/15/抵京10日小记</id>
-    <content type="html"><![CDATA[<p>
-                                    <p>&#26412;&#26469;&#24819;&#35828;&#24037;&#20316;10&#22825;&#35760;&#65292;&#20005;&#35880;&#30340;&#35828;&#65292;&#20013;&#38388;&#36824;&#20241;&#24687;&#20102;&#20004;&#22825;&#21602;</p>
-<p>&#21040;&#23487;&#33293;&#31532;&#19968;&#22825;&#65292;&#26089;&#26216;&#36215;&#24202;&#19978;&#21397;&#25152;&#65292;&#23601;&#21387;&#26029;&#20102;&#39532;&#26742;&#30422;&#12290;&#12290;&#12290;&#12290;&#35753;&#25105;&#36825;&#20010;&#22823;&#33080;&#32982;&#23376;&#24773;&#20309;&#20197;&#22570;&#21584;&#12290;&#12290;&#12290;</p>
-<p>&#160;</p>
-<p>&#19978;&#29677;&#36824;&#26159;&#24456;&#20805;&#23454;&#30340;&#65292;&#22823;&#27010;&#22240;&#20026;&#38656;&#35201;&#23398;&#20064;&#30340;&#19996;&#35199;&#22826;&#22810;</p>
-<p>&#26469;&#21040;&#21271;&#20140;&#31532;&#20108;&#22825;&#23601;&#34987;&#27966;&#19978;&#39033;&#30446;&#65292;&#27491;&#24335;bilable&#20102;&#65292;&#31361;&#28982;&#35273;&#24471;&#36156;&#26377;&#20215;&#20540;&#24863;</p>
-<p>&#21407;&#26412;&#26159;&#19978;&#22823;&#39033;&#30446;&#30340;&#65292;&#38452;&#38169;&#38451;&#24046;&#30340;&#65292;&#26469;&#21040;&#20102;&#26368;&#36855;&#20320;&#30340;&#22242;&#38431;&#65293;&#21152;&#25105;&#20200;&#20154;&#65374;</p>
-<p>&#36215;&#21021;&#36824;&#19981;&#24179;&#34913;&#19968;&#23567;&#20250;&#20799;</p>
-<p>&#24178;&#36215;&#27963;&#20799;&#26469;&#65292;&#36824;&#26159;&#21508;&#26377;&#21508;&#30340;&#22909;</p>
-<p>&#26242;&#26102;&#36824;&#27809;&#21150;&#27861;&#21015;&#20030;123&#65292;&#21482;&#33021;&#35828;&#25910;&#33719;&#22909;&#22810;&#65292;&#36824;&#22312;&#19968;&#28857;&#19968;&#28857;&#30340;&#23398;&#20064;&#20013;</p>
-<p>&#34429;&#28982;&#24178;&#27963;&#20381;&#28982;&#32570;&#20047;&#26465;&#29702;&#24615;&#65292;&#20294;&#20063;&#21487;&#20197;&#33258;&#24049;&#20570;&#20102;</p>
-<p>&#24930;&#24930;&#33021;&#21548;&#24471;&#25026;&#22242;&#38431;&#21516;&#23398;&#20204;&#30340;&#20132;&#27969;</p>
-<p>&#24320;&#22987;&#22312;buddy&#30340;&#24102;&#39046;&#19979;&#65292;&#31995;&#32479;&#30340;&#25509;&#35302;&#19987;&#19994;&#30693;&#35782;</p>
-<p>&#26368;&#21487;&#24796;&#30340;&#23601;&#26159;&#30001;&#20110;&#20154;&#22826;&#23569;&#65292;&#27963;&#20799;&#22826;&#22810;&#65292;&#22823;&#23478;&#27809;&#26377;&#26426;&#20250;&#19968;&#36215;pair</p>
-<p>&#36824;&#22909;3&#20010;&#20154;&#65292;&#38543;&#26102;&#20132;&#27969;&#38382;&#39064;&#19981;&#22823;</p>
-<p>&#22312;&#26032;&#29615;&#22659;&#20013;&#65292;&#24930;&#24930;&#23547;&#25214;&#30528;&#33258;&#24049;&#30340;&#29983;&#27963;&#33410;&#22863;</p>
-<p>&#160;</p>
-<p>&#19978;&#21608;&#65292;&#21608;&#26411;&#21442;&#35266;&#30334;&#24230;&#65293;&#25105;&#12290;&#12290;&#12290;&#12290;&#19981;&#20250;&#29992;&#26032;&#30005;&#33041;&#19978;&#20256;&#29031;&#29255;&#12290;&#12290;&#12290;&#12290;</p>
-<p>&#24635;&#20043;&#21602;&#65292;&#36824;&#26159;&#21916;&#27426;&#25105;&#21496;&#29615;&#22659;&#21834;&#65374;&#27604;&#26684;&#23376;&#38388;&#33298;&#22374;&#22810;&#20102;</p>
-<p>&#25549;&#26159;&#38468;&#36817;&#21507;&#39277;&#20080;&#19996;&#35199;&#26377;&#28857;&#36149;</p>
-<p>&#160;</p>
-<p>&#21516;&#20107;&#20204;&#20063;&#24456;&#21451;&#22909;</p>
-<p>&#36335;&#30196;&#30340;&#25105;&#29420;&#33258;&#19979;&#29677;&#26102;&#65292;&#24635;&#33021;&#22312;&#20986;&#38376;&#30340;&#26102;&#20505;&#25235;&#21040;&#19968;&#26522;&#21516;&#20107;&#65292;&#21578;&#35785;&#25105;&#21435;&#21738;&#37324;&#35813;&#24590;&#20040;&#36208;&#65374;</p>
-<p>&#21152;&#19978;&#21508;&#31181;&#36461;&#39277;&#65292;&#23545;&#21507;&#36135;&#30340;&#21560;&#24341;&#36824;&#26159;&#24456;&#22823;</p>
-<p>&#29241;&#22920;&#24635;&#26159;&#25285;&#24515;&#25105;&#19981;&#36866;&#24212;&#65292;&#24819;&#23478;</p>
-<p>&#25308;&#25176;&#65374;</p>
-<p>&#26472;&#23567;&#30473;&#24050;&#32463;&#19981;&#26159;&#21018;&#19978;&#22823;&#23398;&#30340;&#37027;&#20010;&#29233;&#21741;&#39740;&#20102;</p>
-<p>&#19968;&#20010;&#20154;&#32972;&#20457;&#22823;&#21253;&#65292;&#22806;&#21152;&#19968;&#27515;&#27785;&#27515;&#27785;&#22823;&#31665;&#23376;&#36305;&#36335;&#37117;&#27809;&#38382;&#39064;&#21602;</p>
-<p>&#20851;&#38190;&#26102;&#21051;&#65292;&#21681;&#36824;&#26159;&#24456;&#38752;&#38138;&#28404;</p>
-<p>&#25549;&#26159;&#31532;&#20108;&#22825;&#27985;&#36523;&#30140;&#65292;&#19977;&#35282;&#32908;&#36731;&#24494;&#25289;&#20260;&#32780;&#24050;&#22043;&#12290;&#12290;&#12290;&#12290;&#12290;</p>
-<p>&#160;</p>
-<p>&#19979;&#21608;&#65292;&#39033;&#30446;&#19978;&#32447;</p>
-<p>&#34429;&#28982;&#27809;&#20570;&#22810;&#23569;&#24037;&#20316;&#65292;&#25105;&#36824;&#26159;&#34920;&#31034;&#24515;&#24773;&#28608;&#21160;&#65292;&#24050;&#32463;&#24320;&#22987;&#35745;&#21010;&#35201;&#19981;&#35201;&#21917;&#37202;&#24198;&#31069;&#65374;</p>
-<p>&#19979;&#21608;&#65292;&#36319;&#38065;&#38065;&#21516;&#24535;&#23398;&#25171;&#22826;&#26497;</p>
-<p>&#24076;&#26395;&#23398;&#36153;&#19981;&#35201;&#22826;&#36149;&#65292;&#19981;&#28982;&#25105;&#21487;&#23601;&#21402;&#30528;&#33080;&#30382;&#36864;&#23398;&#20102;&#65374;</p>
-<p>&#160;</p>
-<p>&#21608;&#26411;&#65292;&#21271;&#20140;&#19968;&#24180;&#20013;&#26368;&#22909;&#30340;&#23395;&#33410;</p>
-<p>&#30561;&#20010;&#25042;&#35273;&#65292;&#20986;&#38376;&#36955;&#24367;&#20999;&#65374;</p>
                                     </p>
 ]]></content>
   </entry>

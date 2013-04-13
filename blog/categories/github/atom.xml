@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: github | ]]></title>
+  <link href="http://muggleyoung.github.com/blog/categories/github/atom.xml" rel="self"/>
+  <link href="http://muggleyoung.github.com/"/>
+  <updated>2013-04-13T17:51:27+08:00</updated>
+  <id>http://muggleyoung.github.com/</id>
+  <author>
+    <name><![CDATA[muggleyoung]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Build a Blog With Octopress on Github]]></title>
+    <link href="http://muggleyoung.github.com/blog/2013/04/13/build-a-blog-with-octopress-on-github/"/>
+    <updated>2013-04-13T13:31:00+08:00</updated>
+    <id>http://muggleyoung.github.com/blog/2013/04/13/build-a-blog-with-octopress-on-github</id>
+    <content type="html"><![CDATA[<p><em>Before start, please make sure you have github, ruby, rvm installed.</em></p>
+
+<h2>Setup Octopress</h2>
+
+<h5>Clone octopress repo</h5>
+
+<p><code>
+git clone git://github.com/imathis/octopress.git your_repo
+cd your_repo
+</code></p>
+
+<h5>Install dependent gems</h5>
+
+<p><code>
+gem install bundler
+bundle install
+</code></p>
+
+<h5>Search for a theme to install</h5>
+
+<p><code>
+rake install
+</code></p>
+
+<p>Will talk later about how to install a customized theme</p>
+
+<h5>Deploy it on Github</h5>
+
+<p>I hosted my blog with <a href="http://pages.github.com/">Github Pages</a>, so that I can only use commit and push to publish my posts. If there are multipul authors, it still easy to handle with git commands.</p>
+
+<p>Goto github and create a new repo named as <code>username.github.io</code>. Then github pages will use the master branch as the public directory on a web server, serving up all the files at your Pages url <code>http://username.github.io</code></p>
+
+<p><code>
+rake setup_github_pages
+</code></p>
+
+<p><strong>Note</strong>: When you copy the url from github, please remember to remove the suffix ".git". So the url should be something like this "git@github.com:username/username.github.io". Cause if you get the wrong url, it may not report any error :(</p>
+
+<p>This command will:</p>
+
+<ol>
+<li>Ask you for your Github Pages repository url.</li>
+<li>Rename the remote pointing to imathis/octopress from ‘origin’ to ‘octopress’</li>
+<li>Add your Github Pages repository as the default origin remote.</li>
+<li>Switch the active branch from master to source.</li>
+<li>Configure your blog’s url according to your repository.</li>
+<li>Setup a master branch in the _deploy directory for deployment.</li>
+</ol>
+
+
+<p>Then run:</p>
+
+<p><code>
+rake gen_deploy
+</code></p>
+
+<p>This will generate and deploy your blog on your site.</p>
+
+<p>Now, if you visit http://username.github.io, it should be your site !</p>
+
+<h5>Configuring Your Octopress</h5>
+
+<p><code>
+vi _config.yml
+</code></p>
+
+<p>Go to edit config.yml for site title, author, etc. And some third party account info.</p>
+
+<p>Intergated third party settings:</p>
+
+<ul>
+<li>Github - List your github repositories in the sidebar</li>
+<li>Twitter - Setup a sidebar twitter feed, follow button, and tweet button (for sharing posts and pages).</li>
+<li>Google Plus One - Setup sharing for posts and pages on Google’s plus one network.</li>
+<li>Pinboard - Share your recent Pinboard bookmarks in the sidebar.</li>
+<li>Delicious - Share your recent Delicious bookmarks in the sidebar.</li>
+<li>Disqus Comments - Add your disqus short name to enable disqus comments on your site.</li>
+<li>Google Analytics - Add your tracking id to enable Google Analytics tracking for your site.</li>
+<li>Facebook - Add a Facebook like button</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,99 +1,79 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>eclipse - java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Solo错误解决 - </title>
-  <meta name="author" content="muggleyoung">
+	<meta charset="utf-8">
+	<title>eclipse - java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Solo错误解决 - </title>
+	<meta name="author" content="muggleyoung">
 
-  
-  <meta name="description" content="When I try to launch test for android app, I got following error message: java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Soloat &hellip;">
-  
+	
+	<meta name="description" content="When I try to launch test for android app, I got following error message: java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Soloat &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://muggleyoung.github.com/blog/2012/05/14/eclipse---java.lang.noclassdeffounderror%3A-com.jayway.android.robotium.solo.solo%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-
+	<link href="/atom.xml" rel="alternate" title="" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/"></a></h1>
-  
-    <h2>young for you</h2>
-  
-</hgroup>
+<body>
+	<header id="header" class="inner"><h1><a href="/"></a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:muggleyoung.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+    
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:muggleyoung.github.com">
+	</form>
+</nav>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:muggleyoung.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  
-  <ul class="post-info">
-      <li class="meta icon-pencil">
-        
-
-
-
-
-
-
-
-
-  
-
-
-
-<time datetime="2012-05-14T00:00:00+08:00" pubdate data-updated="true">May 14<span>th</span>, 2012</time>
-        
-      </li>  
-  </ul>
-  
-<header>
-    
-      <h1 class="entry-title">Eclipse - java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Solo错误解决</h1>
-    
-  </header>
-
-
-<div class="entry-content"><p>
+	
+		
+	
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Eclipse - java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Solo错误解决</h2>
+	<div class="entry-content"><p>
                                     <p>When I try to launch test for android app, I got following error message:</p>
 <div id="blog_text" class="cnt" style="font-family: Georgia; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; color: #333333; letter-spacing: 2px; overflow-x: hidden; overflow-y: hidden; position: relative !important;">
 <div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; line-height: normal;">java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Solo<br />at com.skymobi.android.qc.test.RobotTest.setUp(RobotTest.java:46)<br />at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:169)<br />at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:154)<br />at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:529)<br />at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1448)<br /><br />&#22312;eclipse&#20013;&#36827;&#34892;&#22914;&#19979;&#35774;&#32622;</div>
@@ -107,14 +87,8 @@
 </div>
 
 
-  <footer>
-    <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">muggleyoung</span></span>
-
-      
+<div class="meta">
+	<div class="date">
 
 
 
@@ -126,98 +100,40 @@
   
 
 
-
-<time datetime="2012-05-14T00:00:00+08:00" pubdate data-updated="true">May 14<span>th</span>, 2012</time>
-      
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://muggleyoung.github.com/blog/2012/05/14/eclipse---java.lang.noclassdeffounderror%3A-com.jayway.android.robotium.solo.solo%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/" data-via="" data-counturl="http://muggleyoung.github.com/blog/2012/05/14/eclipse---java.lang.noclassdeffounderror%3A-com.jayway.android.robotium.solo.solo%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/" >Tweet</a>
-  
-  
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2012/04/08/%E4%BD%A0%E7%8E%B0%E5%9C%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%BD%BB%E6%9D%BE%E4%B9%88%EF%BC%9F/" title="Previous Post: 你现在的工作轻松么？">&laquo; 你现在的工作轻松么？</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2013/01/08/my-frist-post/" title="Next Post: my-frist-post">my-frist-post &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
+<time datetime="2012-05-14T00:00:00+08:00" pubdate data-updated="true">May 14<span>th</span>, 2012</time></div>
+	<div class="tags">
 
 </div>
+	
+</div></article>
 
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2013/03/27/version-control-dot-vim-file-with-git/">Version Control .vim File With Git</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/01/25/how-to-use-font-icon-in-html/">How to use font icon in HTML</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/01/21/how-to-change-git-repo-name/">how to change git repo name</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/01/21/how-to-setup-a-new-remote-git-repo/">How to setup a new remote git repo</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/01/13/hui-gu-2012/">回顾2012</a>
-      </li>
-    
-  </ul>
-</section>
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
 
 
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
 
-
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - muggleyoung -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>. Design by <a href="http://octopressthemes.com">Octopress Themes</a>.</span>
-</p>
+    muggleyoung
 
 </footer>
-  
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
 
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 
