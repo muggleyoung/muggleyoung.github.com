@@ -4,7 +4,7 @@
   <title><![CDATA[Category: blog | ]]></title>
   <link href="http://muggleyoung.github.com/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://muggleyoung.github.com/"/>
-  <updated>2013-04-13T17:51:27+08:00</updated>
+  <updated>2013-04-14T21:37:01+08:00</updated>
   <id>http://muggleyoung.github.com/</id>
   <author>
     <name><![CDATA[muggleyoung]]></name>
@@ -18,75 +18,68 @@
     <link href="http://muggleyoung.github.com/blog/2013/04/13/build-a-blog-with-octopress-on-github/"/>
     <updated>2013-04-13T13:31:00+08:00</updated>
     <id>http://muggleyoung.github.com/blog/2013/04/13/build-a-blog-with-octopress-on-github</id>
-    <content type="html"><![CDATA[<p><em>Before start, please make sure you have github, ruby, rvm installed.</em></p>
+    <content type="html"><![CDATA[<p><em>在开始前，请确认机器上已安装github, ruby, rvm.</em></p>
 
-<h2>Setup Octopress</h2>
+<h2>安装Octopress</h2>
 
-<h5>Clone octopress repo</h5>
+<h5>从Github克隆Octopress</h5>
 
 <p><code>
-git clone git://github.com/imathis/octopress.git your_repo
-cd your_repo
+git clone git://github.com/imathis/octopress.git your_dir
+cd your_dir
 </code></p>
 
-<h5>Install dependent gems</h5>
+<h5>安装依赖的gems</h5>
 
 <p><code>
 gem install bundler
 bundle install
 </code></p>
 
-<h5>Search for a theme to install</h5>
+<h5>安装默认主题</h5>
 
 <p><code>
 rake install
 </code></p>
 
-<p>Will talk later about how to install a customized theme</p>
+<p>没有自定义主题么？稍后播出~</p>
 
-<h5>Deploy it on Github</h5>
+<h5>部署到Github</h5>
 
-<p>I hosted my blog with <a href="http://pages.github.com/">Github Pages</a>, so that I can only use commit and push to publish my posts. If there are multipul authors, it still easy to handle with git commands.</p>
+<p>我自己的博客就使用了 <a href="http://pages.github.com/">Github Pages</a>, 使用git中的pull和push命令就可以提交自己的博客，Octopress的一键部署让整个过程更加方便。像程序员使用Github合作写代码一样，只要添加合作者，就可以多人合作维护一个博客。</p>
 
-<p>Goto github and create a new repo named as <code>username.github.io</code>. Then github pages will use the master branch as the public directory on a web server, serving up all the files at your Pages url <code>http://username.github.io</code></p>
+<p>在Github建立一个名为<code>username.github.io</code>的版本库，切记前面的名字要和你的Github用户名完全一样，因为Github Pages就靠这个生成静态页面，最终才可以通过<code>http://username.github.io</code>访问你的博客。</p>
 
 <p><code>
 rake setup_github_pages
-</code></p>
+</code>
+上面的命令做了这些事情：
+1. 需要你提供Github Pages需要的版本库链接
+2. 将指向imathis/octopress的分支从"origin"重命名并且重定向到“octopress”
+3. 将你的Github Pages的版本库设置为默认的origin remote.
+4. 将活跃分支从master切换到source
+5. 根据版本库URL配置你的博客链接
+6. 为部署建立一个master分支</p>
 
-<p><strong>Note</strong>: When you copy the url from github, please remember to remove the suffix ".git". So the url should be something like this "git@github.com:username/username.github.io". Cause if you get the wrong url, it may not report any error :(</p>
+<p><strong>Note</strong>: 在进行第一步时，我偷懒直接从Github拷贝了版本库URL——这个URL是有 ".git"后缀的.而该命令真正需要的是没有“.git”后缀的URL。我使用带.git后缀的URL，命令仍然看起来是成功了，但是没办法成功提交本地修改，折腾了俩小时。所以，切记要输入正确的链接，它看起来应该像这样， "git@github.com:username/username.github.io".</p>
 
-<p>This command will:</p>
-
-<ol>
-<li>Ask you for your Github Pages repository url.</li>
-<li>Rename the remote pointing to imathis/octopress from ‘origin’ to ‘octopress’</li>
-<li>Add your Github Pages repository as the default origin remote.</li>
-<li>Switch the active branch from master to source.</li>
-<li>Configure your blog’s url according to your repository.</li>
-<li>Setup a master branch in the _deploy directory for deployment.</li>
-</ol>
-
-
-<p>Then run:</p>
+<p>接下来运行：</p>
 
 <p><code>
 rake gen_deploy
 </code></p>
 
-<p>This will generate and deploy your blog on your site.</p>
+<p>你的博客就被成功生成和部署啦！访问 http://username.github.io 就可以看到~</p>
 
-<p>Now, if you visit http://username.github.io, it should be your site !</p>
-
-<h5>Configuring Your Octopress</h5>
+<h5>修改Octopress的配置</h5>
 
 <p><code>
 vi _config.yml
 </code></p>
 
-<p>Go to edit config.yml for site title, author, etc. And some third party account info.</p>
+<p>该文件中可以修改站点名称，作者等信息，还可以添加第三方插件的配置信息。</p>
 
-<p>Intergated third party settings:</p>
+<p>官方支持的第三方插件设置：</p>
 
 <ul>
 <li>Github - List your github repositories in the sidebar</li>
@@ -94,11 +87,50 @@ vi _config.yml
 <li>Google Plus One - Setup sharing for posts and pages on Google’s plus one network.</li>
 <li>Pinboard - Share your recent Pinboard bookmarks in the sidebar.</li>
 <li>Delicious - Share your recent Delicious bookmarks in the sidebar.</li>
-<li>Disqus Comments - Add your disqus short name to enable disqus comments on your site.</li>
+<li>Disqus Comments - Add your disqus short name to enable disqus comments on your site.（这个是添加评论功能的，非常好用）</li>
 <li>Google Analytics - Add your tracking id to enable Google Analytics tracking for your site.</li>
 <li>Facebook - Add a Facebook like button</li>
 </ul>
 
+
+<h5>安装第三方主题</h5>
+
+<p>谷歌上搜索“octopress theme”，会有很多可选项。我使用了相对简约的主题 <a href="http://zespia.tw/Octopress-Theme-Slash/index_tw.html">slash</a>，安装过程如下：</p>
+
+<p><code>
+cd octopress
+git clone git://github.com/tommy351/Octopress-Theme-Slash.git .themes/slash
+rake install['slash']
+rake generate
+</code></p>
+
+<p>其他的主题安装方法类似，一般情况下他们的github页面上就会有安装指南。</p>
+
+<h5>修改主题</h5>
+
+<p>完全做出一个好用的主题模板比较复杂，日后可以分析下文件结构。在octopress中，使用者可以通过修改目录"sass/custom"下的 *.scss 文件来重写样式，比如颜色，字体及大小等其他的样式定义。如此，当使用者重新安装主题的时候，自定义的样式不会覆盖。</p>
+
+<h5>发表文章</h5>
+
+<p>发表文章之前，首先要安装markdown文件的编辑器。Mac用户推荐安装mou，Windows上没用过，google之后排位靠前的是MarkdownPad。</p>
+
+<p><code>
+rake new_post[title]
+</code></p>
+
+<p>生成新的文章，路径看起来是这样的<code>source/_posts/2013-04-13-build-a-blog-with-octopress-on-github.markdown</code>，用markdown编辑器打开，就可以写文章啦。</p>
+
+<p><code>
+rake preview 预览文章
+rake gen_depoly 生成并部署新的文章
+</code></p>
+
+<h5>添加评论</h5>
+
+<p>因为github上的页面都是静态的，评论的功能就得动用外部工具<a href="https://disqus.com/">Disqus</a>，注册自己的域名和用户信息后，将注册时填写的“Site Shortname”复制到_config.yml文件中对应“disqus_short_name:”的位置就可以啦。</p>
+
+<p>这里推荐一个小工具<a href="https://en.gravatar.com/">Gravatar</a>，在这里上传自己的头像，会同步到很多其他的网站，省得以后一个个设置太麻烦。
+我了解到的，它支持github，disqus，stachoverflow，别的没试过~</p>
 ]]></content>
   </entry>
   
