@@ -7,7 +7,10 @@
 	<meta name="author" content="muggleyoung">
 
 	
-	<meta name="description" content="2013的第一个月快要过半了，我才慢慢悠悠开始总结2012…. 工作第二年 2012的第一件事就是从北京回到西安。2011冬天的一场大病之后改主意想西安了 另外值得一提的是，回来之后很稳定的呆在一个项目上直到现在。要知道11年算上TWU，我呆过5个项目 不论关于消灭QA的话题有多么不同的意见， &hellip;">
+	<meta name="description" content="If you already have a repo, and want to version control it: Goto your repo, and initialize it to a git repo 1
+2
+cd my_repo
+git init Goto github to &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -72,6 +75,122 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/01/21/how-to-setup-a-new-remote-git-repo/">
+		
+			How to Setup a New Remote Git Repo</a>
+	</h2>
+	<div class="entry-content">
+		<h3>If you already have a repo, and want to version control it:</h3>
+
+<ul>
+<li>Goto your repo, and initialize it to a git repo</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd my_repo
+</span><span class='line'>git init</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><p>Goto <a href="http://github.com">github</a> to create your remote repo</p></li>
+<li><p>Connect your local repo to the remote repo</p></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote add origin [your_remote_repo]</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<ul>
+<li>Set your branch as the remote master</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> vi .git/config</span></code></pre></td></tr></table></div></figure>
+
+
+<p>   Add</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[branch "master"]
+</span><span class='line'>  remote = origin
+</span><span class='line'>  merge = refs/heads/master</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>If you want to use different user name and email with your global settings, please change it here. Add</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[user]
+</span><span class='line'>  name = your_username
+</span><span class='line'>  email = your_email</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<h3>If you want to create a repo via git, and then start to coding:</h3>
+
+<p>This is much easier.</p>
+
+<ul>
+<li>Go to <a href="http://github.com">github</a> to create a new repo. (You probably want to create a readme and gitignore at the same time)</li>
+<li>Go to the folder where you want the repo sitting, and clone the repo</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd your_folder
+</span><span class='line'>git clone your_repo</span></code></pre></td></tr></table></div></figure>
+
+
+<p>      <br/>
+<strong>DONE !</strong></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-21T00:31:00+08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/git/'>git</a>
+
+
+</div>
+	
+</div></article>
 
 
     <article class="post">
@@ -312,51 +431,6 @@
 
 
 <time datetime="2012-04-08T00:00:00+08:00" pubdate data-updated="true">Apr 8<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-</div>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2012/02/19/css%E7%AC%94%E8%AE%B0-position%E9%83%BD%E6%9C%89%E5%95%A5%E5%B1%9E%E6%80%A7/">
-		
-			CSS笔记-position都有啥属性</a>
-	</h2>
-	<div class="entry-content">
-		<p>
-                                    <p>&#26681;&#25454;css&#21442;&#32771;&#25163;&#20876;&#65292;&#26159;&#36825;&#26679;&#35299;&#37322;&#30340;</p>
-<p>position&#23646;&#24615;&#23450;&#20041;&#20803;&#32032;&#23450;&#20301;&#31867;&#22411;</p>
-<p>&#20877;&#33258;&#24049;&#20081;&#35299;&#35835;&#19979;&#19979;&#20960;&#20010;&#23646;&#24615;&#12290;</p>
-<p>absolute&#65306;&#32477;&#23545;&#20301;&#32622;&#23450;&#20301;&#65292;&#26159;&#30456;&#23545;&#20110;&#19978;&#19968;&#32423;&#20803;&#32032;&#26679;&#24335;&#30340;&#20301;&#32622;&#23450;&#20301;&#12290;</p>
-<p>fixed&#65292;&#30456;&#23545;&#22909;&#29702;&#35299;&#19968;&#20123;&#12290;&#26159;&#21644;absolute&#26377;&#28857;&#20687;&#65292;&#20294;&#30456;&#23545;&#20110;&#27983;&#35272;&#22120;&#31383;&#21475;&#30340;&#20301;&#32622;&#36827;&#34892;&#23450;&#20301;&#30340;&#12290;&#20250;&#23545;&#20803;&#32032;&#29983;&#25104;&#19968;&#20010;&#32477;&#23545;&#30340;&#20301;&#32622;&#65292;&#20803;&#32032;&#20250;&#19968;&#30452;&#21574;&#22312;&#37027;&#20010;&#20301;&#32622;&#65292;&#26080;&#35770;&#21608;&#22260;&#25110;&#32773;&#19979;&#38754;&#21448;&#26377;&#20102;&#20160;&#20040;&#20803;&#32032;&#12290;&#29468;&#27979;&#22909;&#22810;&#32593;&#31449;&#35753;&#20154;&#35752;&#21388;&#30340;&#39128;&#31383;&#24191;&#21578;&#22823;&#27010;&#23601;&#26159;&#36825;&#20040;&#25630;&#24471;&#12290;&#24403;&#28982;&#65292;&#26377;&#20123;&#37325;&#35201;&#30340;&#20449;&#24687;&#65292;&#20063;&#21487;&#20197;&#29992;&#36825;&#31181;&#26041;&#24335;&#26174;&#31034;&#21704;&#12290;</p>
-<p>relative&#65292;&#26159;&#30456;&#23545;&#20110;&#21608;&#22260;&#20803;&#32032;&#30340;&#20301;&#32622;&#12290;</p>
-<p>&#20854;&#23454;&#21543;&#65292;absolute&#21644;relative&#30340;&#29702;&#35299;&#36824;&#19981;&#26159;&#24456;&#28145;&#21051;&#65292;&#24453;&#20307;&#20250;~</p>
-<p>&#21478;&#22806;&#19968;&#20010;&#23646;&#24615;&#65292;float&#23601;&#22909;&#29702;&#35299;&#22810;&#20102;&#12290;&#27599;&#20010;float&#30340;&#20803;&#32032;&#37117;&#20250;&#25353;&#29031;&#23450;&#20041;&#28418;&#31227;&#65292;&#24182;&#19988;&#20114;&#30456;&#19981;&#20250;&#35206;&#30422;&#12290;&#22914;&#26524;&#39029;&#38754;&#36275;&#22815;&#23485;&#65292;&#23601;&#25490;&#25490;&#31449;&#65307;&#19981;&#22815;&#23485;&#21602;&#65292;&#21518;&#38754;&#30340;&#20803;&#32032;&#23601;&#20250;&#34987;&#25380;&#22312;&#19979;&#19968;&#34892;&#26174;&#31034;&#12290;</p>
-                                    </p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-19T00:00:00+08:00" pubdate data-updated="true">Feb 19<span>th</span>, 2012</time></div>
 	<div class="tags">
 
 </div>
