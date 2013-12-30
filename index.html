@@ -7,7 +7,7 @@
 	<meta name="author" content="muggleyoung">
 
 	
-	<meta name="description" content="五一假期，一路向西 西安-兰州-嘉峪关-敦煌-张掖-兰州-西安，全程多少公里我也不知道~ 花费：2300RMB 吃，住，行，门票各约四分之一 Day 1: 一大早出发，西安突然开始下雨，黑云压城也很有感觉 前一天桑眼的采购了好多吃的，一路黑吃 出门前恰好在微博上看到有人推荐兰州的君乐牛肉面， &hellip;">
+	<meta name="description" content="请确认您已经完成了安装Rails Girls基本教程的步骤。 美化header样式 打开文件 app/assets/stylesheets/application.css 并在最底端添加： .navbar { min-height: 38px; background-color: #f55e55 &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -72,6 +72,211 @@
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/12/29/rails-girls-css/">
+		
+			Rails Girls Css Tutorial</a>
+	</h2>
+	<div class="entry-content">
+		<p>请确认您已经完成了安装Rails Girls基本教程的步骤。</p>
+
+<ol>
+<li><p>美化header样式</p>
+
+<ul>
+<li>打开文件 app/assets/stylesheets/application.css 并在最底端添加：</li>
+</ul>
+
+
+<p> <code>
+ .navbar {
+ min-height: 38px;
+ background-color: #f55e55;
+ }
+</code></p>
+
+<p> 刷新页面，查看样式有什么变化。
+ 此处解释什么是css选择器，学员可以尝试修改header的颜色，字体等。
+ 简单的颜色选取参考网站： <a href="http://color.uisdc.com/">http://color.uisdc.com/</a></p>
+
+<p> 解释display的属性，什么是内联元素，什么是块级元素</p>
+
+<ul>
+<li>在文件底部加入下面的代码：</li>
+</ul>
+
+
+<p> <code>  
+ .navbar a.brand     {
+ font-size: 18px;
+ }
+</code></p>
+
+<p> `
+ .navbar a.brand:hover {</p>
+
+<pre><code> color: #fff;
+ background-color: transparent;
+ text-decoration: none;
+</code></pre>
+
+<p> }
+ `</p>
+
+<p> `
+ .nav > li > a:hover,
+ .nav > li > a:focus {</p>
+
+<pre><code> background-color: rgba(255,255,255,0.3);
+ color: #fff;
+</code></pre>
+
+<p> }
+ `
+ 此处解释css中链接的四种状态。</p></li>
+<li><p>美化表格样式</p>
+
+<ul>
+<li>对于表格，我们可以使用<a href="http://www.bootcss.com/">Bootstrap</a>的表格样式。打开app/views/ideas/index.html.erb文件，找到：</li>
+</ul>
+
+
+<p> <code>
+ &lt;table&gt;
+</code></p>
+
+<p> 将其改为</p>
+
+<p> <code>
+ &lt;table class="table"&gt;
+</code></p>
+
+<ul>
+<li>修改图片大小，找到这段代码</li>
+</ul>
+
+
+<p> <code>
+ &lt;%= image_tag(idea.picture_url, :width =&gt; 600) if idea.picture.present? %&gt;
+</code>
+ 尝试修改width</p>
+
+<ul>
+<li>打开文件app/assets/stylesheets/ideas.css.scss，加入以下代码：</li>
+</ul>
+
+
+<p> <code>
+ .container a:hover {
+ color: #f55e55;
+ text-decoration: none;
+ background-color: rgba(255, 255, 255, 0);
+}
+</code></p>
+
+<ul>
+<li>学员可以尝试为页面添加背景图片，使用background-image属性，背景纹理资源参考此网站<a href="http://subtlepatterns.com/">http://subtlepatterns.com/</a></li>
+</ul>
+</li>
+<li><p>footer样式调整</p>
+
+<ul>
+<li>打开文件 app/assets/stylesheets/application.css 并在最底端添加：</li>
+</ul>
+
+
+<p> <code>
+ footer {
+background-color: #ebebeb;
+padding: 30px 0;
+}
+</code></p>
+
+<p>  学员可尝试在footer中加入更多内容，并调整位置</p></li>
+<li><p>按钮样式</p>
+
+<p> 打开<a href="http://localhost:3000/ideas/new">http://localhost:3000/ideas/new</a>页面，可以看到页面上的Create Idea按钮。</p>
+
+<p> 在文件app/assets/stylesheets/ideas.css.scss最后加入</p>
+
+<p> <code>
+ .container input[type="submit"] {
+ height: 30px;
+ font-size: 13px;
+ background-color: #f55e55;
+ border: none;
+ color: #fff;
+}
+</code></p>
+
+<p> 教练解释css中border的使用，学员可以尝试修改按钮样式，加圆角，阴影，颜色等。</p></li>
+</ol>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-29T20:14:00+08:00" pubdate data-updated="true">Dec 29<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+</div>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/12/13/thailand/">
+		
+			Thailand</a>
+	</h2>
+	<div class="entry-content">
+		
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-13T15:58:00+08:00" pubdate data-updated="true">Dec 13<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+</div>
+	
+</div></article>
 
 
     <article class="post">
@@ -652,235 +857,6 @@
 
 
 <time datetime="2013-03-27T22:45:00+08:00" pubdate data-updated="true">Mar 27<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/git/'>git</a>
-
-
-</div>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/01/25/how-to-use-font-icon-in-html/">
-		
-			How to Use Font Icon in HTML</a>
-	</h2>
-	<div class="entry-content">
-		<h5>Why Icon Fonts (图标字体) are awesome?</h5>
-
-<p>We can easily change the style (e.g. scale, color, shadow, opacity, rotate, etc.)</p>
-
-<p>It is 100% accessible, we don&#8217;t need to use image sprites then</p>
-
-<h5>Some of Icon Fonts websites:</h5>
-
-<ul>
-<li><a href="http://fontello.com/">Fontello</a></li>
-<li><a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome</a></li>
-<li><a href="http://fico.lensco.be/">fico</a></li>
-<li><a href="http://icomoon.io/#home">IcoMoon</a></li>
-</ul>
-
-
-<h5>Building your Icon Fonts</h5>
-
-<h6>1. Download icon fonts</h6>
-
-<p>I used <a href="http://fontello.com/">Fontello</a> to get my Icon Fonts.</p>
-
-<ol>
-<li>Go to <a href="http://fontello.com/">Fontello</a></li>
-<li>Choose icons you want</li>
-<li>Download webfont</li>
-</ol>
-
-
-<p>Then you&#8217;ll get fonts files like: *.eot, *.svg, *.ttf, *.woff.</p>
-
-<h6>2. HTML</h6>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'> &lt;ul&gt;
-</span><span class='line'>      &lt;li class="icon-pencil"&gt;{date}&lt;/li&gt;  
-</span><span class='line'> &lt;/ul&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<h6>3. CSS</h6>
-
-<p>Open your fontello folder, you&#8217;ll see a file named &#8220;fontello.css&#8221;, copy content of this css to your css file:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@charset "UTF-8";
-</span><span class='line'>@font-face {
-</span><span class='line'>  font-family: 'fontello';
-</span><span class='line'>  src: url("../font/fontello.eot");
-</span><span class='line'>  src: url("../font/fontello.eot?#iefix") format('embedded-opentype'), 
-</span><span class='line'>       url("../font/fontello.woff") format('woff'), 
-</span><span class='line'>       url("../font/fontello.ttf") format('truetype'), 
-</span><span class='line'>       url("../font/fontello.svg#fontello") format('svg');
-</span><span class='line'>  font-weight: normal;
-</span><span class='line'>  font-style: normal;
-</span><span class='line'>}
-</span><span class='line'>[class^="icon-"]:before,
-</span><span class='line'>[class*=" icon-"]:before {
-</span><span class='line'>  font-family: 'fontello';
-</span><span class='line'>  font-style: normal;
-</span><span class='line'>  font-weight: normal;
-</span><span class='line'>  speak: none;
-</span><span class='line'>  display: inline-block;
-</span><span class='line'>  text-decoration: inherit;
-</span><span class='line'>  width: 1em;
-</span><span class='line'>  margin-right: 0.2em;
-</span><span class='line'>  text-align: center;
-</span><span class='line'>  opacity: 0.8;
-</span><span class='line'>/* fix buttons height, for twitter bootstrap */
-</span><span class='line'>  line-height: 1em;
-</span><span class='line'>/* Animation center compensation - magrins should be symmetric */
-</span><span class='line'>/* remove if not needed */
-</span><span class='line'>  margin-left: 0.2em;
-</span><span class='line'>/* you can be more comfortable with increased icons size */
-</span><span class='line'>/* font-size: 120%; */
-</span><span class='line'>/* Uncomment for 3D effect */
-</span><span class='line'>/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
-</span><span class='line'>}
-</span><span class='line'>
-</span><span class='line'>.icon-pencil:before { content: '\270e'; } /* '✎' */
-</span><span class='line'>.icon-feather:before { content: '\2712'; } /* '✒' */
-</span><span class='line'>.icon-tag:before { content: '\e70c'; } /* '' */
-</span><span class='line'>.icon-comment:before { content: '\e718'; } /* '' */</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Then you can customize the style as what you want.</p>
-
-<p>DO NOT forget to include your css file in the html. I made this mistake twice, shame :(</p>
-
-<p><strong>Done</strong></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-25T18:25:00+08:00" pubdate data-updated="true">Jan 25<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/css/'>css</a>, <a class='category' href='/blog/categories/html/'>html</a>
-
-
-</div>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/01/21/how-to-change-git-repo-name/">
-		
-			How to Change Git Repo Name</a>
-	</h2>
-	<div class="entry-content">
-		<p>If you are not satisfy with your git repo name, you can easily change it.</p>
-
-<ul>
-<li>Log in <a href="http://github.com">github</a> -> your repo -> settings</li>
-<li>Typing your new repo name, and &#8220;Rename&#8221; it</li>
-<li>Open terminal, go to your repo folder</li>
-<li>You have two ways to change your remote settings:</li>
-</ul>
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git remote set-url origin git@github.com:muggleyoung/fog_city.git</span></code></pre></td></tr></table></div></figure>
-
-
-<p>OR</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>vi .git/config</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Change the remote url to your new repo url</p>
-
-<p><strong>DONE !</strong></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-21T19:46:00+08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time></div>
 	<div class="tags">
 
 

@@ -7,10 +7,7 @@
 	<meta name="author" content="muggleyoung">
 
 	
-	<meta name="description" content="If you already have a repo, and want to version control it: Goto your repo, and initialize it to a git repo 1
-2
-cd my_repo
-git init Goto github to &hellip;">
+	<meta name="description" content="Why Icon Fonts (图标字体) are awesome? We can easily change the style (e.g. scale, color, shadow, opacity, rotate, etc.) It is 100% accessible, we don&# &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -75,6 +72,235 @@ git init Goto github to &hellip;">
 		
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/01/25/how-to-use-font-icon-in-html/">
+		
+			How to Use Font Icon in HTML</a>
+	</h2>
+	<div class="entry-content">
+		<h5>Why Icon Fonts (图标字体) are awesome?</h5>
+
+<p>We can easily change the style (e.g. scale, color, shadow, opacity, rotate, etc.)</p>
+
+<p>It is 100% accessible, we don&#8217;t need to use image sprites then</p>
+
+<h5>Some of Icon Fonts websites:</h5>
+
+<ul>
+<li><a href="http://fontello.com/">Fontello</a></li>
+<li><a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome</a></li>
+<li><a href="http://fico.lensco.be/">fico</a></li>
+<li><a href="http://icomoon.io/#home">IcoMoon</a></li>
+</ul>
+
+
+<h5>Building your Icon Fonts</h5>
+
+<h6>1. Download icon fonts</h6>
+
+<p>I used <a href="http://fontello.com/">Fontello</a> to get my Icon Fonts.</p>
+
+<ol>
+<li>Go to <a href="http://fontello.com/">Fontello</a></li>
+<li>Choose icons you want</li>
+<li>Download webfont</li>
+</ol>
+
+
+<p>Then you&#8217;ll get fonts files like: *.eot, *.svg, *.ttf, *.woff.</p>
+
+<h6>2. HTML</h6>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> &lt;ul&gt;
+</span><span class='line'>      &lt;li class="icon-pencil"&gt;{date}&lt;/li&gt;  
+</span><span class='line'> &lt;/ul&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<h6>3. CSS</h6>
+
+<p>Open your fontello folder, you&#8217;ll see a file named &#8220;fontello.css&#8221;, copy content of this css to your css file:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>@charset "UTF-8";
+</span><span class='line'>@font-face {
+</span><span class='line'>  font-family: 'fontello';
+</span><span class='line'>  src: url("../font/fontello.eot");
+</span><span class='line'>  src: url("../font/fontello.eot?#iefix") format('embedded-opentype'), 
+</span><span class='line'>       url("../font/fontello.woff") format('woff'), 
+</span><span class='line'>       url("../font/fontello.ttf") format('truetype'), 
+</span><span class='line'>       url("../font/fontello.svg#fontello") format('svg');
+</span><span class='line'>  font-weight: normal;
+</span><span class='line'>  font-style: normal;
+</span><span class='line'>}
+</span><span class='line'>[class^="icon-"]:before,
+</span><span class='line'>[class*=" icon-"]:before {
+</span><span class='line'>  font-family: 'fontello';
+</span><span class='line'>  font-style: normal;
+</span><span class='line'>  font-weight: normal;
+</span><span class='line'>  speak: none;
+</span><span class='line'>  display: inline-block;
+</span><span class='line'>  text-decoration: inherit;
+</span><span class='line'>  width: 1em;
+</span><span class='line'>  margin-right: 0.2em;
+</span><span class='line'>  text-align: center;
+</span><span class='line'>  opacity: 0.8;
+</span><span class='line'>/* fix buttons height, for twitter bootstrap */
+</span><span class='line'>  line-height: 1em;
+</span><span class='line'>/* Animation center compensation - magrins should be symmetric */
+</span><span class='line'>/* remove if not needed */
+</span><span class='line'>  margin-left: 0.2em;
+</span><span class='line'>/* you can be more comfortable with increased icons size */
+</span><span class='line'>/* font-size: 120%; */
+</span><span class='line'>/* Uncomment for 3D effect */
+</span><span class='line'>/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+</span><span class='line'>}
+</span><span class='line'>
+</span><span class='line'>.icon-pencil:before { content: '\270e'; } /* '✎' */
+</span><span class='line'>.icon-feather:before { content: '\2712'; } /* '✒' */
+</span><span class='line'>.icon-tag:before { content: '\e70c'; } /* '' */
+</span><span class='line'>.icon-comment:before { content: '\e718'; } /* '' */</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then you can customize the style as what you want.</p>
+
+<p>DO NOT forget to include your css file in the html. I made this mistake twice, shame :(</p>
+
+<p><strong>Done</strong></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-25T18:25:00+08:00" pubdate data-updated="true">Jan 25<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/css/'>css</a>, <a class='category' href='/blog/categories/html/'>html</a>
+
+
+</div>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/01/21/how-to-change-git-repo-name/">
+		
+			How to Change Git Repo Name</a>
+	</h2>
+	<div class="entry-content">
+		<p>If you are not satisfy with your git repo name, you can easily change it.</p>
+
+<ul>
+<li>Log in <a href="http://github.com">github</a> -> your repo -> settings</li>
+<li>Typing your new repo name, and &#8220;Rename&#8221; it</li>
+<li>Open terminal, go to your repo folder</li>
+<li>You have two ways to change your remote settings:</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git remote set-url origin git@github.com:muggleyoung/fog_city.git</span></code></pre></td></tr></table></div></figure>
+
+
+<p>OR</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>vi .git/config</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Change the remote url to your new repo url</p>
+
+<p><strong>DONE !</strong></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-21T19:46:00+08:00" pubdate data-updated="true">Jan 21<span>st</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/git/'>git</a>
+
+
+</div>
+	
+</div></article>
 
 
     <article class="post">
@@ -322,115 +548,6 @@ git init Goto github to &hellip;">
 
 
 <time datetime="2013-01-08T13:52:00+08:00" pubdate data-updated="true">Jan 8<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-</div>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2012/05/14/eclipse---java.lang.noclassdeffounderror%3A-com.jayway.android.robotium.solo.solo%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/">
-		
-			Eclipse - java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Solo错误解决</a>
-	</h2>
-	<div class="entry-content">
-		<p>
-                                    <p>When I try to launch test for android app, I got following error message:</p>
-<div id="blog_text" class="cnt" style="font-family: Georgia; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; color: #333333; letter-spacing: 2px; overflow-x: hidden; overflow-y: hidden; position: relative !important;">
-<div style="font-family: Arial; word-wrap: break-word; word-break: break-all; visibility: visible !important; zoom: 1 !important; filter: none; line-height: normal;">java.lang.NoClassDefFoundError: com.jayway.android.robotium.solo.Solo<br />at com.skymobi.android.qc.test.RobotTest.setUp(RobotTest.java:46)<br />at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:169)<br />at android.test.AndroidTestRunner.runTest(AndroidTestRunner.java:154)<br />at android.test.InstrumentationTestRunner.onStart(InstrumentationTestRunner.java:529)<br />at android.app.Instrumentation$InstrumentationThread.run(Instrumentation.java:1448)<br /><br />&#22312;eclipse&#20013;&#36827;&#34892;&#22914;&#19979;&#35774;&#32622;</div>
-<ol style="line-height: normal;"><li>&#8220;Properties &gt; Java Build Path &gt; Libraries&#8221;, delete &#8220;Android Dependencies&#8221; in my test project.</li>
-<li>&#8220;Properties &gt; Java Build Path &gt; Libraries&#8221;, delete two robotium jar and click &#8220;Add JARs&#8221; to re-import robotium jar in my test project.</li>
-<li>&#8220;Properties &gt; Java Build Path &gt; Order and Export&#8221;, check two checkbok of robotium jar (and othera you want exported.)</li>
-<li>Clean my test project.</li>
-</ol></div>
-<p>Problem sloved!</p>
-                                    </p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-14T00:00:00+08:00" pubdate data-updated="true">May 14<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-</div>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2012/04/08/%E4%BD%A0%E7%8E%B0%E5%9C%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%BD%BB%E6%9D%BE%E4%B9%88%EF%BC%9F/">
-		
-			你现在的工作轻松么？</a>
-	</h2>
-	<div class="entry-content">
-		<p>
-                                    <p>&#24037;&#20316;&#19968;&#21608;&#24180;&#65292;&#24863;&#24936;&#39047;&#22810;&#65292;&#19968;&#28857;&#19968;&#28857;&#35760;&#24405;&#20102;</p>
-<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
-<p>&#35760;&#24471;&#21018;&#24037;&#20316;&#31532;&#19968;&#21608;&#65292;&#26377;&#22825;&#19979;&#29677;&#21518;&#38065;&#38065;&#38382;&#25105;&#24037;&#20316;&#36825;&#20040;&#20037;&#26377;&#21861;&#24863;&#21463;&#12290;&#25105;&#35828;&#65292;&#25402;&#22909;&#65292;&#27604;&#19978;&#23398;&#33298;&#22374;&#12290;&#21548;&#21040;&#30340;&#21516;&#20107;&#24320;&#29609;&#31505;&#35828;&#65292;&#30475;&#30475;&#38065;&#38065;&#25945;&#30340;&#19981;&#22815;&#29408;&#12290;</p>
-<p>&#21518;&#26469;&#26377;&#27425;&#36319;&#29579;&#22823;&#29239;&#39034;&#36335;&#19979;&#29677;&#65292;&#32842;&#36215;&#26469;&#65292;&#20182;&#20063;&#38382;&#20102;&#21516;&#26679;&#30340;&#38382;&#39064;&#65292;&#24403;&#28982;&#22238;&#31572;&#20063;&#26159;&#19968;&#26679;&#30340;&#12290;</p>
-<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
-<p>&#20877;&#24819;&#24819;&#24403;&#21021;&#25214;&#24037;&#20316;&#30340;&#26102;&#20505;&#65292;&#22909;&#22810;&#20154;&#37117;&#35828;&#24819;&#25214;&#36731;&#26494;&#30340;&#24037;&#20316;&#12290;&#20854;&#23454;&#25105;&#20063;&#24046;&#19981;&#22810;&#12290;</p>
-<p>&#24590;&#26679;&#23450;&#20041;&#19968;&#20221;&#36731;&#26494;&#30340;&#24037;&#20316;&#21602;&#65311;</p>
-<p>&#19968;&#20221;&#25253;&#32440;&#19968;&#26479;&#33590;&#36807;&#19968;&#22825;&#30340;&#24037;&#20316;&#65311;</p>
-<p>&#22352;&#22312;&#21150;&#20844;&#23460;&#29100;&#22815;&#20843;&#23567;&#26102;&#22238;&#23478;&#65311;</p>
-<p>&#27604;&#19978;&#29677;&#26356;&#37325;&#35201;&#30340;&#26159;&#21700;&#32769;&#22823;&#39640;&#20852;?</p>
-<p>&#35201;&#24819;&#35201;&#36825;&#20960;&#31181;&#24037;&#20316;&#65292;&#25105;&#20498;&#26159;&#35265;&#36807;&#65292;&#26576;&#20123;&#20160;&#20040;&#20225;&#19994;&#20160;&#20040;&#25152;&#30340;&#65292;&#24212;&#35813;&#26377;&#31867;&#20284;&#30340;&#39118;&#26684;&#12290;&#20294;&#23545;&#25105;&#26469;&#35828;&#37117;&#27809;&#21170;&#12290;</p>
-<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
-<p>&#21548;&#21040;&#36731;&#26494;&#65292;&#20320;&#30340;&#31532;&#19968;&#21453;&#24212;&#26159;&#20160;&#20040;&#65311;</p>
-<p>&#19981;&#21152;&#29677;&#65311;&#19981;&#24178;&#27963;&#65311;&#36824;&#33021;&#29609;&#65311;&#36824;&#33021;&#25343;&#38065;&#65311;&#24819;&#24471;&#22826;&#32654;&#20102;&#21543;</p>
-<p>&#25105;&#30456;&#20449;&#19968;&#21477;&#35805;&#65292;&#24178;&#22810;&#23569;&#27963;&#20799;&#25343;&#22810;&#23569;&#38065;&#12290;</p>
-<p>&#36824;&#26377;&#19968;&#20010;&#31616;&#21333;&#30340;&#36947;&#29702;&#65292;&#33021;&#32773;&#22810;&#24471;&#12290;</p>
-<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
-<p>&#27599;&#22825;&#29305;&#21035;&#20805;&#23454;&#30340;&#24178;&#27963;&#65292;&#24178;&#23436;&#27963;&#30021;&#24555;&#30340;&#29609;&#20799;</p>
-<p>&#21040;&#22788;&#37117;&#26159;&#26377;&#24847;&#24605;&#30340;&#20540;&#24471;&#23398;&#20064;&#30340;&#19996;&#35199;</p>
-<p>&#40723;&#21169;&#20320;&#35762;&#20986;&#33258;&#24049;&#30340;&#35266;&#28857;&#65292;&#25552;&#20986;&#38382;&#39064;</p>
-<p>&#21917;&#33590;&#30475;&#25253;&#21700;&#32769;&#22823;&#65292;&#19981;&#24551;&#24515;&#20250;&#34987;&#26367;&#20195;&#20040;&#65311;</p>
-<p>&#29100;&#26102;&#38388;&#19978;&#29677;&#65292;&#33258;&#24049;&#19981;&#30693;&#36947;&#20570;&#30340;&#19996;&#35199;&#24847;&#20041;&#20309;&#22312;&#65292;&#26159;&#21542;&#30495;&#27491;&#22909;&#29992;&#65292;&#19981;&#30171;&#33510;&#20040;&#65311;</p>
-<p>&#20570;&#26377;&#24847;&#24605;&#30340;&#20107;&#20799;&#65292;&#20570;&#26377;&#24847;&#20041;&#30340;&#20107;&#20799;&#65292;&#19981;&#33298;&#22374;&#20040;&#65311;</p>
-<p>&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;</p>
-<p>&#27604;&#36215;&#25265;&#24616;&#38065;&#23569;&#65292;&#24037;&#20316;&#32047;&#65292;&#21516;&#20107;&#20851;&#31995;&#38590;&#22788;&#8230;.&#30340;&#21516;&#23398;&#20204;</p>
-<p>&#24037;&#20316;&#19968;&#24180;&#20043;&#38469;&#65292;&#25105;&#20381;&#28982;&#20250;&#22238;&#31572;&#65292;&#19978;&#29677;&#27604;&#19978;&#23398;&#26102;&#20505;&#33298;&#22374;&#22810;&#20102;&#12290;</p>
-                                    </p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-04-08T00:00:00+08:00" pubdate data-updated="true">Apr 8<span>th</span>, 2012</time></div>
 	<div class="tags">
 
 </div>

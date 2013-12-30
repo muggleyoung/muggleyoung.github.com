@@ -1,0 +1,288 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>rails girls css tutorial - </title>
+	<meta name="author" content="muggleyoung">
+
+	
+	<meta name="description" content="请确认您已经完成了安装Rails Girls基本教程的步骤。 美化header样式 打开文件 app/assets/stylesheets/application.css 并在最底端添加： .navbar { min-height: 38px; background-color: #f55e55 &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+</head>
+
+<body>
+	<header id="header" class="inner"><h1><a href="/"></a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:muggleyoung.github.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		
+    
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:muggleyoung.github.com">
+	</form>
+</nav>
+
+</header>
+	
+		
+	
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Rails Girls Css Tutorial</h2>
+	<div class="entry-content"><p>请确认您已经完成了安装Rails Girls基本教程的步骤。</p>
+
+<ol>
+<li><p>美化header样式</p>
+
+<ul>
+<li>打开文件 app/assets/stylesheets/application.css 并在最底端添加：</li>
+</ul>
+
+
+<p> <code>
+ .navbar {
+ min-height: 38px;
+ background-color: #f55e55;
+ }
+</code></p>
+
+<p> 刷新页面，查看样式有什么变化。
+ 此处解释什么是css选择器，学员可以尝试修改header的颜色，字体等。
+ 简单的颜色选取参考网站： <a href="http://color.uisdc.com/">http://color.uisdc.com/</a></p>
+
+<p> 解释display的属性，什么是内联元素，什么是块级元素</p>
+
+<ul>
+<li>在文件底部加入下面的代码：</li>
+</ul>
+
+
+<p> <code>  
+ .navbar a.brand     {
+ font-size: 18px;
+ }
+</code></p>
+
+<p> `
+ .navbar a.brand:hover {</p>
+
+<pre><code> color: #fff;
+ background-color: transparent;
+ text-decoration: none;
+</code></pre>
+
+<p> }
+ `</p>
+
+<p> `
+ .nav > li > a:hover,
+ .nav > li > a:focus {</p>
+
+<pre><code> background-color: rgba(255,255,255,0.3);
+ color: #fff;
+</code></pre>
+
+<p> }
+ `
+ 此处解释css中链接的四种状态。</p></li>
+<li><p>美化表格样式</p>
+
+<ul>
+<li>对于表格，我们可以使用<a href="http://www.bootcss.com/">Bootstrap</a>的表格样式。打开app/views/ideas/index.html.erb文件，找到：</li>
+</ul>
+
+
+<p> <code>
+ &lt;table&gt;
+</code></p>
+
+<p> 将其改为</p>
+
+<p> <code>
+ &lt;table class="table"&gt;
+</code></p>
+
+<ul>
+<li>修改图片大小，找到这段代码</li>
+</ul>
+
+
+<p> <code>
+ &lt;%= image_tag(idea.picture_url, :width =&gt; 600) if idea.picture.present? %&gt;
+</code>
+ 尝试修改width</p>
+
+<ul>
+<li>打开文件app/assets/stylesheets/ideas.css.scss，加入以下代码：</li>
+</ul>
+
+
+<p> <code>
+ .container a:hover {
+ color: #f55e55;
+ text-decoration: none;
+ background-color: rgba(255, 255, 255, 0);
+}
+</code></p>
+
+<ul>
+<li>学员可以尝试为页面添加背景图片，使用background-image属性，背景纹理资源参考此网站<a href="http://subtlepatterns.com/">http://subtlepatterns.com/</a></li>
+</ul>
+</li>
+<li><p>footer样式调整</p>
+
+<ul>
+<li>打开文件 app/assets/stylesheets/application.css 并在最底端添加：</li>
+</ul>
+
+
+<p> <code>
+ footer {
+background-color: #ebebeb;
+padding: 30px 0;
+}
+</code></p>
+
+<p>  学员可尝试在footer中加入更多内容，并调整位置</p></li>
+<li><p>按钮样式</p>
+
+<p> 打开<a href="http://localhost:3000/ideas/new">http://localhost:3000/ideas/new</a>页面，可以看到页面上的Create Idea按钮。</p>
+
+<p> 在文件app/assets/stylesheets/ideas.css.scss最后加入</p>
+
+<p> <code>
+ .container input[type="submit"] {
+ height: 30px;
+ font-size: 13px;
+ background-color: #f55e55;
+ border: none;
+ color: #fff;
+}
+</code></p>
+
+<p> 教练解释css中border的使用，学员可以尝试修改按钮样式，加圆角，阴影，颜色等。</p></li>
+</ol>
+
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-29T20:14:00+08:00" pubdate data-updated="true">Dec 29<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+</div>
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
+
+    muggleyoung
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'muggleyoung';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://muggleyoung.github.com/blog/2013/12/29/rails-girls-css/';
+        var disqus_url = 'http://muggleyoung.github.com/blog/2013/12/29/rails-girls-css/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+</body>
+</html>
