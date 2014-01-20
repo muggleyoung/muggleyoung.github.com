@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | ]]></title>
   <link href="http://muggleyoung.github.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://muggleyoung.github.com/"/>
-  <updated>2014-01-06T21:47:07+08:00</updated>
+  <updated>2014-01-20T18:30:30+05:30</updated>
   <id>http://muggleyoung.github.com/</id>
   <author>
     <name><![CDATA[muggleyoung]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Version Control .vim File With Git]]></title>
     <link href="http://muggleyoung.github.com/blog/2013/03/27/version-control-dot-vim-file-with-git/"/>
-    <updated>2013-03-27T22:45:00+08:00</updated>
+    <updated>2013-03-27T22:45:00+05:30</updated>
     <id>http://muggleyoung.github.com/blog/2013/03/27/version-control-dot-vim-file-with-git</id>
     <content type="html"><![CDATA[<p><em>We usually have lots of vim plugins installed, and custermized configrations. It is better to version control .vim, .vimrc, even .gvimrc. So that we can easily set the configration on different laptop, also as a backup :)</em></p>
 
@@ -154,7 +154,7 @@ rm script
   <entry>
     <title type="html"><![CDATA[how to change git repo name]]></title>
     <link href="http://muggleyoung.github.com/blog/2013/01/21/how-to-change-git-repo-name/"/>
-    <updated>2013-01-21T19:46:00+08:00</updated>
+    <updated>2013-01-21T19:46:00+05:30</updated>
     <id>http://muggleyoung.github.com/blog/2013/01/21/how-to-change-git-repo-name</id>
     <content type="html"><![CDATA[<p>If you are not satisfy with your git repo name, you can easily change it.</p>
 
@@ -189,7 +189,7 @@ Change the remote url to your new repo url</p>
   <entry>
     <title type="html"><![CDATA[How to setup a new remote git repo]]></title>
     <link href="http://muggleyoung.github.com/blog/2013/01/21/how-to-setup-a-new-remote-git-repo/"/>
-    <updated>2013-01-21T00:31:00+08:00</updated>
+    <updated>2013-01-21T00:31:00+05:30</updated>
     <id>http://muggleyoung.github.com/blog/2013/01/21/how-to-setup-a-new-remote-git-repo</id>
     <content type="html"><![CDATA[<h3>If you already have a repo, and want to version control it:</h3>
 
